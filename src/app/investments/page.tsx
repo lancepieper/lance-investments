@@ -42,8 +42,9 @@ export default function InvestmentsPage() {
         Investments
       </h1>
       <p className="mt-4 text-gray-400">
-        Positions I&rsquo;ve held or currently hold. This is not financial
-        advice &mdash; just a transparent look at where I&rsquo;ve put capital.
+        A non-exhaustive list of positions I&rsquo;ve held or currently hold.
+        This is not financial advice &mdash; just a transparent look at where
+        I&rsquo;ve put capital.
       </p>
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
