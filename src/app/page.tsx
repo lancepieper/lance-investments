@@ -1,6 +1,43 @@
 import Link from "next/link";
+import Parser from "rss-parser";
 
-export default function Home() {
+// Revalidate the RSS feed every hour
+export const revalidate = 3600;
+
+interface FeedItem {
+  title?: string;
+  link?: string;
+  pubDate?: string;
+  contentSnippet?: string;
+}
+
+async function getLatestPosts(): Promise<FeedItem[]> {
+  try {
+    const parser = new Parser();
+    const feed = await parser.parseURL("https://lancepieper.substack.com/feed");
+    return (feed.items ?? []).slice(0, 2);
+  } catch {
+    return [];
+  }
+}
+
+function formatDate(dateString?: string): string {
+  if (!dateString) return "";
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+function truncate(text: string | undefined, maxLength: number): string {
+  if (!text) return "";
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength).trimEnd() + "...";
+}
+
+export default async function Home() {
+  const latestPosts = await getLatestPosts();
   return (
     <>
       {/* Hero */}
@@ -127,6 +164,56 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest Writing */}
+      {latestPosts.length > 0 && (
+        <section className="border-t border-navy-800 bg-navy-900/40">
+          <div className="mx-auto max-w-5xl px-6 py-20">
+            <h2 className="text-center text-2xl font-bold text-white md:text-3xl">
+              Latest Writing
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-gray-400">
+              Recent essays and analysis from my Substack.
+            </p>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-2">
+              {latestPosts.map((post) => (
+                <a
+                  key={post.link}
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
+                >
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
+                      {post.title}
+                    </h3>
+                    <time className="text-sm text-gray-500">
+                      {formatDate(post.pubDate)}
+                    </time>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                    {truncate(post.contentSnippet, 200)}
+                  </p>
+                  <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
+                    Read more &rarr;
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link
+                href="/blog"
+                className="text-sm font-medium text-gold-400 transition-colors hover:text-gold-300"
+              >
+                View all posts &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="border-t border-navy-800">
