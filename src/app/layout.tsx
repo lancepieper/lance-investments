@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "lance.investments",
-    title: "lance.investments",
+    title: "lance.investments — Investment Insights by Lance Pieper",
     description:
-      "Investment insights, market analysis, and financial commentary by Lance Pieper.",
+      "Frameworks and analysis on macroeconomics, technology, and long-term investing. Helping investors navigate complexity with clarity.",
     url: siteUrl,
     images: [
       {
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "lance.investments",
+    title: "lance.investments — Investment Insights by Lance Pieper",
     description:
-      "Investment insights, market analysis, and financial commentary by Lance Pieper.",
+      "Frameworks and analysis on macroeconomics, technology, and long-term investing. Helping investors navigate complexity with clarity.",
     creator: "@lancepieper1",
     images: ["/banner.png"],
   },
