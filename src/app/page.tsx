@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Parser from "rss-parser";
 
@@ -9,6 +10,7 @@ interface FeedItem {
   link?: string;
   pubDate?: string;
   contentSnippet?: string;
+  enclosure?: { url?: string };
 }
 
 async function getLatestPosts(): Promise<FeedItem[]> {
@@ -183,22 +185,34 @@ export default async function Home() {
                   href={post.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
+                  className="group overflow-hidden rounded-lg border border-navy-800 bg-navy-900/60 transition-colors hover:border-gold-500/40"
                 >
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
-                      {post.title}
-                    </h3>
-                    <time className="text-sm text-gray-500">
-                      {formatDate(post.pubDate)}
-                    </time>
+                  {post.enclosure?.url && (
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={post.enclosure.url}
+                        alt={post.title ?? ""}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
+                        {post.title}
+                      </h3>
+                      <time className="text-sm text-gray-500">
+                        {formatDate(post.pubDate)}
+                      </time>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                      {truncate(post.contentSnippet, 200)}
+                    </p>
+                    <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
+                      Read more &rarr;
+                    </span>
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                    {truncate(post.contentSnippet, 200)}
-                  </p>
-                  <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
-                    Read more &rarr;
-                  </span>
                 </a>
               ))}
             </div>
