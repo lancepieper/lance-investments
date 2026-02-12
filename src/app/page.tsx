@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Parser from "rss-parser";
 import AnimateIn from "@/components/AnimateIn";
+import SubstackSubscribe from "@/components/SubstackSubscribe";
 
 // Revalidate the RSS feed every hour
 export const revalidate = 3600;
@@ -251,14 +252,7 @@ export default async function Home() {
               I publish new essays and analysis on Substack. Follow along for
               fresh perspectives on markets and investing.
             </p>
-            <a
-              href="https://lancepieper.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center rounded-md bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400"
-            >
-              Subscribe on Substack
-            </a>
+            <SubstackSubscribe />
           </AnimateIn>
         </div>
       </section>
