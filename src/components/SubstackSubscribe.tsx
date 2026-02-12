@@ -1,18 +1,73 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
+
 export default function SubstackSubscribe() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <p className="mt-8 text-sm font-medium text-gold-400">
+        ✓ You&rsquo;re subscribed! Check your inbox to confirm.
+      </p>
+    );
+  }
+
   return (
-    <iframe
-      src="https://lancepieper.substack.com/embed"
-      width="480"
-      height="150"
-      className="mx-auto mt-8 border-0"
-      style={{
-        background: "transparent",
-        borderRadius: "8px",
-        maxWidth: "100%",
-      }}
-      title="Subscribe to The Atlas Letter"
-    />
+    <form
+      onSubmit={handleSubmit}
+      className="relative mx-auto mt-8 flex max-w-md gap-3"
+    >
+      <input
+        type="email"
+        required
+        placeholder="Your email address"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+          if (status === "error") setStatus("idle");
+        }}
+        className="min-w-0 flex-1 rounded-md border border-navy-800 bg-navy-900/80 px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-colors focus:border-gold-500/60"
+      />
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="shrink-0 rounded-md bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 disabled:opacity-60"
+      >
+        {status === "loading" ? "Subscribing…" : "Subscribe"}
+      </button>
+      {status === "error" && (
+        <p className="absolute -bottom-7 left-0 text-xs text-red-400">
+          Something went wrong. Please try again.
+        </p>
+      )}
+    </form>
   );
 }
