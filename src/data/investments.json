@@ -8,5 +8,6 @@
   { "name": "Iren", "sector": "Energy", "logo": "/logos/iren.png" },
   { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.png" },
   { "name": "GE Vernova", "sector": "Energy", "logo": "/logos/ge-vernova.png" },
-  { "name": "Groq", "sector": "Technology", "logo": "/logos/groq.png" }
+  { "name": "Groq", "sector": "Technology", "logo": "/logos/groq.png" },
+  { "name": "SpaceX", "sector": "Aerospace", "logo": "/logos/spacex.svg" }
 ]
