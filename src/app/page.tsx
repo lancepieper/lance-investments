@@ -19,8 +19,9 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
             I&rsquo;m Lance Pieper &mdash; an investor and writer exploring the
-            intersection of macro trends, technology, and long-term value
-            creation. I share what I&rsquo;m learning along the way.
+            intersection of macro trends, economics, &amp; technology. I share
+            frameworks and insights to help long-term investors navigate
+            complexity.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
