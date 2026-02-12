@@ -5,7 +5,11 @@ export const runtime = "edge";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-export default function Icon() {
+export default async function Icon() {
+  const fontData = await fetch(
+    "https://fonts.gstatic.com/s/dancingscript/v29/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSoHTQ.ttf"
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -21,9 +25,8 @@ export default function Icon() {
       >
         <div
           style={{
-            fontSize: "24px",
-            fontFamily: "Georgia, serif",
-            fontStyle: "italic",
+            fontSize: "26px",
+            fontFamily: "Dancing Script",
             fontWeight: 700,
             color: "#d4a84b",
             display: "flex",
@@ -33,6 +36,16 @@ export default function Icon() {
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Dancing Script",
+          data: fontData,
+          style: "normal",
+          weight: 700,
+        },
+      ],
+    }
   );
 }

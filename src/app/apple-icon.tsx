@@ -5,7 +5,11 @@ export const runtime = "edge";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-export default function AppleIcon() {
+export default async function AppleIcon() {
+  const fontData = await fetch(
+    "https://fonts.gstatic.com/s/dancingscript/v29/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSoHTQ.ttf"
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -22,8 +26,7 @@ export default function AppleIcon() {
         <div
           style={{
             fontSize: "120px",
-            fontFamily: "Georgia, serif",
-            fontStyle: "italic",
+            fontFamily: "Dancing Script",
             fontWeight: 700,
             color: "#d4a84b",
             display: "flex",
@@ -33,6 +36,16 @@ export default function AppleIcon() {
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Dancing Script",
+          data: fontData,
+          style: "normal",
+          weight: 700,
+        },
+      ],
+    }
   );
 }
