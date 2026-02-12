@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Parser from "rss-parser";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ interface FeedItem {
   pubDate?: string;
   contentSnippet?: string;
   creator?: string;
+  enclosure?: { url?: string };
 }
 
 async function getPosts(): Promise<FeedItem[]> {
@@ -80,22 +82,34 @@ export default async function BlogPage() {
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
+              className="group block overflow-hidden rounded-lg border border-navy-800 bg-navy-900/60 transition-colors hover:border-gold-500/40"
             >
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 className="text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
-                  {post.title}
-                </h2>
-                <time className="shrink-0 text-sm text-gray-500">
-                  {formatDate(post.pubDate)}
-                </time>
+              {post.enclosure?.url && (
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={post.enclosure.url}
+                    alt={post.title ?? ""}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                  <h2 className="text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
+                    {post.title}
+                  </h2>
+                  <time className="shrink-0 text-sm text-gray-500">
+                    {formatDate(post.pubDate)}
+                  </time>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                  {truncate(post.contentSnippet, 200)}
+                </p>
+                <span className="mt-4 inline-block text-sm font-medium text-gold-400 opacity-0 transition-opacity group-hover:opacity-100">
+                  Read more &rarr;
+                </span>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                {truncate(post.contentSnippet, 200)}
-              </p>
-              <span className="mt-4 inline-block text-sm font-medium text-gold-400 opacity-0 transition-opacity group-hover:opacity-100">
-                Read more &rarr;
-              </span>
             </a>
           ))}
         </div>
