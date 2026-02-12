@@ -114,20 +114,20 @@ const PRESETS = [
 function computeResult(regime: any, allocation: any, useRealReturns: boolean) {
   const w = { stocks: allocation.stocks / 100, bonds: allocation.bonds / 100, gold: allocation.gold / 100, cash: allocation.cash / 100, intl: allocation.intl / 100 };
   const monthlyInflation = Math.pow(1 + regime.annualizedInflation, 1 / 12) - 1;
-  const cpiPath = regime.months.map((_, i) => useRealReturns ? Math.pow(1 + monthlyInflation, i) : 1);
+  const cpiPath = regime.months.map((_: any, i: number) => useRealReturns ? Math.pow(1 + monthlyInflation, i) : 1);
   const adjustedAssets: Record<string, number[]> = {};
-  for (const [a, path] of Object.entries(regime.assets)) { adjustedAssets[a] = path.map((v, i) => v / cpiPath[i]); }
-  const path = regime.months.map((_, i) => {
+  for (const [a, path] of Object.entries(regime.assets) as [string, number[]][]) { adjustedAssets[a] = path.map((v: number, i: number) => v / cpiPath[i]); }
+  const path = regime.months.map((_: any, i: number) => {
     let val = 0;
-    for (const [a, wt] of Object.entries(w)) { if (wt > 0 && adjustedAssets[a]) val += wt * adjustedAssets[a][i]; }
+    for (const [a, wt] of Object.entries(w) as [string, number][]) { if (wt > 0 && adjustedAssets[a]) val += wt * adjustedAssets[a][i]; }
     return val;
   });
   let peak = path[0], maxDD = 0, troughMonth = 0;
-  path.forEach((v, i) => { if (v > peak) peak = v; const dd = (peak - v) / peak; if (dd > maxDD) { maxDD = dd; troughMonth = i; } });
+  path.forEach((v: number, i: number) => { if (v > peak) peak = v; const dd = (peak - v) / peak; if (dd > maxDD) { maxDD = dd; troughMonth = i; } });
   let recoveryMonths = null;
   for (let i = troughMonth; i < path.length; i++) { if (path[i] >= 100) { recoveryMonths = i - troughMonth; break; } }
   const assetReturns: Record<string, number> = {};
-  for (const [a, p] of Object.entries(adjustedAssets)) { assetReturns[a] = (p[p.length - 1] / p[0] - 1) * 100; }
+  for (const [a, p] of Object.entries(adjustedAssets) as [string, number[]][]) { assetReturns[a] = (p[p.length - 1] / p[0] - 1) * 100; }
   return { regime, path, maxDD: maxDD * 100, troughMonth, recoveryMonths, totalReturn: (path[path.length - 1] / 100 - 1) * 100, assetReturns };
 }
 
