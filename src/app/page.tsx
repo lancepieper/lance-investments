@@ -83,6 +83,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Tools */}
+      <section className="border-t border-navy-800 bg-navy-900/40">
+        <div className="mx-auto max-w-5xl px-6 py-20">
+          <h2 className="text-center text-2xl font-bold text-white md:text-3xl">
+            Interactive Tools
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-gray-400">
+            Tools to help you think through portfolio construction and financial planning.
+          </p>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            <Link
+              href="/simulator"
+              className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
+            >
+              <h3 className="text-lg font-semibold text-gold-400">
+                Monte Carlo Simulator
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                Model your financial future across thousands of randomized scenarios. Adjust savings rates, asset allocation, and withdrawal strategies to see the range of outcomes — not just the average.
+              </p>
+              <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
+                Try it &rarr;
+              </span>
+            </Link>
+
+            <Link
+              href="/stress-test"
+              className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
+            >
+              <h3 className="text-lg font-semibold text-gold-400">
+                Portfolio Regime Stress Tester
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                See how your portfolio allocation would have performed through the worst market crises of the last 50 years — from 1970s stagflation to the 2022 rate shock. Built on verified data from Shiller, LBMA, and EFA.
+              </p>
+              <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
+                Try it &rarr;
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="border-t border-navy-800">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center">
@@ -93,7 +137,7 @@ export default function Home() {
             I publish new essays and analysis on Substack. Follow along for
             fresh perspectives on markets and investing.
           </p>
-          <a
+          
             href="https://lancepieper.substack.com"
             target="_blank"
             rel="noopener noreferrer"
