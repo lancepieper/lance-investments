@@ -1,32 +1,8 @@
 [
-  {
-    "name": "Bitcoin",
-    "sector": "Crypto",
-    "date": "2020-03-15"
-  },
-  {
-    "name": "NVIDIA",
-    "sector": "Technology",
-    "date": "2019-08-01"
-  },
-  {
-    "name": "Vanguard Total World Stock ETF (VT)",
-    "sector": "Equities",
-    "date": "2018-01-10"
-  },
-  {
-    "name": "Ethereum",
-    "sector": "Crypto",
-    "date": "2021-01-20"
-  },
-  {
-    "name": "Apple",
-    "sector": "Technology",
-    "date": "2017-06-12"
-  },
-  {
-    "name": "iShares 20+ Year Treasury Bond ETF (TLT)",
-    "sector": "Fixed Income",
-    "date": "2022-10-01"
-  }
+  { "name": "Bitcoin", "sector": "Crypto" },
+  { "name": "NVIDIA", "sector": "Technology" },
+  { "name": "Vanguard Total World Stock ETF (VT)", "sector": "Equities" },
+  { "name": "Ethereum", "sector": "Crypto" },
+  { "name": "Apple", "sector": "Technology" },
+  { "name": "iShares 20+ Year Treasury Bond ETF (TLT)", "sector": "Fixed Income" }
 ]

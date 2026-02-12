@@ -11,14 +11,6 @@ export const metadata: Metadata = {
 interface Investment {
   name: string;
   sector: string;
-  date: string;
-}
-
-function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-  });
 }
 
 const sectorColors: Record<string, string> = {
@@ -35,9 +27,7 @@ function getSectorStyle(sector: string): string {
 }
 
 export default function InvestmentsPage() {
-  const sorted = [...(investments as Investment[])].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const items = investments as Investment[];
 
   return (
     <section className="mx-auto max-w-3xl px-6 py-20">
@@ -48,19 +38,19 @@ export default function InvestmentsPage() {
         Investments
       </h1>
       <p className="mt-4 text-gray-400">
-        A timeline of positions I&rsquo;ve held. This is not financial advice
-        &mdash; just a transparent look at where I&rsquo;ve put capital.
+        Positions I&rsquo;ve held or currently hold. This is not financial
+        advice &mdash; just a transparent look at where I&rsquo;ve put capital.
       </p>
 
       <div className="relative mt-14">
-        {/* Vertical timeline line */}
+        {/* Vertical line */}
         <div className="absolute left-3 top-0 bottom-0 w-px bg-navy-700" />
 
         <div className="space-y-10">
-          {sorted.map((inv, i) => (
-            <AnimateIn key={`${inv.name}-${inv.date}`} delay={i * 80}>
+          {items.map((inv, i) => (
+            <AnimateIn key={inv.name} delay={i * 80}>
               <div className="relative pl-10">
-                {/* Timeline dot */}
+                {/* Dot */}
                 <div className="absolute left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-gold-400 bg-navy-950" />
 
                 <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40">
@@ -74,9 +64,6 @@ export default function InvestmentsPage() {
                       {inv.sector}
                     </span>
                   </div>
-                  <time className="mt-2 block text-sm text-gray-500">
-                    {formatDate(inv.date)}
-                  </time>
                 </div>
               </div>
             </AnimateIn>
