@@ -6,6 +6,6 @@
   { "name": "Google", "sector": "Technology", "logo": "/logos/google.svg" },
   { "name": "AMD", "sector": "Technology", "logo": "/logos/amd.svg" },
   { "name": "Iren", "sector": "Energy", "logo": "/logos/iren.png" },
-  { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.png" },
+  { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.svg" },
   { "name": "GE Vernova", "sector": "Energy", "logo": "/logos/ge-vernova.png" }
 ]
