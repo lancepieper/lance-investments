@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
+  description:
+    "Get in touch with Lance Pieper to discuss markets, explore a collaboration, or connect on Substack, X, and LinkedIn.",
 };
 
 const links = [

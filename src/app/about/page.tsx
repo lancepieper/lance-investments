@@ -3,6 +3,8 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
+  description:
+    "Lance Pieper is an investor, macro analyst, writer, and Certified Financial Planner exploring the intersection of macroeconomics, technology, and behavioral finance.",
 };
 
 export default function AboutPage() {

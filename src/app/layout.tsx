@@ -15,6 +15,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://www.lance.investments";
+
 export const metadata: Metadata = {
   title: {
     default: "lance.investments",
@@ -22,6 +24,32 @@ export const metadata: Metadata = {
   },
   description:
     "Investment insights, market analysis, and financial commentary by Lance Pieper.",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "lance.investments",
+    title: "lance.investments",
+    description:
+      "Investment insights, market analysis, and financial commentary by Lance Pieper.",
+    url: siteUrl,
+    images: [
+      {
+        url: "/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "lance.investments",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "lance.investments",
+    description:
+      "Investment insights, market analysis, and financial commentary by Lance Pieper.",
+    creator: "@lancepieper1",
+    images: ["/banner.png"],
+  },
 };
 
 export default function RootLayout({

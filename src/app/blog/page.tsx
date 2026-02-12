@@ -4,6 +4,8 @@ import Parser from "rss-parser";
 
 export const metadata: Metadata = {
   title: "Blog",
+  description:
+    "Essays and analysis on macroeconomics, technology, monetary history, and long-term investing by Lance Pieper.",
 };
 
 // Revalidate the RSS feed every hour
