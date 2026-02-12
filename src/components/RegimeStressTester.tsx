@@ -1,10 +1,36 @@
 "use client";
 
-// @ts-nocheck
 import { useState, useMemo } from "react";
 
-const ASSET_LABELS = { stocks: "US Stocks", bonds: "US Bonds", gold: "Gold", cash: "Cash / T-Bills", intl: "Intl Stocks" };
-const ASSET_COLORS = { stocks: "#5b9bd5", bonds: "#8faadc", gold: "#d4a843", cash: "#a8a8a8", intl: "#7eb8c9" };
+type AssetKey = "stocks" | "bonds" | "gold" | "cash" | "intl";
+type Allocation = Record<AssetKey, number>;
+
+interface Regime {
+  id: string;
+  name: string;
+  shortName: string;
+  period: string;
+  description: string;
+  color: string;
+  context: string;
+  annualizedInflation: number;
+  months: number[];
+  assets: Record<AssetKey, number[]>;
+}
+
+interface Result {
+  regime: Regime;
+  path: number[];
+  maxDD: number;
+  troughMonth: number;
+  recoveryMonths: number | null;
+  totalReturn: number;
+  assetReturns: Record<AssetKey, number>;
+}
+
+const ASSET_KEYS: AssetKey[] = ["stocks", "bonds", "gold", "cash", "intl"];
+const ASSET_LABELS: Record<AssetKey, string> = { stocks: "US Stocks", bonds: "US Bonds", gold: "Gold", cash: "Cash / T-Bills", intl: "Intl Stocks" };
+const ASSET_COLORS: Record<AssetKey, string> = { stocks: "#5b9bd5", bonds: "#8faadc", gold: "#d4a843", cash: "#a8a8a8", intl: "#7eb8c9" };
 
 // DATA SOURCES & METHODOLOGY (Verified Feb 2026)
 // US Stocks: S&P 500 monthly prices from Robert Shiller ie_data.xls (Yale, 1871-2026)
@@ -16,7 +42,7 @@ const ASSET_COLORS = { stocks: "#5b9bd5", bonds: "#8faadc", gold: "#d4a843", cas
 //   1973-74, 1980-82: Brighthouse/Bloomberg EAFE annual returns, distributed monthly.
 // CPI: BLS data via Shiller. Monthly averages smooth daily extremes.
 
-const REGIMES = [
+const REGIMES: Regime[] = [
   {
     id: "stagflation73", name: "1973\u201374 Stagflation", shortName: "'73 Stagflation",
     period: "Jan 1973 \u2013 Dec 1974", description: "Oil embargo, wage-price spiral, and a deep recession. The worst equity bear market since the Depression.",
@@ -103,7 +129,9 @@ const REGIMES = [
   },
 ];
 
-const PRESETS = [
+interface Preset { name: string; desc: string; alloc: Allocation; }
+
+const PRESETS: Preset[] = [
   { name: "60/40 Classic", desc: "Traditional balanced", alloc: { stocks: 60, bonds: 40, gold: 0, cash: 0, intl: 0 } },
   { name: "All-Weather", desc: "Dalio-inspired", alloc: { stocks: 30, bonds: 40, gold: 15, cash: 0, intl: 15 } },
   { name: "Permanent Port.", desc: "Browne's 4x25", alloc: { stocks: 25, bonds: 25, gold: 25, cash: 25, intl: 0 } },
@@ -112,32 +140,32 @@ const PRESETS = [
   { name: "Conservative", desc: "Capital preservation", alloc: { stocks: 20, bonds: 50, gold: 10, cash: 20, intl: 0 } },
 ];
 
-function computeResult(regime: any, allocation: any, useRealReturns: boolean) {
-  const w = { stocks: allocation.stocks / 100, bonds: allocation.bonds / 100, gold: allocation.gold / 100, cash: allocation.cash / 100, intl: allocation.intl / 100 };
+function computeResult(regime: Regime, allocation: Allocation, useRealReturns: boolean): Result {
+  const w: Allocation = { stocks: allocation.stocks / 100, bonds: allocation.bonds / 100, gold: allocation.gold / 100, cash: allocation.cash / 100, intl: allocation.intl / 100 };
   const monthlyInflation = Math.pow(1 + regime.annualizedInflation, 1 / 12) - 1;
-  const cpiPath = regime.months.map((_: any, i: number) => useRealReturns ? Math.pow(1 + monthlyInflation, i) : 1);
+  const cpiPath = regime.months.map((_n: number, i: number) => useRealReturns ? Math.pow(1 + monthlyInflation, i) : 1);
   const adjustedAssets: Record<string, number[]> = {};
-  for (const [a, path] of Object.entries(regime.assets) as [string, number[]][]) { adjustedAssets[a] = path.map((v: number, i: number) => v / cpiPath[i]); }
-  const path = regime.months.map((_: any, i: number) => {
+  for (const key of ASSET_KEYS) { adjustedAssets[key] = regime.assets[key].map((v: number, i: number) => v / cpiPath[i]); }
+  const path = regime.months.map((_n: number, i: number) => {
     let val = 0;
-    for (const [a, wt] of Object.entries(w) as [string, number][]) { if (wt > 0 && adjustedAssets[a]) val += wt * adjustedAssets[a][i]; }
+    for (const key of ASSET_KEYS) { if (w[key] > 0 && adjustedAssets[key]) val += w[key] * adjustedAssets[key][i]; }
     return val;
   });
   let peak = path[0], maxDD = 0, troughMonth = 0;
   path.forEach((v: number, i: number) => { if (v > peak) peak = v; const dd = (peak - v) / peak; if (dd > maxDD) { maxDD = dd; troughMonth = i; } });
-  let recoveryMonths = null;
+  let recoveryMonths: number | null = null;
   for (let i = troughMonth; i < path.length; i++) { if (path[i] >= 100) { recoveryMonths = i - troughMonth; break; } }
-  const assetReturns: Record<string, number> = {};
-  for (const [a, p] of Object.entries(adjustedAssets) as [string, number[]][]) { assetReturns[a] = (p[p.length - 1] / p[0] - 1) * 100; }
+  const assetReturns = {} as Record<AssetKey, number>;
+  for (const key of ASSET_KEYS) { const p = adjustedAssets[key]; assetReturns[key] = (p[p.length - 1] / p[0] - 1) * 100; }
   return { regime, path, maxDD: maxDD * 100, troughMonth, recoveryMonths, totalReturn: (path[path.length - 1] / 100 - 1) * 100, assetReturns };
 }
 
-function MiniChart({ path, color, height = 60 }: { path: number[], color: string, height?: number }) {
+function MiniChart({ path, color, height = 60 }: { path: number[]; color: string; height?: number }) {
   const min = Math.min(...path, 95), max = Math.max(...path, 105), range = max - min || 1;
   const h = height, w = 400;
-  const points = path.map((v, i) => `${(i / (path.length - 1)) * w},${h - ((v - min) / range) * h}`).join(" ");
+  const points = path.map((v: number, i: number) => `${(i / (path.length - 1)) * w},${h - ((v - min) / range) * h}`).join(" ");
   const baseline = h - ((100 - min) / range) * h;
-  const fillPoints = path.map((v, i) => { const y = v < 100 ? h - ((v - min) / range) * h : baseline; return `${(i / (path.length - 1)) * w},${y}`; }).join(" ");
+  const fillPoints = path.map((v: number, i: number) => { const y = v < 100 ? h - ((v - min) / range) * h : baseline; return `${(i / (path.length - 1)) * w},${y}`; }).join(" ");
   return (
     <svg viewBox={`0 0 ${w} ${h}`} style={{ width: "100%", height, display: "block" }} preserveAspectRatio="none">
       <line x1="0" y1={baseline} x2={w} y2={baseline} stroke="rgba(255,255,255,0.15)" strokeDasharray="4,3" />
@@ -147,11 +175,11 @@ function MiniChart({ path, color, height = 60 }: { path: number[], color: string
   );
 }
 
-function ComparisonBars({ results }: { results: any[] }) {
-  const maxDD = Math.max(...results.map(r => r.maxDD));
+function ComparisonBars({ results }: { results: Result[] }) {
+  const maxDD = Math.max(...results.map((r: Result) => r.maxDD));
   return (
     <div style={{ display: "flex", alignItems: "flex-end", gap: 8, height: 120, padding: "0 4px" }}>
-      {results.map(r => (
+      {results.map((r: Result) => (
         <div key={r.regime.id} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
           <span style={{ fontSize: 11, fontWeight: 600, color: r.regime.color }}>{"-" + r.maxDD.toFixed(0) + "%"}</span>
           <div style={{ width: "100%", maxWidth: 48, height: (r.maxDD / (maxDD * 1.15)) * 100 + "%", minHeight: 4, background: r.regime.color, opacity: 0.7, borderRadius: "4px 4px 0 0" }} />
@@ -163,17 +191,23 @@ function ComparisonBars({ results }: { results: any[] }) {
 }
 
 export default function RegimeStressTester() {
-  const [allocation, setAllocation] = useState<Record<string, number>>({ stocks: 60, bonds: 40, gold: 0, cash: 0, intl: 0 });
+  const [allocation, setAllocation] = useState<Allocation>({ stocks: 60, bonds: 40, gold: 0, cash: 0, intl: 0 });
   const [selectedRegime, setSelectedRegime] = useState("gfc08");
   const [initialValue, setInitialValue] = useState(500000);
   const [useRealReturns, setUseRealReturns] = useState(false);
-  const total = Object.values(allocation).reduce((s, v) => s + v, 0);
-  const results = useMemo(() => REGIMES.map(r => computeResult(r, allocation, useRealReturns)), [allocation, useRealReturns]);
-  const worstDD = Math.max(...results.map(r => r.maxDD));
-  const avgDD = results.reduce((s, r) => s + r.maxDD, 0) / results.length;
-  const survivedAll = results.every(r => r.recoveryMonths !== null);
-  const fmt = (v: number) => Math.abs(v) >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : Math.abs(v) >= 1e3 ? "$" + (v / 1e3).toFixed(0) + "K" : "$" + Math.round(v).toLocaleString();
-  const toggleBtn = (active: boolean) => ({ padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500 as const, letterSpacing: 0.3, cursor: "pointer" as const, border: "none", background: active ? "rgba(99,200,170,0.12)" : "transparent", color: active ? "#63c8aa" : "rgba(255,255,255,0.35)", fontFamily: "'DM Sans',system-ui,sans-serif", transition: "all 0.15s ease" });
+  const total = ASSET_KEYS.reduce((s: number, k: AssetKey) => s + allocation[k], 0);
+  const results = useMemo(() => REGIMES.map((r: Regime) => computeResult(r, allocation, useRealReturns)), [allocation, useRealReturns]);
+  const worstDD = Math.max(...results.map((r: Result) => r.maxDD));
+  const avgDD = results.reduce((s: number, r: Result) => s + r.maxDD, 0) / results.length;
+  const survivedAll = results.every((r: Result) => r.recoveryMonths !== null);
+  const fmt = (v: number): string => Math.abs(v) >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : Math.abs(v) >= 1e3 ? "$" + (v / 1e3).toFixed(0) + "K" : "$" + Math.round(v).toLocaleString();
+  const toggleBtn = (active: boolean): React.CSSProperties => ({ padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500, letterSpacing: 0.3, cursor: "pointer", border: "none", background: active ? "rgba(99,200,170,0.12)" : "transparent", color: active ? "#63c8aa" : "rgba(255,255,255,0.35)", fontFamily: "'DM Sans',system-ui,sans-serif", transition: "all 0.15s ease" });
+
+  const summaryRows: [string, string, string][] = [
+    ["Worst drawdown", "-" + worstDD.toFixed(1) + "%", "#ef4444"],
+    ["Avg drawdown", "-" + avgDD.toFixed(1) + "%", "#eab308"],
+    ["Recovered all?", survivedAll ? "Yes" : "No", survivedAll ? "#22c55e" : "#ef4444"],
+  ];
 
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#0d1117 0%,#111820 40%,#0f1923 100%)", color: "#f0f0f0", fontFamily: "'DM Sans',system-ui,sans-serif" }}>
@@ -197,9 +231,9 @@ export default function RegimeStressTester() {
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: 20 }}>
             <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 12 }}>Preset Portfolios</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-              {PRESETS.map(p => {
+              {PRESETS.map((p: Preset) => {
                 const active = JSON.stringify(allocation) === JSON.stringify(p.alloc);
-                return (<button key={p.name} onClick={() => setAllocation({...p.alloc})} style={{ background: active ? "rgba(99,200,170,0.08)" : "rgba(255,255,255,0.02)", border: active ? "1px solid rgba(99,200,170,0.2)" : "1px solid rgba(255,255,255,0.04)", borderRadius: 10, padding: "8px 10px", cursor: "pointer", textAlign: "left", color: "#f0f0f0" }}>
+                return (<button key={p.name} onClick={() => setAllocation({...p.alloc})} style={{ background: active ? "rgba(99,200,170,0.08)" : "rgba(255,255,255,0.02)", border: active ? "1px solid rgba(99,200,170,0.2)" : "1px solid rgba(255,255,255,0.04)", borderRadius: 10, padding: "8px 10px", cursor: "pointer", textAlign: "left" as const, color: "#f0f0f0" }}>
                   <div style={{ fontSize: 12, fontFamily: "'DM Serif Display',serif" }}>{p.name}</div>
                   <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", marginTop: 2 }}>{p.desc}</div>
                 </button>);
@@ -212,16 +246,16 @@ export default function RegimeStressTester() {
               <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500 }}>Allocation</div>
               <div style={{ fontSize: 13, fontFamily: "'DM Serif Display',serif", color: total === 100 ? "#63c8aa" : "#ef4444" }}>{total}%{total !== 100 && <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginLeft: 4 }}>({total < 100 ? "under" : "over"})</span>}</div>
             </div>
-            {Object.entries(ASSET_LABELS).map(([key, label]) => (
+            {ASSET_KEYS.map((key: AssetKey) => (
               <div key={key} style={{ marginBottom: 10 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 4 }}>
                   <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
                     <span style={{ width: 8, height: 8, borderRadius: "50%", background: ASSET_COLORS[key], display: "inline-block" }} />
-                    <span style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</span>
+                    <span style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: 0.5 }}>{ASSET_LABELS[key]}</span>
                   </span>
                   <span style={{ fontSize: 14, fontFamily: "'DM Serif Display',serif", color: "rgba(255,255,255,0.9)" }}>{allocation[key]}%</span>
                 </div>
-                <input type="range" min={0} max={100} step={5} value={allocation[key]} onChange={e => setAllocation(prev => ({ ...prev, [key]: parseInt(e.target.value) }))} />
+                <input type="range" min={0} max={100} step={5} value={allocation[key]} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAllocation((prev: Allocation) => ({ ...prev, [key]: parseInt(e.target.value) }))} />
               </div>
             ))}
           </div>
@@ -232,12 +266,12 @@ export default function RegimeStressTester() {
               <span style={{ fontSize: 11, color: "rgba(255,255,255,0.45)" }}>Portfolio Value</span>
               <span style={{ fontSize: 14, fontFamily: "'DM Serif Display',serif" }}>{fmt(initialValue)}</span>
             </div>
-            <input type="range" min={50000} max={5000000} step={50000} value={initialValue} onChange={e => setInitialValue(parseInt(e.target.value))} />
+            <input type="range" min={50000} max={5000000} step={50000} value={initialValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInitialValue(parseInt(e.target.value))} />
           </div>
 
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: 20 }}>
             <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 10 }}>Summary {useRealReturns && <span style={{ fontSize: 9, color: "rgba(255,255,255,0.25)", fontWeight: 400 }}>(real)</span>}</div>
-            {[["Worst drawdown", "-" + worstDD.toFixed(1) + "%", "#ef4444"], ["Avg drawdown", "-" + avgDD.toFixed(1) + "%", "#eab308"], ["Recovered all?", survivedAll ? "Yes" : "No", survivedAll ? "#22c55e" : "#ef4444"]].map(([l, v, c]) => (
+            {summaryRows.map(([l, v, c]: [string, string, string]) => (
               <div key={l} style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
                 <span style={{ fontSize: 11, color: "rgba(255,255,255,0.35)" }}>{l}</span>
                 <span style={{ fontSize: 14, fontFamily: "'DM Serif Display',serif", color: c }}>{v}</span>
@@ -252,7 +286,7 @@ export default function RegimeStressTester() {
             <ComparisonBars results={results} />
           </div>
 
-          {results.map(r => {
+          {results.map((r: Result) => {
             const isOpen = selectedRegime === r.regime.id;
             const endVal = initialValue * (1 + r.totalReturn / 100);
             return (
@@ -262,7 +296,7 @@ export default function RegimeStressTester() {
                     <div style={{ fontSize: 10, letterSpacing: 1, textTransform: "uppercase", color: r.regime.color, marginBottom: 4 }}>{r.regime.period}</div>
                     <div style={{ fontSize: 16, fontFamily: "'DM Serif Display',serif", color: "rgba(255,255,255,0.9)" }}>{r.regime.name}</div>
                   </div>
-                  <div style={{ textAlign: "right" }}>
+                  <div style={{ textAlign: "right" as const }}>
                     <div style={{ fontSize: 22, fontFamily: "'DM Serif Display',serif", color: r.maxDD > 20 ? "#ef4444" : r.maxDD > 10 ? "#eab308" : "#22c55e" }}>-{r.maxDD.toFixed(1)}%</div>
                     <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>Max Drawdown{useRealReturns ? " (real)" : ""}</div>
                   </div>
@@ -278,13 +312,13 @@ export default function RegimeStressTester() {
                     <div style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", lineHeight: 1.5, marginBottom: 6 }}>{r.regime.description}</div>
                     <div style={{ fontSize: 11, color: "rgba(255,255,255,0.22)", lineHeight: 1.5, fontStyle: "italic", marginBottom: 10 }}>{r.regime.context}</div>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px" }}>
-                      {Object.entries(r.assetReturns).filter(([a]) => allocation[a] > 0).sort(([, a], [, b]) => b - a).map(([a, ret]) => (
+                      {ASSET_KEYS.filter((a: AssetKey) => allocation[a] > 0).sort((a: AssetKey, b: AssetKey) => r.assetReturns[b] - r.assetReturns[a]).map((a: AssetKey) => (
                         <div key={a} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                           <span style={{ display: "flex", alignItems: "center", gap: 5 }}>
                             <span style={{ width: 5, height: 5, borderRadius: "50%", background: ASSET_COLORS[a], display: "inline-block" }} />
                             <span style={{ fontSize: 10, color: "rgba(255,255,255,0.35)" }}>{ASSET_LABELS[a]}</span>
                           </span>
-                          <span style={{ fontSize: 12, fontFamily: "'DM Serif Display',serif", color: ret >= 0 ? "#63c8aa" : "#ef4444" }}>{ret >= 0 ? "+" : ""}{ret.toFixed(1)}%</span>
+                          <span style={{ fontSize: 12, fontFamily: "'DM Serif Display',serif", color: r.assetReturns[a] >= 0 ? "#63c8aa" : "#ef4444" }}>{r.assetReturns[a] >= 0 ? "+" : ""}{r.assetReturns[a].toFixed(1)}%</span>
                         </div>
                       ))}
                     </div>
@@ -295,7 +329,7 @@ export default function RegimeStressTester() {
           })}
 
           <div style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", lineHeight: 1.7, padding: "0 4px" }}>
-            <strong style={{ color: "rgba(255,255,255,0.4)" }}>Data sources:</strong> S&P 500 monthly prices and 10-year Treasury yields from Robert Shiller's ie_data.xls (Yale). Gold from LBMA monthly averages (NMA). International stocks from iShares EFA ETF monthly closes (Yahoo Finance) for 2001-2022 regimes; pre-2001 from MSCI EAFE annual returns (Brighthouse/Bloomberg). Cash from short-rate proxies. Bond returns from GS10 yield changes (modified duration 7). Real returns deflated by CPI. Monthly averages smooth daily extremes. Past performance is not indicative of future results. This tool is for educational purposes only and does not constitute financial advice. Errors or omissions may occur. Do your own research and consult a qualified, licensed adviser who understands your circumstances before acting on this content.
+            <strong style={{ color: "rgba(255,255,255,0.4)" }}>Data sources:</strong> S&amp;P 500 monthly prices and 10-year Treasury yields from Robert Shiller&apos;s ie_data.xls (Yale). Gold from LBMA monthly averages (NMA). International stocks from iShares EFA ETF monthly closes (Yahoo Finance) for 2001-2022 regimes; pre-2001 from MSCI EAFE annual returns (Brighthouse/Bloomberg). Cash from short-rate proxies. Bond returns from GS10 yield changes (modified duration 7). Real returns deflated by CPI. Monthly averages smooth daily extremes. Past performance is not indicative of future results. This tool is for educational purposes only and does not constitute financial advice. Errors or omissions may occur. Do your own research and consult a qualified, licensed adviser who understands your circumstances before acting on this content.
           </div>
         </div>
       </div>
