@@ -5,7 +5,7 @@ import investments from "@/data/investments.json";
 export const metadata: Metadata = {
   title: "Investments",
   description:
-    "A timeline of past and current investments by Lance Pieper, spanning technology, crypto, equities, and more.",
+    "Past and current investments by Lance Pieper, spanning technology, crypto, equities, and more.",
 };
 
 interface Investment {
@@ -42,33 +42,19 @@ export default function InvestmentsPage() {
         advice &mdash; just a transparent look at where I&rsquo;ve put capital.
       </p>
 
-      <div className="relative mt-14">
-        {/* Vertical line */}
-        <div className="absolute left-3 top-0 bottom-0 w-px bg-navy-700" />
-
-        <div className="space-y-10">
-          {items.map((inv, i) => (
-            <AnimateIn key={inv.name} delay={i * 80}>
-              <div className="relative pl-10">
-                {/* Dot */}
-                <div className="absolute left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-gold-400 bg-navy-950" />
-
-                <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h2 className="text-lg font-semibold text-white">
-                      {inv.name}
-                    </h2>
-                    <span
-                      className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${getSectorStyle(inv.sector)}`}
-                    >
-                      {inv.sector}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </AnimateIn>
-          ))}
-        </div>
+      <div className="mt-12 grid gap-4 sm:grid-cols-2">
+        {items.map((inv, i) => (
+          <AnimateIn key={inv.name} delay={i * 80}>
+            <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40">
+              <h2 className="text-lg font-semibold text-white">{inv.name}</h2>
+              <span
+                className={`mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${getSectorStyle(inv.sector)}`}
+              >
+                {inv.sector}
+              </span>
+            </div>
+          </AnimateIn>
+        ))}
       </div>
 
       <AnimateIn>
