@@ -50,6 +50,9 @@ export const metadata: Metadata = {
     creator: "@lancepieper1",
     images: ["/banner.png"],
   },
+  verification: {
+    google: "Mw2Z8m8IeCMJ3yU4gMtjV7RBX7_5i8Z3qdEsDgXiHlo",
+  },
 };
 
 export default function RootLayout({
