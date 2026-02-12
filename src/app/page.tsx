@@ -137,7 +137,7 @@ export default function Home() {
             I publish new essays and analysis on Substack. Follow along for
             fresh perspectives on markets and investing.
           </p>
-          
+          <a
             href="https://lancepieper.substack.com"
             target="_blank"
             rel="noopener noreferrer"
