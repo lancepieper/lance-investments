@@ -1,11 +1,11 @@
 [
-  { "name": "Bitcoin", "sector": "Crypto" },
-  { "name": "NVIDIA", "sector": "Technology" },
-  { "name": "Databricks", "sector": "Technology" },
-  { "name": "Tesla", "sector": "Technology" },
-  { "name": "Google", "sector": "Technology" },
-  { "name": "AMD", "sector": "Technology" },
-  { "name": "Iren", "sector": "Energy" },
-  { "name": "Bloom Energy", "sector": "Energy" },
-  { "name": "GE Vernova", "sector": "Energy" }
+  { "name": "Bitcoin", "sector": "Crypto", "domain": "bitcoin.org" },
+  { "name": "NVIDIA", "sector": "Technology", "domain": "nvidia.com" },
+  { "name": "Databricks", "sector": "Technology", "domain": "databricks.com" },
+  { "name": "Tesla", "sector": "Technology", "domain": "tesla.com" },
+  { "name": "Google", "sector": "Technology", "domain": "google.com" },
+  { "name": "AMD", "sector": "Technology", "domain": "amd.com" },
+  { "name": "Iren", "sector": "Energy", "domain": "iren.com" },
+  { "name": "Bloom Energy", "sector": "Energy", "domain": "bloomenergy.com" },
+  { "name": "GE Vernova", "sector": "Energy", "domain": "gevernova.com" }
 ]

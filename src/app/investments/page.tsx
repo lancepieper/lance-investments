@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import investments from "@/data/investments.json";
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 interface Investment {
   name: string;
   sector: string;
+  domain: string;
 }
 
 const sectorColors: Record<string, string> = {
@@ -46,13 +48,22 @@ export default function InvestmentsPage() {
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {items.map((inv, i) => (
           <AnimateIn key={inv.name} delay={i * 80}>
-            <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40">
-              <h2 className="text-lg font-semibold text-white">{inv.name}</h2>
-              <span
-                className={`mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${getSectorStyle(inv.sector)}`}
-              >
-                {inv.sector}
-              </span>
+            <div className="flex items-center gap-4 rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40">
+              <Image
+                src={`https://logo.clearbit.com/${inv.domain}`}
+                alt={`${inv.name} logo`}
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 rounded-md bg-white p-1"
+              />
+              <div>
+                <h2 className="text-lg font-semibold text-white">{inv.name}</h2>
+                <span
+                  className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${getSectorStyle(inv.sector)}`}
+                >
+                  {inv.sector}
+                </span>
+              </div>
             </div>
           </AnimateIn>
         ))}
