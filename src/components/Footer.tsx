@@ -52,6 +52,11 @@ export default function Footer() {
           <p className="text-xs text-gray-500">
             &copy; {new Date().getFullYear()} Lance Pieper. All rights reserved.
           </p>
+          <p className="mt-2 max-w-lg text-center text-[11px] leading-relaxed text-gray-600">
+            This site is for informational purposes only and does not constitute
+            financial advice. Always do your own research before making
+            investment decisions.
+          </p>
         </div>
       </div>
     </footer>
