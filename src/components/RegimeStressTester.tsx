@@ -111,11 +111,11 @@ const PRESETS = [
   { name: "Conservative", desc: "Capital preservation", alloc: { stocks: 20, bonds: 50, gold: 10, cash: 20, intl: 0 } },
 ];
 
-function computeResult(regime, allocation, useRealReturns) {
+function computeResult(regime: any, allocation: any, useRealReturns: boolean) {
   const w = { stocks: allocation.stocks / 100, bonds: allocation.bonds / 100, gold: allocation.gold / 100, cash: allocation.cash / 100, intl: allocation.intl / 100 };
   const monthlyInflation = Math.pow(1 + regime.annualizedInflation, 1 / 12) - 1;
   const cpiPath = regime.months.map((_, i) => useRealReturns ? Math.pow(1 + monthlyInflation, i) : 1);
-  const adjustedAssets = {};
+  const adjustedAssets: Record<string, number[]> = {};
   for (const [a, path] of Object.entries(regime.assets)) { adjustedAssets[a] = path.map((v, i) => v / cpiPath[i]); }
   const path = regime.months.map((_, i) => {
     let val = 0;
@@ -126,12 +126,12 @@ function computeResult(regime, allocation, useRealReturns) {
   path.forEach((v, i) => { if (v > peak) peak = v; const dd = (peak - v) / peak; if (dd > maxDD) { maxDD = dd; troughMonth = i; } });
   let recoveryMonths = null;
   for (let i = troughMonth; i < path.length; i++) { if (path[i] >= 100) { recoveryMonths = i - troughMonth; break; } }
-  const assetReturns = {};
+  const assetReturns: Record<string, number> = {};
   for (const [a, p] of Object.entries(adjustedAssets)) { assetReturns[a] = (p[p.length - 1] / p[0] - 1) * 100; }
   return { regime, path, maxDD: maxDD * 100, troughMonth, recoveryMonths, totalReturn: (path[path.length - 1] / 100 - 1) * 100, assetReturns };
 }
 
-function MiniChart({ path, color, height = 60 }) {
+function MiniChart({ path, color, height = 60 }: { path: number[], color: string, height?: number }) {
   const min = Math.min(...path, 95), max = Math.max(...path, 105), range = max - min || 1;
   const h = height, w = 400;
   const points = path.map((v, i) => `${(i / (path.length - 1)) * w},${h - ((v - min) / range) * h}`).join(" ");
@@ -146,7 +146,7 @@ function MiniChart({ path, color, height = 60 }) {
   );
 }
 
-function ComparisonBars({ results }) {
+function ComparisonBars({ results }: { results: any[] }) {
   const maxDD = Math.max(...results.map(r => r.maxDD));
   return (
     <div style={{ display: "flex", alignItems: "flex-end", gap: 8, height: 120, padding: "0 4px" }}>
@@ -162,7 +162,7 @@ function ComparisonBars({ results }) {
 }
 
 export default function RegimeStressTester() {
-  const [allocation, setAllocation] = useState({ stocks: 60, bonds: 40, gold: 0, cash: 0, intl: 0 });
+  const [allocation, setAllocation] = useState<Record<string, number>>({ stocks: 60, bonds: 40, gold: 0, cash: 0, intl: 0 });
   const [selectedRegime, setSelectedRegime] = useState("gfc08");
   const [initialValue, setInitialValue] = useState(500000);
   const [useRealReturns, setUseRealReturns] = useState(false);
@@ -171,8 +171,8 @@ export default function RegimeStressTester() {
   const worstDD = Math.max(...results.map(r => r.maxDD));
   const avgDD = results.reduce((s, r) => s + r.maxDD, 0) / results.length;
   const survivedAll = results.every(r => r.recoveryMonths !== null);
-  const fmt = v => Math.abs(v) >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : Math.abs(v) >= 1e3 ? "$" + (v / 1e3).toFixed(0) + "K" : "$" + Math.round(v).toLocaleString();
-  const toggleBtn = (active) => ({ padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500, letterSpacing: 0.3, cursor: "pointer", border: "none", background: active ? "rgba(99,200,170,0.12)" : "transparent", color: active ? "#63c8aa" : "rgba(255,255,255,0.35)", fontFamily: "'DM Sans',system-ui,sans-serif", transition: "all 0.15s ease" });
+  const fmt = (v: number) => Math.abs(v) >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : Math.abs(v) >= 1e3 ? "$" + (v / 1e3).toFixed(0) + "K" : "$" + Math.round(v).toLocaleString();
+  const toggleBtn = (active: boolean) => ({ padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500 as const, letterSpacing: 0.3, cursor: "pointer" as const, border: "none", background: active ? "rgba(99,200,170,0.12)" : "transparent", color: active ? "#63c8aa" : "rgba(255,255,255,0.35)", fontFamily: "'DM Sans',system-ui,sans-serif", transition: "all 0.15s ease" });
 
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#0d1117 0%,#111820 40%,#0f1923 100%)", color: "#f0f0f0", fontFamily: "'DM Sans',system-ui,sans-serif" }}>
