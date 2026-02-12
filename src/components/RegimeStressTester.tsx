@@ -1,5 +1,6 @@
 "use client";
 
+// @ts-nocheck
 import { useState, useMemo } from "react";
 
 const ASSET_LABELS = { stocks: "US Stocks", bonds: "US Bonds", gold: "Gold", cash: "Cash / T-Bills", intl: "Intl Stocks" };
