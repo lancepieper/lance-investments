@@ -33,14 +33,6 @@ export const metadata: Metadata = {
     description:
       "Frameworks and analysis on macroeconomics, technology, and long-term investing. Helping investors navigate complexity with clarity.",
     url: siteUrl,
-    images: [
-      {
-        url: "/banner.png",
-        width: 1200,
-        height: 630,
-        alt: "lance.investments",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -48,7 +40,6 @@ export const metadata: Metadata = {
     description:
       "Frameworks and analysis on macroeconomics, technology, and long-term investing. Helping investors navigate complexity with clarity.",
     creator: "@lancepieper1",
-    images: ["/banner.png"],
   },
   verification: {
     google: "Mw2Z8m8IeCMJ3yU4gMtjV7RBX7_5i8Z3qdEsDgXiHlo",
