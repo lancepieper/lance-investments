@@ -359,7 +359,7 @@ export default function FinancialSimulator() {
                 </table>
               </div>
             </div>
-            <div className="text-[10px] text-white/20 leading-relaxed px-1">
+            <div className="text-[13px] text-white/40 leading-relaxed px-1">
               This simulator uses Monte Carlo analysis with normally distributed returns. This tool is for educational purposes only and does not constitute financial advice. Errors or omissions may occur. Any forward-looking statements involve risks and uncertainties that may cause actual results to differ materially. Past performance is not indicative of future results. Do your own research and consult a qualified, licensed adviser who understands your circumstances before acting on this content.
             </div>
           </div>
