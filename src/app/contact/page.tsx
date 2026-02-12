@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -43,6 +44,7 @@ export default function ContactPage() {
         say hello &mdash; I&rsquo;d love to hear from you.
       </p>
 
+      <AnimateIn>
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
         {links.map(({ label, href, description }) => (
           <a
@@ -62,6 +64,7 @@ export default function ContactPage() {
           </a>
         ))}
       </div>
+      </AnimateIn>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Parser from "rss-parser";
+import AnimateIn from "@/components/AnimateIn";
 
 // Revalidate the RSS feed every hour
 export const revalidate = 3600;
@@ -56,12 +57,15 @@ export default async function Home() {
             <span className="text-gold-400">clarity</span> and{" "}
             <span className="text-gold-400">conviction</span>.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
-            I&rsquo;m Lance Pieper &mdash; an investor and writer exploring the
-            intersection of macro trends, economics, &amp; technology. I share
-            frameworks and insights to help long-term investors navigate
-            complexity.
-          </p>
+          <AnimateIn delay={200}>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
+              I&rsquo;m Lance Pieper &mdash; an investor and writer exploring the
+              intersection of macro trends, economics, &amp; technology. I share
+              frameworks and insights to help long-term investors navigate
+              complexity.
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={400}>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/blog"
@@ -76,6 +80,7 @@ export default async function Home() {
               Learn More
             </Link>
           </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -90,6 +95,7 @@ export default async function Home() {
               Recent essays and analysis from my Substack.
             </p>
 
+            <AnimateIn>
             <div className="mt-12 grid gap-8 md:grid-cols-2">
               {latestPosts.map((post) => (
                 <a
@@ -128,6 +134,7 @@ export default async function Home() {
                 </a>
               ))}
             </div>
+            </AnimateIn>
 
             <div className="mt-10 text-center">
               <Link
@@ -151,6 +158,7 @@ export default async function Home() {
             Topics I explore on my Substack and across my research.
           </p>
 
+          <AnimateIn>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
@@ -182,6 +190,7 @@ export default async function Home() {
               </div>
             ))}
           </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -195,6 +204,7 @@ export default async function Home() {
             Tools to help you think through portfolio construction and financial planning.
           </p>
 
+          <AnimateIn>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <Link
               href="/simulator"
@@ -226,27 +236,30 @@ export default async function Home() {
               </span>
             </Link>
           </div>
+          </AnimateIn>
         </div>
       </section>
 
       {/* CTA */}
       <section className="border-t border-navy-800">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center">
-          <h2 className="text-2xl font-bold text-white md:text-3xl">
-            Stay in the loop
-          </h2>
-          <p className="mx-auto mt-4 max-w-lg text-gray-400">
-            I publish new essays and analysis on Substack. Follow along for
-            fresh perspectives on markets and investing.
-          </p>
-          <a
-            href="https://lancepieper.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center rounded-md bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400"
-          >
-            Subscribe on Substack
-          </a>
+          <AnimateIn>
+            <h2 className="text-2xl font-bold text-white md:text-3xl">
+              Stay in the loop
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-gray-400">
+              I publish new essays and analysis on Substack. Follow along for
+              fresh perspectives on markets and investing.
+            </p>
+            <a
+              href="https://lancepieper.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center rounded-md bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400"
+            >
+              Subscribe on Substack
+            </a>
+          </AnimateIn>
         </div>
       </section>
     </>

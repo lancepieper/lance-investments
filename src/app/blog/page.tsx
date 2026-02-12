@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Parser from "rss-parser";
+import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -78,9 +79,9 @@ export default async function BlogPage() {
         </div>
       ) : (
         <div className="mt-12 space-y-6">
-          {posts.map((post) => (
+          {posts.map((post, i) => (
+            <AnimateIn key={post.link} delay={i * 100}>
             <a
-              key={post.link}
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -113,6 +114,7 @@ export default async function BlogPage() {
                 </span>
               </div>
             </a>
+            </AnimateIn>
           ))}
         </div>
       )}

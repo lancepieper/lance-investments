@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "About",
@@ -29,6 +30,7 @@ export default function AboutPage() {
         </div>
       </div>
 
+      <AnimateIn>
       <div className="mt-10 space-y-6 text-gray-300 leading-relaxed">
         <p>
           I&rsquo;m an investor, macro analyst, writer, and Certified Financial
@@ -67,7 +69,9 @@ export default function AboutPage() {
           focusing on what matters over the long term and ignoring the rest.
         </p>
       </div>
+      </AnimateIn>
 
+      <AnimateIn>
       <div className="mt-12 rounded-lg border border-navy-800 bg-navy-900/60 p-6">
         <p className="text-sm text-gray-400">
           Want to connect or collaborate? Head over to the{" "}
@@ -77,6 +81,7 @@ export default function AboutPage() {
           to find the best way to reach me.
         </p>
       </div>
+      </AnimateIn>
     </section>
   );
 }
