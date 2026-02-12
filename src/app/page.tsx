@@ -79,6 +79,68 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Latest Writing */}
+      {latestPosts.length > 0 && (
+        <section className="border-t border-navy-800 bg-navy-900/40">
+          <div className="mx-auto max-w-5xl px-6 py-20">
+            <h2 className="text-center text-2xl font-bold text-white md:text-3xl">
+              Latest Writing
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-gray-400">
+              Recent essays and analysis from my Substack.
+            </p>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-2">
+              {latestPosts.map((post) => (
+                <a
+                  key={post.link}
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group overflow-hidden rounded-lg border border-navy-800 bg-navy-900/60 transition-colors hover:border-gold-500/40"
+                >
+                  {post.enclosure?.url && (
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={post.enclosure.url}
+                        alt={post.title ?? ""}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
+                        {post.title}
+                      </h3>
+                      <time className="text-sm text-gray-500">
+                        {formatDate(post.pubDate)}
+                      </time>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                      {truncate(post.contentSnippet, 200)}
+                    </p>
+                    <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
+                      Read more &rarr;
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link
+                href="/blog"
+                className="text-sm font-medium text-gold-400 transition-colors hover:text-gold-300"
+              >
+                View all posts &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* What I Write About */}
       <section className="border-t border-navy-800 bg-navy-900/40">
         <div className="mx-auto max-w-5xl px-6 py-20">
@@ -166,68 +228,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      {/* Latest Writing */}
-      {latestPosts.length > 0 && (
-        <section className="border-t border-navy-800 bg-navy-900/40">
-          <div className="mx-auto max-w-5xl px-6 py-20">
-            <h2 className="text-center text-2xl font-bold text-white md:text-3xl">
-              Latest Writing
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-gray-400">
-              Recent essays and analysis from my Substack.
-            </p>
-
-            <div className="mt-12 grid gap-8 md:grid-cols-2">
-              {latestPosts.map((post) => (
-                <a
-                  key={post.link}
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group overflow-hidden rounded-lg border border-navy-800 bg-navy-900/60 transition-colors hover:border-gold-500/40"
-                >
-                  {post.enclosure?.url && (
-                    <div className="relative h-48 w-full overflow-hidden">
-                      <Image
-                        src={post.enclosure.url}
-                        alt={post.title ?? ""}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6">
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-lg font-semibold text-white group-hover:text-gold-400 transition-colors">
-                        {post.title}
-                      </h3>
-                      <time className="text-sm text-gray-500">
-                        {formatDate(post.pubDate)}
-                      </time>
-                    </div>
-                    <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                      {truncate(post.contentSnippet, 200)}
-                    </p>
-                    <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
-                      Read more &rarr;
-                    </span>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            <div className="mt-10 text-center">
-              <Link
-                href="/blog"
-                className="text-sm font-medium text-gold-400 transition-colors hover:text-gold-300"
-              >
-                View all posts &rarr;
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* CTA */}
       <section className="border-t border-navy-800">
