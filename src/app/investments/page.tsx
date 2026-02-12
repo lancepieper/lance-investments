@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 interface Investment {
   name: string;
   sector: string;
-  domain: string;
+  logo: string;
 }
 
 const sectorColors: Record<string, string> = {
@@ -50,11 +50,12 @@ export default function InvestmentsPage() {
           <AnimateIn key={inv.name} delay={i * 80}>
             <div className="flex items-center gap-4 rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40">
               <Image
-                src={`https://logo.clearbit.com/${inv.domain}`}
+                src={inv.logo}
                 alt={`${inv.name} logo`}
                 width={40}
                 height={40}
-                className="h-10 w-10 shrink-0 rounded-md bg-white p-1"
+                className="h-10 w-10 shrink-0 rounded-md bg-white p-1.5"
+                unoptimized={inv.logo.endsWith(".svg")}
               />
               <div>
                 <h2 className="text-lg font-semibold text-white">{inv.name}</h2>
