@@ -99,7 +99,7 @@ export default function Home() {
               className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
             >
               <h3 className="text-lg font-semibold text-gold-400">
-                Monte Carlo Simulator
+                Financial Planning Simulator
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-gray-400">
                 Model your financial future across thousands of randomized scenarios. Adjust savings rates, asset allocation, and withdrawal strategies to see the range of outcomes — not just the average.
