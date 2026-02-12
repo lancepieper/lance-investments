@@ -1,8 +1,11 @@
 [
   { "name": "Bitcoin", "sector": "Crypto" },
   { "name": "NVIDIA", "sector": "Technology" },
-  { "name": "Vanguard Total World Stock ETF (VT)", "sector": "Equities" },
-  { "name": "Ethereum", "sector": "Crypto" },
-  { "name": "Apple", "sector": "Technology" },
-  { "name": "iShares 20+ Year Treasury Bond ETF (TLT)", "sector": "Fixed Income" }
+  { "name": "Databricks", "sector": "Technology" },
+  { "name": "Tesla", "sector": "Technology" },
+  { "name": "Google", "sector": "Technology" },
+  { "name": "AMD", "sector": "Technology" },
+  { "name": "Iren", "sector": "Energy" },
+  { "name": "Bloom Energy", "sector": "Energy" },
+  { "name": "GE Vernova", "sector": "Energy" }
 ]

@@ -20,6 +20,7 @@ const sectorColors: Record<string, string> = {
   "Fixed Income": "bg-amber-500/20 text-amber-300",
   "Real Estate": "bg-rose-500/20 text-rose-300",
   Commodities: "bg-orange-500/20 text-orange-300",
+  Energy: "bg-emerald-500/20 text-emerald-300",
 };
 
 function getSectorStyle(sector: string): string {
