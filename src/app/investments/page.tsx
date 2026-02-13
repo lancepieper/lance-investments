@@ -75,7 +75,7 @@ export default async function InvestmentsPage() {
       <AnimateIn>
         <div className="mt-8 rounded-lg border border-gold-500/30 bg-gold-500/5 p-4 text-center">
           <p className="text-sm font-medium text-gold-400">
-            Full portfolio details coming soon.
+            Details coming soon.
           </p>
         </div>
       </AnimateIn>
