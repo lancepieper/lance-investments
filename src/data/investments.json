@@ -9,6 +9,5 @@
   { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.png" },
   { "name": "GE Vernova", "sector": "Energy", "logo": "/logos/ge-vernova.svg" },
   { "name": "Groq", "sector": "Technology", "logo": "/logos/groq.png" },
-  { "name": "SpaceX", "sector": "Aerospace", "logo": "/logos/spacex.svg" },
-  { "name": "Gold", "sector": "Commodities", "logo": "/logos/gold.svg" }
+  { "name": "SpaceX", "sector": "Aerospace", "logo": "/logos/spacex.svg" }
 ]
