@@ -13,6 +13,7 @@ interface Investment {
   name: string;
   sector: string;
   logo: string;
+  url: string;
 }
 
 const sectorColors: Record<string, string> = {
@@ -50,7 +51,12 @@ export default function InvestmentsPage() {
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {items.map((inv, i) => (
           <AnimateIn key={inv.name} delay={i * 80}>
-            <div className="flex items-center gap-4 rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40">
+            <a
+              href={inv.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40"
+            >
               <Image
                 src={inv.logo}
                 alt={`${inv.name} logo`}
@@ -67,7 +73,7 @@ export default function InvestmentsPage() {
                   {inv.sector}
                 </span>
               </div>
-            </div>
+            </a>
           </AnimateIn>
         ))}
       </div>

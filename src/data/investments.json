@@ -1,13 +1,13 @@
 [
-  { "name": "Bitcoin", "sector": "Crypto", "logo": "/logos/bitcoin.svg" },
-  { "name": "NVIDIA", "sector": "Technology", "logo": "/logos/nvidia.svg" },
-  { "name": "Databricks", "sector": "Technology", "logo": "/logos/databricks.svg" },
-  { "name": "Tesla", "sector": "Technology", "logo": "/logos/tesla.svg" },
-  { "name": "Google", "sector": "Technology", "logo": "/logos/google.svg" },
-  { "name": "AMD", "sector": "Technology", "logo": "/logos/amd.svg" },
-  { "name": "Iren", "sector": "Energy", "logo": "/logos/iren.svg" },
-  { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.png" },
-  { "name": "GE Vernova", "sector": "Energy", "logo": "/logos/ge-vernova.svg" },
-  { "name": "Groq", "sector": "Technology", "logo": "/logos/groq.png" },
-  { "name": "SpaceX", "sector": "Aerospace", "logo": "/logos/spacex.svg" }
+  { "name": "Bitcoin", "sector": "Crypto", "logo": "/logos/bitcoin.svg", "url": "/bitcoin-whitepaper.pdf" },
+  { "name": "NVIDIA", "sector": "Technology", "logo": "/logos/nvidia.svg", "url": "https://nvidia.com" },
+  { "name": "Databricks", "sector": "Technology", "logo": "/logos/databricks.svg", "url": "https://databricks.com" },
+  { "name": "Tesla", "sector": "Technology", "logo": "/logos/tesla.svg", "url": "https://tesla.com" },
+  { "name": "Google", "sector": "Technology", "logo": "/logos/google.svg", "url": "https://google.com" },
+  { "name": "AMD", "sector": "Technology", "logo": "/logos/amd.svg", "url": "https://amd.com" },
+  { "name": "Iren", "sector": "Energy", "logo": "/logos/iren.svg", "url": "https://iren.com" },
+  { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.png", "url": "https://bloomenergy.com" },
+  { "name": "GE Vernova", "sector": "Energy", "logo": "/logos/ge-vernova.svg", "url": "https://gevernova.com" },
+  { "name": "Groq", "sector": "Technology", "logo": "/logos/groq.png", "url": "https://groq.com" },
+  { "name": "SpaceX", "sector": "Aerospace", "logo": "/logos/spacex.svg", "url": "https://spacex.com" }
 ]
