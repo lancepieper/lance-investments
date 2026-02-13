@@ -60,7 +60,7 @@ export default async function Home() {
           </h1>
           <AnimateIn delay={200}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
-              I&rsquo;m Lance Pieper &mdash; an investor and writer exploring the
+              I&rsquo;m Lance Pieper &mdash; an investor and financial planner exploring the
               intersection of macro trends, economics, &amp; technology. I share
               frameworks and insights to help long-term investors navigate
               complexity.
