@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import investments from "@/data/investments.json";
+import { fetchMarketData, type MarketData } from "@/lib/market-data";
+
+export const revalidate = 300; // refresh prices every 5 minutes
 
 export const metadata: Metadata = {
   title: "Investments",
@@ -14,6 +17,7 @@ interface Investment {
   sector: string;
   logo: string;
   url: string;
+  ticker: string | null;
 }
 
 const sectorColors: Record<string, string> = {
@@ -31,8 +35,22 @@ function getSectorStyle(sector: string): string {
   return sectorColors[sector] ?? "bg-gold-500/20 text-gold-400";
 }
 
-export default function InvestmentsPage() {
+function formatPrice(price: number): string {
+  if (price >= 10000) return `$${price.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
+  return `$${price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
+function formatChange(value: number, pct: number): { text: string; color: string } {
+  const sign = value >= 0 ? "+" : "";
+  const color = value >= 0 ? "text-green-400" : "text-red-400";
+  const text = `${sign}${pct.toFixed(1)}%`;
+  return { text, color };
+}
+
+export default async function InvestmentsPage() {
   const items = investments as Investment[];
+  const tickers = items.map((inv) => inv.ticker).filter(Boolean) as string[];
+  const marketData = await fetchMarketData(tickers);
 
   return (
     <section className="mx-auto max-w-3xl px-6 py-20">
@@ -49,33 +67,67 @@ export default function InvestmentsPage() {
       </p>
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
-        {items.map((inv, i) => (
-          <AnimateIn key={inv.name} delay={i * 80}>
-            <a
-              href={inv.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40"
-            >
-              <Image
-                src={inv.logo}
-                alt={`${inv.name} logo`}
-                width={40}
-                height={40}
-                className="h-10 w-10 shrink-0 rounded-md bg-white p-1.5"
-                unoptimized={inv.logo.endsWith(".svg")}
-              />
-              <div>
-                <h2 className="text-lg font-semibold text-white">{inv.name}</h2>
-                <span
-                  className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${getSectorStyle(inv.sector)}`}
-                >
-                  {inv.sector}
-                </span>
-              </div>
-            </a>
-          </AnimateIn>
-        ))}
+        {items.map((inv, i) => {
+          const data: MarketData | undefined = inv.ticker
+            ? marketData[inv.ticker]
+            : undefined;
+          const daily = data
+            ? formatChange(data.dailyChange, data.dailyChangePct)
+            : null;
+          const yearly = data
+            ? formatChange(data.yearChange, data.yearChangePct)
+            : null;
+
+          return (
+            <AnimateIn key={inv.name} delay={i * 80}>
+              <a
+                href={inv.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 rounded-lg border border-navy-800 bg-navy-900/60 p-5 transition-colors hover:border-gold-500/40"
+              >
+                <Image
+                  src={inv.logo}
+                  alt={`${inv.name} logo`}
+                  width={40}
+                  height={40}
+                  className="mt-0.5 h-10 w-10 shrink-0 rounded-md bg-white p-1.5"
+                  unoptimized={inv.logo.endsWith(".svg")}
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <h2 className="text-lg font-semibold text-white">
+                      {inv.name}
+                    </h2>
+                    {data && (
+                      <span className="shrink-0 text-right text-sm font-semibold text-white">
+                        {formatPrice(data.price)}
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-1 flex items-center justify-between gap-2">
+                    <span
+                      className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${getSectorStyle(inv.sector)}`}
+                    >
+                      {inv.sector}
+                    </span>
+                    {data && daily && yearly ? (
+                      <span className="shrink-0 text-right text-xs">
+                        <span className={daily.color}>{daily.text} today</span>
+                        <span className="text-gray-600"> · </span>
+                        <span className={yearly.color}>{yearly.text} 12mo</span>
+                      </span>
+                    ) : (
+                      !inv.ticker && (
+                        <span className="text-xs text-gray-500">Private</span>
+                      )
+                    )}
+                  </div>
+                </div>
+              </a>
+            </AnimateIn>
+          );
+        })}
       </div>
 
       <AnimateIn>
@@ -84,7 +136,7 @@ export default function InvestmentsPage() {
             This page reflects personal investment activity and is for
             informational purposes only. It does not constitute investment
             advice, a recommendation, or a solicitation to buy or sell any
-            securities.
+            securities. Prices are delayed and provided by Yahoo Finance.
           </p>
         </div>
       </AnimateIn>

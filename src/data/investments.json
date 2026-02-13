@@ -1,13 +1,13 @@
 [
-  { "name": "Bitcoin", "sector": "Crypto", "logo": "/logos/bitcoin.svg", "url": "/bitcoin-whitepaper.pdf" },
-  { "name": "NVIDIA", "sector": "Technology", "logo": "/logos/nvidia.svg", "url": "https://nvidia.com" },
-  { "name": "Databricks", "sector": "Technology", "logo": "/logos/databricks.svg", "url": "https://databricks.com" },
-  { "name": "Tesla", "sector": "Technology", "logo": "/logos/tesla.svg", "url": "https://tesla.com" },
-  { "name": "Google", "sector": "Technology", "logo": "/logos/google.svg", "url": "https://google.com" },
-  { "name": "AMD", "sector": "Technology", "logo": "/logos/amd.svg", "url": "https://amd.com" },
-  { "name": "Iren", "sector": "Energy", "logo": "/logos/iren.svg", "url": "https://iren.com" },
-  { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.png", "url": "https://bloomenergy.com" },
-  { "name": "GE Vernova", "sector": "Energy", "logo": "/logos/ge-vernova.svg", "url": "https://gevernova.com" },
-  { "name": "Groq", "sector": "Technology", "logo": "/logos/groq.png", "url": "https://groq.com" },
-  { "name": "SpaceX", "sector": "Aerospace", "logo": "/logos/spacex.svg", "url": "https://spacex.com" }
+  { "name": "Bitcoin", "sector": "Crypto", "logo": "/logos/bitcoin.svg", "url": "/bitcoin-whitepaper.pdf", "ticker": "BTC" },
+  { "name": "NVIDIA", "sector": "Technology", "logo": "/logos/nvidia.svg", "url": "https://nvidia.com", "ticker": "NVDA" },
+  { "name": "Databricks", "sector": "Technology", "logo": "/logos/databricks.svg", "url": "https://databricks.com", "ticker": null },
+  { "name": "Tesla", "sector": "Technology", "logo": "/logos/tesla.svg", "url": "https://tesla.com", "ticker": "TSLA" },
+  { "name": "Google", "sector": "Technology", "logo": "/logos/google.svg", "url": "https://google.com", "ticker": "GOOGL" },
+  { "name": "AMD", "sector": "Technology", "logo": "/logos/amd.svg", "url": "https://amd.com", "ticker": "AMD" },
+  { "name": "Iren", "sector": "Energy", "logo": "/logos/iren.svg", "url": "https://iren.com", "ticker": "IREN" },
+  { "name": "Bloom Energy", "sector": "Energy", "logo": "/logos/bloom-energy.png", "url": "https://bloomenergy.com", "ticker": "BE" },
+  { "name": "GE Vernova", "sector": "Energy", "logo": "/logos/ge-vernova.svg", "url": "https://gevernova.com", "ticker": "GEV" },
+  { "name": "Groq", "sector": "Technology", "logo": "/logos/groq.png", "url": "https://groq.com", "ticker": null },
+  { "name": "SpaceX", "sector": "Aerospace", "logo": "/logos/spacex.svg", "url": "https://spacex.com", "ticker": null }
 ]
