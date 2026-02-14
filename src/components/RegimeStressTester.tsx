@@ -210,8 +210,7 @@ export default function RegimeStressTester() {
   ];
 
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#0d1117 0%,#111820 40%,#0f1923 100%)", color: "#f0f0f0", fontFamily: "'DM Sans',system-ui,sans-serif" }}>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#0d1117 0%,#111820 40%,#0f1923 100%)", color: "#f0f0f0", fontFamily: "var(--font-dm-sans),'DM Sans',system-ui,sans-serif" }}>
       <style>{`input[type=range]{width:100%;height:4px;appearance:none;-webkit-appearance:none;background:rgba(255,255,255,0.08);border-radius:2px;outline:none;cursor:pointer}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#63c8aa;cursor:pointer;border:2px solid #0d1117;box-shadow:0 0 6px rgba(99,200,170,0.3)}`}</style>
 
       <div style={{ padding: "24px 28px 8px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12 }}>
