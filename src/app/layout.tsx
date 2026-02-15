@@ -31,8 +31,8 @@ const siteUrl = "https://www.lance.investments";
 
 export const metadata: Metadata = {
   title: {
-    default: "lance.investments",
-    template: "%s | lance.investments",
+    default: "Lance Pieper",
+    template: "%s | Lance Pieper",
   },
   description:
     "Investment insights, market analysis, and financial commentary by Lance Pieper.",
@@ -40,15 +40,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "lance.investments",
-    title: "lance.investments — Investment Insights by Lance Pieper",
+    siteName: "Lance Pieper",
+    title: "Lance Pieper — Investment Insights",
     description:
       "Frameworks and analysis on macroeconomics, technology, and long-term investing. Helping investors navigate complexity with clarity.",
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "lance.investments — Investment Insights by Lance Pieper",
+    title: "Lance Pieper — Investment Insights",
     description:
       "Frameworks and analysis on macroeconomics, technology, and long-term investing. Helping investors navigate complexity with clarity.",
     creator: "@lancepieper1",
@@ -73,7 +73,7 @@ export default function RootLayout({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/banner.png"
-            alt="lance.investments banner"
+            alt="Lance Pieper banner"
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
           />
         </div>
