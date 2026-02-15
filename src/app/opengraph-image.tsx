@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "lance.investments — Investment Insights by Lance Pieper";
+export const alt = "Lance Pieper — Investment Insights";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -74,7 +74,7 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          lance.investments
+          Lance Pieper
         </div>
 
         {/* Tagline */}

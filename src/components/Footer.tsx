@@ -9,7 +9,7 @@ export default function Footer() {
             href="/"
             className="text-lg font-bold tracking-tight text-white"
           >
-            lance<span className="text-gold-400">.investments</span>
+            Lance <span className="text-gold-400">Pieper</span>
           </Link>
 
           <ul className="flex gap-6 text-sm text-gray-400">
