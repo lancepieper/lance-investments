@@ -1,0 +1,173 @@
+{
+  "published_at": "2026-03-03T01:16:28Z",
+  "current": {
+    "date": "2026-03-03",
+    "regime_status": "Regime 3 \u2014 Elevated",
+    "tier1_score": 5.0,
+    "tier1_max": 10,
+    "tier1_count": 5,
+    "tier2_score": 3.0,
+    "tier2_max": 14,
+    "tier2_count": 7,
+    "tier3_score": 4.0,
+    "tier3_max": 10,
+    "tier3_count": 5,
+    "overrides": [
+      "OVERRIDE 3: Gold Momentum + Divergence both at 2 \u2192 minimum Elevated"
+    ],
+    "indicators": [
+      {
+        "num": 1,
+        "name": "Gold Momentum",
+        "tier": 1,
+        "score": 2.0,
+        "raw_value": 5378.1,
+        "notes": "Gold=$5378, YoY=+86.1%, 8wk=+20.0%"
+      },
+      {
+        "num": 2,
+        "name": "Gold/Treasury Divergence",
+        "tier": 1,
+        "score": 2.0,
+        "raw_value": 86.08054805895789,
+        "notes": "Gold YoY=+86.1%, 10Y chg=-0.19%. STEALTH SUPPRESSION \u2014 gold surging while yields fall"
+      },
+      {
+        "num": 3,
+        "name": "Fed Balance Sheet",
+        "tier": 1,
+        "score": 1.0,
+        "raw_value": 6613797.0,
+        "notes": "Assets=$6.61T. 3mo chg=+1.2%. Purchase pace=$40B/mo. Expanding via purchases"
+      },
+      {
+        "num": 4,
+        "name": "Treasury Auction Demand",
+        "tier": 1,
+        "score": 0.0,
+        "raw_value": 2.35,
+        "notes": "10Y B/C=2.45. 30Y B/C=2.35. \u26a0 Signal masked by Fed purchases"
+      },
+      {
+        "num": 5,
+        "name": "IORB-SOFR Spread",
+        "tier": 1,
+        "score": 0.0,
+        "raw_value": -3.000000000000025,
+        "notes": "IORB=3.65%, SOFR=3.68%, Spread=-3.0bps"
+      },
+      {
+        "num": 6,
+        "name": "Foreign Treasury Holdings",
+        "tier": 2,
+        "score": 0.0,
+        "raw_value": 9127.7,
+        "notes": "$9.1T, 2mo trend=stable/rising"
+      },
+      {
+        "num": 7,
+        "name": "Fed Deferred Asset",
+        "tier": 2,
+        "score": 1.0,
+        "raw_value": 245.0,
+        "notes": "$245B. Cumulative deferred asset per H.4.1. Growing."
+      },
+      {
+        "num": 8,
+        "name": "Private Credit Stress",
+        "tier": 2,
+        "score": 0.0,
+        "raw_value": 2.17,
+        "notes": "Baa spread=2.17%"
+      },
+      {
+        "num": 9,
+        "name": "Copper Physical Premium",
+        "tier": 2,
+        "score": 0.0,
+        "raw_value": 4.0,
+        "notes": "4.0% premium. Elevated but below 5% trigger. Monitor weekly. "
+      },
+      {
+        "num": 10,
+        "name": "China Export Controls",
+        "tier": 2,
+        "score": 0.0,
+        "raw_value": 0.0,
+        "notes": "Current scope: Ga, Ge, Sb, enriched isotopes. Stable."
+      },
+      {
+        "num": 11,
+        "name": "DXY",
+        "tier": 2,
+        "score": 1.0,
+        "raw_value": 98.52,
+        "notes": "DXY=98.5, 8wk chg=-0.1%"
+      },
+      {
+        "num": 12,
+        "name": "Gold/Fed BS Ratio",
+        "tier": 2,
+        "score": 1.0,
+        "raw_value": 0.21264144846305383,
+        "notes": "Coverage=21.3%. Gold reserves=$1.41T vs Fed=$6.61T. Target: 33-50% (Myrmikan)"
+      },
+      {
+        "num": 13,
+        "name": "Deficit/GDP",
+        "tier": 3,
+        "score": 1.0,
+        "raw_value": 5.76808,
+        "notes": "Deficit = 5.8% of GDP"
+      },
+      {
+        "num": 14,
+        "name": "Debt Service/Revenue",
+        "tier": 3,
+        "score": 0.0,
+        "raw_value": 20.0,
+        "notes": "20.0% of revenue. CBO estimate. At threshold and rising."
+      },
+      {
+        "num": 15,
+        "name": "CB Gold Purchases",
+        "tier": 3,
+        "score": 0.0,
+        "raw_value": 863.0,
+        "notes": "863 tonnes annualized. WGC 2025 estimate. Below 2023-24 record pace."
+      },
+      {
+        "num": 16,
+        "name": "S&P/Gold Ratio",
+        "tier": 3,
+        "score": 1.0,
+        "raw_value": 1.2795634145887953,
+        "notes": "S&P=6882 / Gold=5378 = 1.28"
+      },
+      {
+        "num": 17,
+        "name": "Commodity/Gold Ratio",
+        "tier": 3,
+        "score": 2.0,
+        "raw_value": 0.1175638236551942,
+        "notes": "GSCI=632, Gold=$5378, Ratio=0.1176 (YoY=-38.2%)"
+      }
+    ]
+  },
+  "history": [
+    {
+      "date": "2026-03-02",
+      "tier1_score": 5.0,
+      "tier2_score": 3.0,
+      "tier3_score": 4.0,
+      "regime_status": "Regime 3 \u2014 Elevated"
+    },
+    {
+      "date": "2026-03-03",
+      "tier1_score": 5.0,
+      "tier2_score": 3.0,
+      "tier3_score": 4.0,
+      "regime_status": "Regime 3 \u2014 Elevated"
+    }
+  ]
+}

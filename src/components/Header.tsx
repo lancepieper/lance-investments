@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/investments", label: "Investments" },
   { href: "/simulator", label: "Simulator" },
   { href: "/stress-test", label: "Stress Test" },
+  { href: "/atlas", label: "Atlas" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
