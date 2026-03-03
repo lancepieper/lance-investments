@@ -1,8 +1,8 @@
 {
-  "published_at": "2026-03-03T19:22:44Z",
+  "published_at": "2026-03-03T20:03:55Z",
   "current": {
     "date": "2026-03-03",
-    "regime_status": "Regime 3\u21924 Transition",
+    "regime_status": "Regime 3 \u2014 Elevated",
     "tier1_score": 5.0,
     "tier1_max": 10,
     "tier1_count": 5,
@@ -191,7 +191,7 @@
       "tier1_score": 5.0,
       "tier2_score": 5.0,
       "tier3_score": 6.0,
-      "regime_status": "Regime 3\u21924 Transition"
+      "regime_status": "Regime 3 \u2014 Elevated"
     }
   ]
 }
