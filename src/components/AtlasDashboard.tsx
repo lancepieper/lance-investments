@@ -247,7 +247,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
             Positioning, Triggers, and Track Record
           </div>
           <div className="text-sm text-gray-400 max-w-[500px] mx-auto mb-6 leading-relaxed">
-            What to do about this reading, the specific triggers that would escalate or de-escalate the regime, the framework&apos;s historical track record across nine back-tested periods, and the full 17-indicator evidence table.
+            What to do about this reading, the specific triggers that would escalate or de-escalate the regime, the framework&apos;s historical track record across nine back-tested periods, and the full 20-indicator evidence table.
           </div>
           <form onSubmit={handleSubscribe} className="flex gap-2 justify-center max-w-[400px] mx-auto">
             <input
@@ -385,7 +385,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
               onClick={() => setShowEvidence(!showEvidence)}
               className="flex w-full justify-between items-center cursor-pointer py-3 border-b border-navy-800"
             >
-              <SectionLabel>Full 17-Indicator Evidence</SectionLabel>
+              <SectionLabel>Full 20-Indicator Evidence</SectionLabel>
               <span className="text-xs text-gray-500">{showEvidence ? "Hide ▲" : "Show ▼"}</span>
             </button>
             {showEvidence && (

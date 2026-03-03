@@ -1,17 +1,17 @@
 {
-  "published_at": "2026-03-03T01:16:28Z",
+  "published_at": "2026-03-03T19:22:44Z",
   "current": {
     "date": "2026-03-03",
-    "regime_status": "Regime 3 \u2014 Elevated",
+    "regime_status": "Regime 3\u21924 Transition",
     "tier1_score": 5.0,
     "tier1_max": 10,
     "tier1_count": 5,
-    "tier2_score": 3.0,
-    "tier2_max": 14,
-    "tier2_count": 7,
-    "tier3_score": 4.0,
-    "tier3_max": 10,
-    "tier3_count": 5,
+    "tier2_score": 5.0,
+    "tier2_max": 18,
+    "tier2_count": 9,
+    "tier3_score": 6.0,
+    "tier3_max": 12,
+    "tier3_count": 6,
     "overrides": [
       "OVERRIDE 3: Gold Momentum + Divergence both at 2 \u2192 minimum Elevated"
     ],
@@ -21,16 +21,16 @@
         "name": "Gold Momentum",
         "tier": 1,
         "score": 2.0,
-        "raw_value": 5378.1,
-        "notes": "Gold=$5378, YoY=+86.1%, 8wk=+20.0%"
+        "raw_value": 5129.6,
+        "notes": "Gold=$5130, YoY=+77.5%, 8wk=+14.4%"
       },
       {
         "num": 2,
         "name": "Gold/Treasury Divergence",
         "tier": 1,
         "score": 2.0,
-        "raw_value": 86.08054805895789,
-        "notes": "Gold YoY=+86.1%, 10Y chg=-0.19%. STEALTH SUPPRESSION \u2014 gold surging while yields fall"
+        "raw_value": 77.48252716075015,
+        "notes": "Gold YoY=+77.5%, 10Y chg=-0.19%. STEALTH SUPPRESSION \u2014 gold surging while yields fall"
       },
       {
         "num": 3,
@@ -53,8 +53,8 @@
         "name": "IORB-SOFR Spread",
         "tier": 1,
         "score": 0.0,
-        "raw_value": -3.000000000000025,
-        "notes": "IORB=3.65%, SOFR=3.68%, Spread=-3.0bps"
+        "raw_value": -6.000000000000005,
+        "notes": "IORB=3.65%, SOFR=3.71%, Spread=-6.0bps"
       },
       {
         "num": 6,
@@ -101,16 +101,16 @@
         "name": "DXY",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 98.52,
-        "notes": "DXY=98.5, 8wk chg=-0.1%"
+        "raw_value": 99.09,
+        "notes": "DXY=99.1, 8wk chg=+0.5%"
       },
       {
         "num": 12,
         "name": "Gold/Fed BS Ratio",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 0.21264144846305383,
-        "notes": "Coverage=21.3%. Gold reserves=$1.41T vs Fed=$6.61T. Target: 33-50% (Myrmikan)"
+        "raw_value": 0.20281615701383035,
+        "notes": "Coverage=20.3%. Gold reserves=$1.34T vs Fed=$6.61T. Target: 33-50% (Myrmikan)"
       },
       {
         "num": 13,
@@ -141,16 +141,40 @@
         "name": "S&P/Gold Ratio",
         "tier": 3,
         "score": 1.0,
-        "raw_value": 1.2795634145887953,
-        "notes": "S&P=6882 / Gold=5378 = 1.28"
+        "raw_value": 1.341550998128509,
+        "notes": "S&P=6882 / Gold=5130 = 1.34"
       },
       {
         "num": 17,
         "name": "Commodity/Gold Ratio",
         "tier": 3,
         "score": 2.0,
-        "raw_value": 0.1175638236551942,
-        "notes": "GSCI=632, Gold=$5378, Ratio=0.1176 (YoY=-38.2%)"
+        "raw_value": 0.1262457111665627,
+        "notes": "GSCI=648, Gold=$5130, Ratio=0.1262 (YoY=-33.6%)"
+      },
+      {
+        "num": 18,
+        "name": "Copper TC/RCs",
+        "tier": 2,
+        "score": 2.0,
+        "raw_value": -60.0,
+        "notes": "Benchmark=$0/t. Spot=$-60/t. 2026 annual benchmark: $0/t (Antofagasta/Chinese smelter). Record low. Prior year was $21.25/t.. Fastmarkets spot TC index approx -$60 to -$67/t as of Dec 2025. Smelters paying miners."
+      },
+      {
+        "num": 19,
+        "name": "Copper Inventories",
+        "tier": 2,
+        "score": 0.0,
+        "raw_value": 967000.0,
+        "notes": "Total=967kt. ~13 days demand. COMEX=55%. LME=19%. SHFE=26%"
+      },
+      {
+        "num": 20,
+        "name": "Silver Market Balance",
+        "tier": 3,
+        "score": 2.0,
+        "raw_value": 800.0,
+        "notes": "Cumulative deficit=800 Moz. Latest annual=117 Moz. SLV=318M oz"
       }
     ]
   },
@@ -165,9 +189,9 @@
     {
       "date": "2026-03-03",
       "tier1_score": 5.0,
-      "tier2_score": 3.0,
-      "tier3_score": 4.0,
-      "regime_status": "Regime 3 \u2014 Elevated"
+      "tier2_score": 5.0,
+      "tier3_score": 6.0,
+      "regime_status": "Regime 3\u21924 Transition"
     }
   ]
 }
