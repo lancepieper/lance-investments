@@ -231,7 +231,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         {narrative?.what_changed && narrative.what_changed.length > 0 && (
           <div className="rounded-md bg-navy-800/40 border border-navy-800 p-4">
             <div className="text-[10px] uppercase tracking-[0.15em] text-gold-400 font-medium mb-2">
-              What Changed Since Last Reading
+              Current Readings
             </div>
             <div className="flex flex-col gap-1.5">
               {narrative.what_changed.map((item, i) => (
