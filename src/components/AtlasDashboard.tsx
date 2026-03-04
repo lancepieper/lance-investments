@@ -37,6 +37,68 @@ function postureColor(color: string) {
   }
 }
 
+const CYCLE_STAGES = [
+  { num: 1, label: "Sound Money", era: "1945–1971" },
+  { num: 2, label: "Credit Expansion", era: "1971–2020" },
+  { num: 3, label: "Emerging Disorder", era: "2020–present" },
+  { num: 4, label: "Crisis Acceleration", era: "Not yet" },
+  { num: 5, label: "Resolution", era: "Not yet" },
+];
+
+function regimeDisplayInfo(status: string): { activeStage: number; sublevel: string; subtitle: string } {
+  const s = status.toLowerCase();
+  if (s.includes("confirmed"))
+    return { activeStage: 4, sublevel: "Crisis Confirmed", subtitle: "Monetary regime transition confirmed across all tiers" };
+  if (s.includes("transition"))
+    return { activeStage: 3, sublevel: "Accelerating", subtitle: "Regime shift underway — signals strengthening across tiers" };
+  if (s.includes("elevated"))
+    return { activeStage: 3, sublevel: "Early Warning", subtitle: "Multiple indicators firing — watching for acceleration" };
+  return { activeStage: 3, sublevel: "Monitoring", subtitle: "Structural conditions present — no active signals yet" };
+}
+
+function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublevel: string }) {
+  return (
+    <div className="flex items-center gap-0 w-full mb-3">
+      {CYCLE_STAGES.map((stage, i) => {
+        const isActive = stage.num === activeStage;
+        const isPast = stage.num < activeStage;
+        const isLast = i === CYCLE_STAGES.length - 1;
+        return (
+          <div key={stage.num} className="flex items-center flex-1">
+            <div className="flex flex-col items-center flex-1">
+              <div
+                className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all ${
+                  isActive
+                    ? "bg-gold-500/20 border-gold-500 text-gold-400 ring-2 ring-gold-500/20"
+                    : isPast
+                    ? "bg-gray-700/50 border-gray-600 text-gray-400"
+                    : "bg-navy-800/60 border-navy-700 text-gray-600"
+                }`}
+              >
+                {stage.num}
+              </div>
+              <div className={`mt-1.5 text-center ${isActive ? "text-gold-400" : isPast ? "text-gray-500" : "text-gray-600"}`}>
+                <div className="text-[9px] font-semibold uppercase tracking-[0.05em] leading-tight">
+                  {stage.label}
+                </div>
+                <div className={`text-[8px] mt-0.5 ${isActive ? "text-gold-400/60" : isPast ? "text-gray-600" : "text-gray-700"}`}>
+                  {stage.era}
+                </div>
+                {isActive && (
+                  <div className="text-[8px] text-gold-400/80 font-semibold mt-0.5">{sublevel}</div>
+                )}
+              </div>
+            </div>
+            {!isLast && (
+              <div className={`h-px flex-shrink-0 w-4 -mt-5 ${isPast ? "bg-gray-600" : "bg-navy-700"}`} />
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 /* ── Sub-components ──────────────────────────────────── */
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -132,16 +194,26 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
   const tier2 = current.indicators.filter((i) => i.tier === 2);
   const tier3 = current.indicators.filter((i) => i.tier === 3);
 
+  const info = regimeDisplayInfo(current.regime_status);
+
   return (
     <div className="mx-auto max-w-[740px] px-6 pt-12 pb-20">
 
       {/* ═══════ REGIME STATUS + WHAT CHANGED ═══════ */}
       <section className="mb-10">
         <SectionLabel>Atlas Regime Dashboard</SectionLabel>
-        <div className={`inline-flex items-center rounded-lg border px-6 py-3.5 mb-4 ${rc.bg} ${rc.border}`}>
+
+        {/* 5-Stage Cycle Indicator */}
+        <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 mb-4">
+          <CycleIndicator activeStage={info.activeStage} sublevel={info.sublevel} />
+        </div>
+
+        {/* Current Reading */}
+        <div className={`inline-flex flex-col rounded-lg border px-6 py-3.5 mb-4 ${rc.bg} ${rc.border}`}>
           <span className={`font-mono text-[22px] font-bold tracking-wide ${rc.text}`}>
-            {current.regime_status.replace("—", "\u2014")}
+            {info.sublevel}
           </span>
+          <span className="text-[11px] text-gray-400 mt-1">{info.subtitle}</span>
         </div>
         <div className="text-xs text-gray-500 font-mono mb-4">{dateStr}</div>
 
