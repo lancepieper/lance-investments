@@ -5,7 +5,6 @@ import RegimeHistoryChart from "@/components/RegimeHistoryChart";
 import DivergenceChart from "@/components/DivergenceChart";
 import type { AtlasData, AtlasIndicator, NarrativeData } from "@/app/atlas/page";
 
-const STORAGE_KEY = "atlas-unlocked";
 
 /* ── Helpers ─────────────────────────────────────────── */
 
@@ -100,18 +99,11 @@ function IndicatorRow({ indicator }: { indicator: AtlasIndicator }) {
 /* ── Main Dashboard ──────────────────────────────────── */
 
 export default function AtlasDashboard({ data, narrative }: { data: AtlasData; narrative: NarrativeData | null }) {
-  const [unlocked, setUnlocked] = useState(false);
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [showEvidence, setShowEvidence] = useState(false);
+  const [waitlisted, setWaitlisted] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setUnlocked(localStorage.getItem(STORAGE_KEY) === "true");
-    }
-  }, []);
-
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const handleWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.includes("@")) return;
     setSubmitting(true);
@@ -122,10 +114,9 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         body: JSON.stringify({ email }),
       });
     } catch {
-      // Still unlock on error for MVP
+      // Still mark as waitlisted — email was sent fire-and-forget
     }
-    localStorage.setItem(STORAGE_KEY, "true");
-    setUnlocked(true);
+    setWaitlisted(true);
     setSubmitting(false);
   };
 
@@ -246,188 +237,71 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         </Card>
       )}
 
-      {/* ═══════ EMAIL GATE ═══════ */}
-      {!unlocked && (
-        <div className="rounded-lg border border-gold-500/25 bg-gradient-to-b from-navy-900/90 to-navy-950/90 px-8 py-10 text-center mb-8">
-          <div className="text-lg font-semibold text-white mb-1.5">
-            Positioning, Triggers, and Track Record
-          </div>
-          <div className="text-sm text-gray-400 max-w-[500px] mx-auto mb-6 leading-relaxed">
-            What to do about this reading, the specific triggers that would escalate or de-escalate the regime, the framework&apos;s historical track record across nine back-tested periods, and the full 20-indicator evidence table.
-          </div>
-          <form onSubmit={handleSubscribe} className="flex gap-2 justify-center max-w-[400px] mx-auto">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              className="flex-1 rounded-md border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gold-500/60 focus:outline-none focus:ring-1 focus:ring-gold-500/30"
-            />
-            <button
-              type="submit"
-              disabled={submitting}
-              className="rounded-md bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 disabled:opacity-50 cursor-pointer"
-            >
-              {submitting ? "..." : "Unlock →"}
-            </button>
-          </form>
-        </div>
-      )}
-
-      {/* ═══════ GATED CONTENT ═══════ */}
-      {unlocked && (
-        <>
-          {/* POSITIONING */}
-          {narrative?.positioning && (
-            <Card className="mb-6">
-              <SectionLabel>What to Do About It</SectionLabel>
-              <div className="text-sm text-gray-300 leading-[1.8] mb-4"
-                dangerouslySetInnerHTML={{ __html: narrative.positioning.intro }}
+      {/* ═══════ WAITLIST GATE ═══════ */}
+      <div className="rounded-lg border border-gold-500/25 bg-gradient-to-b from-navy-900/90 to-navy-950/90 px-8 py-10 text-center mb-8">
+        {!waitlisted ? (
+          <>
+            <div className="text-lg font-semibold text-white mb-1.5">
+              Full Dashboard Coming Soon
+            </div>
+            <div className="text-sm text-gray-400 max-w-[500px] mx-auto mb-2 leading-relaxed">
+              Positioning guidance, escalation triggers, the framework&apos;s historical track record, and the full 20-indicator evidence table will be available to paid subscribers.
+            </div>
+            <div className="text-xs text-gray-500 max-w-[440px] mx-auto mb-6">
+              Join the waitlist to be notified when subscriptions launch.
+            </div>
+            <form onSubmit={handleWaitlist} className="flex gap-2 justify-center max-w-[400px] mx-auto">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                className="flex-1 rounded-md border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gold-500/60 focus:outline-none focus:ring-1 focus:ring-gold-500/30"
               />
-              <div className="rounded-md bg-navy-800/50 p-5">
-                <div className="text-[11px] text-gold-400 font-semibold uppercase tracking-[0.08em] mb-3">
-                  Framework Posture — {current.regime_status.includes("Elevated") ? "Elevated" : current.regime_status.includes("Transition") ? "Transition" : current.regime_status.includes("Confirmed") ? "Confirmed" : "Stable"}
-                </div>
-                {narrative.positioning.posture.map((item, i) => (
-                  <div key={i} className={`py-2.5 ${i < narrative.positioning.posture.length - 1 ? "border-b border-navy-800/40" : ""}`}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={`text-sm ${postureColor(item.color)}`}>■</span>
-                      <span className="text-[13px] font-semibold text-gray-200">{item.label}</span>
-                    </div>
-                    <div className="text-xs text-gray-400 ml-[22px] leading-relaxed">{item.reason}</div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-          )}
+              <button
+                type="submit"
+                disabled={submitting}
+                className="rounded-md bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 disabled:opacity-50 cursor-pointer"
+              >
+                {submitting ? "..." : "Join Waitlist"}
+              </button>
+            </form>
+          </>
+        ) : (
+          <>
+            <div className="text-lg font-semibold text-white mb-1.5">
+              You&apos;re on the list
+            </div>
+            <div className="text-sm text-gray-400 max-w-[500px] mx-auto leading-relaxed">
+              We&apos;ll notify you when paid subscriptions launch. The full dashboard includes positioning guidance, specific escalation and de-escalation triggers, historical track record, and the complete 20-indicator evidence table.
+            </div>
+          </>
+        )}
+      </div>
 
-          {/* TRIGGERS */}
-          {narrative?.triggers && (
-            <Card className="mb-6">
-              <SectionLabel>What Would Change This Reading</SectionLabel>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="rounded-md bg-red-500/5 border border-red-500/12 p-4">
-                  <div className="text-[11px] text-red-400 font-semibold uppercase tracking-[0.08em] mb-2.5">▲ Escalation Triggers</div>
-                  <div className="text-[13px] text-gray-300 leading-relaxed space-y-2">
-                    {narrative.triggers.escalation.map((t, i) => (
-                      <div key={i} dangerouslySetInnerHTML={{ __html: t }} />
-                    ))}
-                  </div>
-                </div>
-                <div className="rounded-md bg-emerald-500/5 border border-emerald-500/12 p-4">
-                  <div className="text-[11px] text-emerald-400 font-semibold uppercase tracking-[0.08em] mb-2.5">▼ De-escalation Signals</div>
-                  <div className="text-[13px] text-gray-300 leading-relaxed space-y-2">
-                    {narrative.triggers.deescalation.map((t, i) => (
-                      <div key={i} dangerouslySetInnerHTML={{ __html: t }} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Card>
-          )}
+      {/* ═══════ PAID CONTENT — uncomment when subscription system is ready ═══════ */}
+      {/* Paid sections: Positioning, Triggers, Track Record, History Chart, Evidence Table */}
+      {/* These are rendered from narrative JSON and scores JSON — code preserved in git history */}
 
-          {/* TRACK RECORD */}
-          {narrative?.track_record && (
-            <Card className="mb-6">
-              <SectionLabel>Framework Track Record</SectionLabel>
-              <div className="text-sm text-gray-300 leading-relaxed mb-5">
-                {narrative.track_record.intro}
-              </div>
-
-              {/* Confirmed transitions */}
-              <div className="mb-5">
-                <div className="text-[11px] text-emerald-400 font-semibold uppercase tracking-[0.08em] mb-2.5">
-                  Confirmed Transitions
-                </div>
-                {narrative.track_record.confirmed.map((e, i) => (
-                  <div key={i} className="flex gap-4 items-start px-4 py-3 mb-2 rounded-md bg-navy-800/40 border-l-[3px] border-l-emerald-500">
-                    <div className="min-w-[70px]">
-                      <div className="font-mono text-[13px] text-gold-400 font-semibold">{e.year}</div>
-                      <div className="text-[10px] text-gray-500 mt-0.5">{e.lead}</div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-[13px] text-gray-200 font-medium">{e.label}</div>
-                      <div className="text-xs text-gray-400 mt-0.5">{e.signal} → {e.result}</div>
-                    </div>
-                    <div className="font-mono text-sm font-bold text-gold-400 min-w-[28px] text-right">{e.grade}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Adversarial tests */}
-              <div>
-                <div className="text-[11px] text-gray-500 font-semibold uppercase tracking-[0.08em] mb-2.5">
-                  Adversarial Tests — Periods Where the Framework Should Not Fire
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {narrative.track_record.adversarial.map((e, i) => (
-                    <div key={i} className="rounded-md bg-navy-800/30 border border-navy-800/60 px-3 py-2.5">
-                      <div className="font-mono text-[11px] text-gray-400">{e.year}</div>
-                      <div className="text-xs text-gray-300 mt-0.5">{e.label}</div>
-                      <div className="text-[11px] text-emerald-400 mt-1">{e.result}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Card>
-          )}
-
-          {/* REGIME HISTORY CHART */}
-          <Card className="mb-6">
-            <SectionLabel>Regime Score History</SectionLabel>
-            {history.length < 2 ? (
-              <p className="py-8 text-center text-sm text-gray-500">
-                Historical tracking begins now. This chart will populate as daily scores accumulate.
-              </p>
-            ) : (
-              <RegimeHistoryChart history={history} />
-            )}
-          </Card>
-
-          {/* EVIDENCE — collapsible */}
-          <div className="mb-8">
-            <button
-              onClick={() => setShowEvidence(!showEvidence)}
-              className="flex w-full justify-between items-center cursor-pointer py-3 border-b border-navy-800"
-            >
-              <SectionLabel>Full 20-Indicator Evidence</SectionLabel>
-              <span className="text-xs text-gray-500">{showEvidence ? "Hide ▲" : "Show ▼"}</span>
-            </button>
-            {showEvidence && (
-              <div className="mt-3">
-                {[
-                  { tier: 1, label: "Tier 1 — Primary", indicators: tier1 },
-                  { tier: 2, label: "Tier 2 — Confirming", indicators: tier2 },
-                  { tier: 3, label: "Tier 3 — Structural", indicators: tier3 },
-                ].map(({ tier, label, indicators }) => (
-                  <div key={tier} className="mb-4">
-                    <div className="text-[11px] text-gray-500 font-semibold uppercase tracking-[0.08em] mb-1.5">{label}</div>
-                    {indicators.map((ind) => (
-                      <IndicatorRow key={ind.num} indicator={ind} />
-                    ))}
-                  </div>
-                ))}
-                <div className="mt-3 rounded-md bg-violet-500/5 border border-violet-500/10 px-4 py-3 text-[11px] text-gray-400 leading-relaxed">
-                  <span className="text-violet-400/70 font-semibold">New signal</span> indicators (#18-20) track unprecedented structural conditions with no historical analogue. Their value is as forward-looking thesis conviction, not validated pattern recognition. Indicators #1-17 have been back-tested across nine historical periods with near-zero false positives.
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Disclaimer */}
-          <div className="text-[11px] text-gray-600 text-center max-w-[600px] mx-auto mt-4 leading-relaxed">
-            This dashboard is for informational and educational purposes only and does not constitute financial advice. The Atlas Framework is a proprietary analytical tool. Historical back-test results are retrospective and not predictive of future performance.
-          </div>
-        </>
-      )}
-
-      {/* Disclaimer also visible when locked */}
-      {!unlocked && (
-        <div className="text-[11px] text-gray-600 text-center max-w-[600px] mx-auto mt-4 leading-relaxed">
-          This dashboard is for informational and educational purposes only and does not constitute financial advice.
+      {/* Disclaimer */}
+      <div className="mt-10 border-t border-navy-800/60 pt-6">
+        <div className="text-[11px] font-semibold text-gray-500 uppercase tracking-[0.08em] mb-2">Important Disclosures</div>
+        <div className="text-[11px] text-gray-600 max-w-[640px] leading-relaxed space-y-2.5">
+          <p>
+            This dashboard is for informational and educational purposes only and does not constitute investment advice, a recommendation or solicitation to buy or sell any security, or an offer to provide investment advisory or financial planning services. Nothing on this site should be construed as a personal recommendation for any particular investor. The content does not take into account your individual financial situation, investment objectives, or risk tolerance.
+          </p>
+          <p>
+            The Atlas Framework is a proprietary analytical model reflecting one interpretation of publicly available macroeconomic data. All models are simplifications of complex systems and carry inherent limitations. Past regime classifications are retrospective analyses and are not indicative of future results. No analytical framework can reliably forecast market movements. Historical back-tests are hypothetical, were not traded in real time, and may not reflect the impact of actual market conditions, liquidity constraints, or transaction costs.
+          </p>
+          <p>
+            The author and affiliated entities may hold positions in assets or asset classes discussed on this site and may trade these positions at any time without notice. The information presented may become outdated and there is no obligation to update it.
+          </p>
+          <p>
+            Any investment decision you make based on information found on this site is made solely at your own risk. You should conduct your own due diligence and consult with a qualified, licensed financial advisor before making any investment decisions. By accessing this dashboard, you acknowledge that you have read and understood these disclosures.
+          </p>
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const GOOGLE_SHEET_WEBHOOK =
+  "https://script.google.com/macros/s/AKfycbxIQbAIvn5RqIqDKimRTbf580CsrSuGwa91hqHjCBGYt-oJBgnghlRWnr9HeX4I_YPXVQ/exec";
+
 export async function POST(req: NextRequest) {
   try {
     const { email } = await req.json();
@@ -8,16 +11,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
-    // MVP: Log to server console (visible in Vercel function logs)
-    console.log(`[ATLAS SUBSCRIBE] ${new Date().toISOString()} — ${email}`);
-
-    // TODO: Connect to Formspree, Mailchimp, or other email service
-    // Example with Formspree:
-    // await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ email, _subject: "Atlas Dashboard Signup" }),
-    // });
+    // Send to Google Sheet (fire-and-forget — Apps Script redirects but saves data)
+    fetch(GOOGLE_SHEET_WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+      redirect: "follow",
+    }).catch(() => {});
 
     return NextResponse.json({ success: true });
   } catch {

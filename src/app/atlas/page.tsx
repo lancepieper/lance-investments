@@ -6,7 +6,7 @@ import AtlasDashboard from "@/components/AtlasDashboard";
 export const metadata: Metadata = {
   title: "Atlas Regime Dashboard",
   description:
-    "Real-time macro regime assessment across 17 indicators. Track monetary, fiscal, and structural signals that precede regime transitions.",
+    "Real-time macro regime assessment across 20 indicators. Track monetary, fiscal, and structural signals that precede regime transitions.",
 };
 
 export interface AtlasIndicator {

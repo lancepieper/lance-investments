@@ -133,7 +133,7 @@ interface Preset { name: string; desc: string; alloc: Allocation; }
 
 const PRESETS: Preset[] = [
   { name: "60/40 Classic", desc: "Traditional balanced", alloc: { stocks: 60, bonds: 40, gold: 0, cash: 0, intl: 0 } },
-  { name: "All-Weather", desc: "Dalio-inspired", alloc: { stocks: 30, bonds: 40, gold: 15, cash: 0, intl: 15 } },
+  { name: "All-Weather", desc: "Diversified balanced", alloc: { stocks: 30, bonds: 40, gold: 15, cash: 0, intl: 15 } },
   { name: "Permanent Port.", desc: "Browne's 4x25", alloc: { stocks: 25, bonds: 25, gold: 25, cash: 25, intl: 0 } },
   { name: "100% Equities", desc: "Maximum growth", alloc: { stocks: 80, bonds: 0, gold: 0, cash: 0, intl: 20 } },
   { name: "Hard Assets", desc: "Inflation hedge", alloc: { stocks: 30, bonds: 10, gold: 35, cash: 5, intl: 20 } },
