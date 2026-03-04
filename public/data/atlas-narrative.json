@@ -13,8 +13,8 @@
   "divergence": {
     "description": "The single most predictive indicator in The Canary. When gold surges and yields don\u2019t follow, the bond market is being artificially suppressed \u2014 either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
     "months": ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
-    "gold": [2950, 3080, 3200, 3350, 3500, 3680, 3900, 4100, 4300, 4550, 4820, 5130],
-    "yields": [4.30, 4.35, 4.32, 4.28, 4.22, 4.18, 4.20, 4.15, 4.10, 4.15, 4.12, 4.11],
+    "gold": [3120, 3210, 3370, 3340, 3350, 3550, 3870, 4000, 4240, 4310, 4620, 5130],
+    "yields": [4.17, 4.25, 4.46, 4.26, 4.23, 4.28, 4.12, 4.13, 4.09, 4.19, 4.29, 3.97],
     "gold_change": "+78%",
     "yield_change": "\u22120.19%",
     "current_reading": "<strong>Current reading:</strong> Gold +78% YoY while 10Y yields are flat (\u22120.19%). The gold-colored area shows the divergence at its widest point in modern history \u2014 gold has nearly doubled in a year while the bond market hasn\u2019t moved. Historically, this gap closes violently: either yields spike to catch up (bad for bonds), or gold is proven right about debasement (bad for the monetary system). At this magnitude, the divergence has moved beyond \u201ctension\u201d into \u201cstealth suppression.\u201d"
