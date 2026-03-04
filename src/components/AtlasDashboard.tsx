@@ -201,7 +201,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
 
       {/* ═══════ REGIME STATUS + WHAT CHANGED ═══════ */}
       <section className="mb-10">
-        <SectionLabel>Atlas Regime Dashboard</SectionLabel>
+        <SectionLabel>Monetary Regime Dashboard</SectionLabel>
 
         {/* 5-Stage Cycle Indicator */}
         <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 mb-4">
@@ -301,7 +301,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
                   <div className="text-gray-400 leading-snug">{row.wall_street}</div>
                 </div>
                 <div>
-                  <div className="text-[10px] text-gold-400 uppercase tracking-[0.08em] mb-1">Atlas Framework</div>
+                  <div className="text-[10px] text-gold-400 uppercase tracking-[0.08em] mb-1">Framework Reading</div>
                   <div className="text-gray-300 leading-snug">{row.atlas}</div>
                 </div>
               </div>
