@@ -6,12 +6,12 @@
     { "type": "held", "text": "Three new supply-chain indicators added: Copper TC/RCs (score 2), Copper Inventories (score 0), Silver Market Balance (score 2)." }
   ],
   "contrarian": [
-    "Wall Street is framing gold\u2019s run as an inflation trade. <strong>The framework says otherwise.</strong> If this were inflation, commodities would be running with gold \u2014 copper, oil, and the GSCI would be surging. Instead, the commodity/gold ratio has collapsed 34%. Gold is repricing against <em>everything</em>: stocks, bonds, and commodities alike.",
+    "Wall Street is framing gold\u2019s run as an inflation trade. <strong>The Canary says otherwise.</strong> If this were inflation, commodities would be running with gold \u2014 copper, oil, and the GSCI would be surging. Instead, the commodity/gold ratio has collapsed 34%. Gold is repricing against <em>everything</em>: stocks, bonds, and commodities alike.",
     "This is a monetary confidence signal. Gold is telling you something about the monetary system itself, not about CPI prints. Gold has posted +78% YoY while Treasury yields stayed flat \u2014 the last time a divergence this extreme appeared was the early 1970s, after Nixon closed the gold window but before the market fully processed the implications.",
-    "Meanwhile, the Fed is quietly expanding its balance sheet through $40B/month in short-duration purchases while publicly maintaining a tightening stance. The framework sees through the narrative to the mechanism: the balance sheet is growing, and the purchases are only \u201cshort duration\u201d for now. The new supply-chain indicators add another layer: copper smelters are paying miners to take concentrate (TC/RCs at $0), and the silver market is running its 5th consecutive annual deficit with 800 million ounces of cumulative shortfall."
+    "Meanwhile, the Fed is quietly expanding its balance sheet through $40B/month in short-duration purchases while publicly maintaining a tightening stance. The Canary sees through the narrative to the mechanism: the balance sheet is growing, and the purchases are only \u201cshort duration\u201d for now. New supply-chain indicators add another layer: copper smelters are paying miners to take concentrate (TC/RCs at $0), and the silver market is running its 5th consecutive annual deficit with 800 million ounces of cumulative shortfall."
   ],
   "divergence": {
-    "description": "The single most predictive indicator in the framework. When gold surges and yields don\u2019t follow, the bond market is being artificially suppressed \u2014 either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
+    "description": "The single most predictive indicator in The Canary. When gold surges and yields don\u2019t follow, the bond market is being artificially suppressed \u2014 either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
     "months": ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
     "gold": [2950, 3080, 3200, 3350, 3500, 3680, 3900, 4100, 4300, 4550, 4820, 5130],
     "yields": [4.30, 4.35, 4.32, 4.28, 4.22, 4.18, 4.20, 4.15, 4.10, 4.15, 4.12, 4.11],
@@ -27,7 +27,7 @@
     { "topic": "Copper supply", "wall_street": "Inventories high \u2014 no shortage", "atlas": "TC/RCs at $0 says smelters are in crisis. Headline inventory masks geographic dislocation and tariff front-loading" }
   ],
   "positioning": {
-    "intro": "<strong>Elevated is the building phase, not the panic phase.</strong> Historically, the transition from Elevated to Crisis takes 6\u201318 months, and the largest gains in gold, Bitcoin, and hard assets occur <em>during</em> the transition \u2014 not after crisis is confirmed. The framework now includes a 10% short-term Treasury buffer \u2014 not a duration bet or a conviction compromise, but a liquidity parking lot that gets eliminated at Regime 4 when Treasuries themselves become the problem.",
+    "intro": "<strong>Elevated is the building phase, not the panic phase.</strong> Historically, the transition from Elevated to Crisis takes 6\u201318 months, and the largest gains in gold, Bitcoin, and hard assets occur <em>during</em> the transition \u2014 not after crisis is confirmed. The Canary now includes a 10% short-term Treasury buffer \u2014 not a duration bet or a conviction compromise, but a liquidity parking lot that gets eliminated at Regime 4 when Treasuries themselves become the problem.",
     "posture": [
       { "color": "emerald", "label": "Gold \u2014 overweight, core (20%)", "reason": "Gold Momentum + Divergence both at 2 simultaneously. This signal cluster has preceded every major regime transition. At +78% YoY, momentum has already exceeded the Score 2 threshold." },
       { "color": "emerald", "label": "Bitcoin \u2014 overweight, debasement call option (10%)", "reason": "Functions as high-beta gold in monetary regime transitions. Dropped 57% in 2020 acute crisis, then 18x\u2019d. Position size for volatility. Increases to 12% at Regime 4 Confirmed." },
@@ -39,7 +39,7 @@
   },
   "triggers": {
     "escalation": [
-      "Fed shifts to <strong>long-duration purchases</strong> while framework reads Elevated or above \u2192 immediate Transition (Override Rule #4). QE launched from Stable does not trigger \u2014 it\u2019s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
+      "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Elevated or above \u2192 immediate Transition (Override Rule #4). QE launched from Stable does not trigger \u2014 it\u2019s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
       "Treasury auction B/C drops below <strong>2.0</strong> \u2192 demand crisis signal. Currently masked by Fed purchases \u2014 watch what happens if they pause.",
       "Tier 2 confirming score reaches <strong>\u22656</strong> (currently 5/18) \u2192 triggers Transition via combined T1+T2 gate. Watch copper premiums, China controls, and Fed deferred asset for movement.",
       "Gold 8-week momentum breaks <strong>+15%</strong> \u2192 acceleration signal. Currently at +14.4% \u2014 at the threshold."
@@ -52,15 +52,15 @@
     ]
   },
   "track_record": {
-    "intro": "Applied retroactively across nine historical periods, the framework identified every major regime transition 3\u20136 months early with near-zero false positives.",
+    "intro": "Applied retroactively across nine historical periods, The Canary identified every major regime transition 3\u20136 months early with near-zero false positives.",
     "confirmed": [
       { "year": "1971\u201373", "label": "Nixon Shock", "signal": "Elevated \u2192 Transition", "lead": "6 months early", "result": "Gold +375% over next 3 years", "grade": "B+" },
       { "year": "2008\u201309", "label": "Global Financial Crisis", "signal": "Elevated \u2192 Transition", "lead": "3 months before QE1", "result": "Gold +170% from crisis to peak", "grade": "A\u2212" },
       { "year": "2020", "label": "COVID Monetary Flood", "signal": "Elevated at onset", "lead": "Real-time detection", "result": "Gold +30%, BTC +1,692% from lows", "grade": "A" }
     ],
     "adversarial": [
-      { "year": "2015\u201316", "label": "Gold rally", "result": "Framework stayed silent \u2713" },
-      { "year": "2013\u201315", "label": "Gold bear market", "result": "No false Elevated \u2713" },
+      { "year": "2015\u201316", "label": "Gold rally", "result": "The Canary stayed silent \u2713" },
+      { "year": "2013\u201315", "label": "Gold bear market", "result": "No false signal \u2713" },
       { "year": "2018", "label": "Fed tightening", "result": "No false signal \u2713" },
       { "year": "1998", "label": "LTCM crisis", "result": "Correctly filtered \u2713" },
       { "year": "2022\u201323", "label": "SVB banking stress", "result": "Brief signal, self-corrected \u2713" },

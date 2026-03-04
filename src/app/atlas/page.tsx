@@ -4,9 +4,9 @@ import { join } from "path";
 import AtlasDashboard from "@/components/AtlasDashboard";
 
 export const metadata: Metadata = {
-  title: "Monetary Regime Dashboard",
+  title: "The Canary | Lance Pieper",
   description:
-    "Real-time macro regime assessment across 20 indicators. Track monetary, fiscal, and structural signals that precede regime transitions.",
+    "A live dashboard tracking 20 macro indicators to detect monetary system transitions and investment implications.",
 };
 
 export interface AtlasIndicator {
@@ -91,7 +91,7 @@ export default function AtlasPage() {
     return (
       <div className="mx-auto max-w-5xl px-6 py-20 text-center">
         <h1 className="text-2xl font-bold text-white">
-          Monetary Regime Dashboard
+          The Canary
         </h1>
         <p className="mt-4 text-gray-400">
           Scores have not been published yet. Check back soon.

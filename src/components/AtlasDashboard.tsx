@@ -201,7 +201,8 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
 
       {/* ═══════ REGIME STATUS + WHAT CHANGED ═══════ */}
       <section className="mb-10">
-        <SectionLabel>Monetary Regime Dashboard</SectionLabel>
+        <SectionLabel>The Canary</SectionLabel>
+        <div className="text-sm text-gray-400 -mt-2 mb-4 italic">The signal before the system breaks</div>
 
         {/* 5-Stage Cycle Indicator */}
         <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 mb-4">
@@ -271,7 +272,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {/* ═══════ DIVERGENCE CHART ═══════ */}
       {narrative?.divergence && (
         <Card className="mb-8">
-          <SectionLabel>Gold/Treasury Divergence — The Framework&apos;s Core Signal</SectionLabel>
+          <SectionLabel>Gold/Treasury Divergence — The Canary&apos;s Core Signal</SectionLabel>
           <div className="text-sm text-gray-400 leading-relaxed mb-4">
             {narrative.divergence.description}
           </div>
@@ -291,7 +292,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {/* ═══════ FRAMEWORK VS CONSENSUS ═══════ */}
       {narrative?.consensus && narrative.consensus.length > 0 && (
         <Card className="mb-8">
-          <SectionLabel>Framework vs. Consensus</SectionLabel>
+          <SectionLabel>The Canary vs. Consensus</SectionLabel>
           <div className="text-[13px]">
             {narrative.consensus.map((row, i) => (
               <div key={i} className={`grid grid-cols-[120px_1fr_1fr] gap-4 py-3.5 ${i < narrative.consensus.length - 1 ? "border-b border-navy-800/40" : ""}`}>
@@ -301,7 +302,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
                   <div className="text-gray-400 leading-snug">{row.wall_street}</div>
                 </div>
                 <div>
-                  <div className="text-[10px] text-gold-400 uppercase tracking-[0.08em] mb-1">Framework Reading</div>
+                  <div className="text-[10px] text-gold-400 uppercase tracking-[0.08em] mb-1">The Canary</div>
                   <div className="text-gray-300 leading-snug">{row.atlas}</div>
                 </div>
               </div>
@@ -318,7 +319,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
               Full Dashboard Coming Soon
             </div>
             <div className="text-sm text-gray-400 max-w-[500px] mx-auto mb-2 leading-relaxed">
-              Positioning guidance, escalation triggers, the framework&apos;s historical track record, and the full 20-indicator evidence table will be available to paid subscribers.
+              Built for investors who want signal before the consensus catches up. Positioning guidance, escalation triggers, historical track record, and the full 20-indicator evidence table will be available to paid subscribers.
             </div>
             <div className="text-xs text-gray-500 max-w-[440px] mx-auto mb-6">
               Join the waitlist to be notified when subscriptions launch. No obligation — your information is only used to send updates.
@@ -375,7 +376,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
             This dashboard is for informational and educational purposes only and does not constitute investment advice, a recommendation or solicitation to buy or sell any security, or an offer to provide investment advisory or financial planning services. Nothing on this site should be construed as a personal recommendation for any particular investor. The content does not take into account your individual financial situation, investment objectives, or risk tolerance.
           </p>
           <p>
-            The Atlas Framework is a proprietary analytical model reflecting one interpretation of publicly available macroeconomic data. All models are simplifications of complex systems and carry inherent limitations. Past regime classifications are retrospective analyses and are not indicative of future results. No analytical framework can reliably forecast market movements. Historical back-tests are hypothetical, were not traded in real time, and may not reflect the impact of actual market conditions, liquidity constraints, or transaction costs.
+            The Canary is a proprietary analytical model reflecting one interpretation of publicly available macroeconomic data. All models are simplifications of complex systems and carry inherent limitations. Past regime classifications are retrospective analyses and are not indicative of future results. No analytical framework can reliably forecast market movements. Historical back-tests are hypothetical, were not traded in real time, and may not reflect the impact of actual market conditions, liquidity constraints, or transaction costs.
           </p>
           <p>
             The author and affiliated entities may hold positions in assets or asset classes discussed on this site and may trade these positions at any time without notice. The information presented may become outdated and there is no obligation to update it.
