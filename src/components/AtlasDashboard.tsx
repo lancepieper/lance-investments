@@ -67,7 +67,7 @@ function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublev
           <div key={stage.num} className="flex items-center flex-1">
             <div className="flex flex-col items-center flex-1">
               <div
-                className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all ${
+                className={`w-11 h-11 rounded-full flex items-center justify-center text-base font-bold border-2 transition-all ${
                   isActive
                     ? "bg-gold-500/20 border-gold-500 text-gold-400 ring-2 ring-gold-500/20"
                     : isPast
@@ -77,20 +77,20 @@ function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublev
               >
                 {stage.num}
               </div>
-              <div className={`mt-2 text-center ${isActive ? "text-gold-400" : isPast ? "text-gray-500" : "text-gray-600"}`}>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.05em] leading-tight">
+              <div className={`mt-2.5 text-center ${isActive ? "text-gold-400" : isPast ? "text-gray-500" : "text-gray-600"}`}>
+                <div className="text-xs font-semibold uppercase tracking-[0.05em] leading-tight">
                   {stage.label}
                 </div>
-                <div className={`text-[10px] mt-0.5 ${isActive ? "text-gold-400/60" : isPast ? "text-gray-600" : "text-gray-700"}`}>
+                <div className={`text-[11px] mt-0.5 ${isActive ? "text-gold-400/60" : isPast ? "text-gray-600" : "text-gray-700"}`}>
                   {stage.era}
                 </div>
                 {isActive && (
-                  <div className="text-[10px] text-gold-400/80 font-semibold mt-0.5">{sublevel}</div>
+                  <div className="text-[11px] text-gold-400/80 font-semibold mt-0.5">{sublevel}</div>
                 )}
               </div>
             </div>
             {!isLast && (
-              <div className={`h-px flex-shrink-0 w-6 -mt-6 ${isPast ? "bg-gray-600" : "bg-navy-700"}`} />
+              <div className={`h-px flex-shrink-0 w-6 -mt-7 ${isPast ? "bg-gray-600" : "bg-navy-700"}`} />
             )}
           </div>
         );
@@ -103,7 +103,7 @@ function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublev
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="text-xs uppercase tracking-[0.2em] text-gold-400 font-medium mb-4">
+    <div className="text-sm uppercase tracking-[0.2em] text-gold-400 font-medium mb-4">
       {children}
     </div>
   );
@@ -122,10 +122,10 @@ function TierBarCompact({ label, score, max }: { label: string; score: number; m
   return (
     <div className="flex-1">
       <div className="flex justify-between mb-1">
-        <span className="text-[11px] uppercase tracking-[0.1em] text-gray-500">{label}</span>
-        <span className="font-mono text-sm font-bold text-gray-200">{score}<span className="text-gray-500 font-normal">/{max}</span></span>
+        <span className="text-xs uppercase tracking-[0.1em] text-gray-500">{label}</span>
+        <span className="font-mono text-base font-bold text-gray-200">{score}<span className="text-gray-500 font-normal">/{max}</span></span>
       </div>
-      <div className="h-[6px] rounded-full bg-navy-800">
+      <div className="h-2 rounded-full bg-navy-800">
         <div className={`h-full rounded-full ${barFillColor(pct)} opacity-70`} style={{ width: `${Math.max(pct * 100, 2)}%` }} />
       </div>
     </div>
@@ -202,7 +202,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {/* ═══════ REGIME STATUS + WHAT CHANGED ═══════ */}
       <section className="mb-10">
         <SectionLabel>The Canary</SectionLabel>
-        <div className="text-base text-gray-400 -mt-2 mb-5 italic">The signal before the system breaks</div>
+        <div className="text-lg text-gray-400 -mt-2 mb-6 italic">The signal before the system breaks</div>
 
         {/* 5-Stage Cycle Indicator */}
         <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-6 mb-5">
@@ -211,12 +211,12 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
 
         {/* Current Reading */}
         <div className={`inline-flex flex-col rounded-lg border px-6 py-3.5 mb-4 ${rc.bg} ${rc.border}`}>
-          <span className={`font-mono text-[22px] font-bold tracking-wide ${rc.text}`}>
+          <span className={`font-mono text-2xl font-bold tracking-wide ${rc.text}`}>
             {info.sublevel}
           </span>
-          <span className="text-[13px] text-gray-400 mt-1">{info.subtitle}</span>
+          <span className="text-sm text-gray-400 mt-1">{info.subtitle}</span>
         </div>
-        <div className="text-xs text-gray-500 font-mono mb-4">{dateStr}</div>
+        <div className="text-sm text-gray-500 font-mono mb-4">{dateStr}</div>
 
         {current.overrides.length > 0 && (
           <div className="mb-4 space-y-2">
@@ -230,13 +230,13 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
 
         {/* What Changed */}
         {narrative?.what_changed && narrative.what_changed.length > 0 && (
-          <div className="rounded-md bg-navy-800/40 border border-navy-800 p-4">
-            <div className="text-xs uppercase tracking-[0.15em] text-gold-400 font-medium mb-3">
+          <div className="rounded-md bg-navy-800/40 border border-navy-800 p-5">
+            <div className="text-sm uppercase tracking-[0.15em] text-gold-400 font-medium mb-3">
               Current Readings
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {narrative.what_changed.map((item, i) => (
-                <div key={i} className="text-sm text-gray-300">
+                <div key={i} className="text-[15px] text-gray-300 leading-relaxed">
                   {item.type === "new" ? (
                     <span className="text-red-400 font-semibold">▲ NEW</span>
                   ) : (
@@ -261,7 +261,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {narrative?.contrarian && narrative.contrarian.length > 0 && (
         <Card className="mb-8">
           <SectionLabel>What the Consensus Is Missing</SectionLabel>
-          <div className="text-[15px] text-gray-300 leading-[1.8]">
+          <div className="text-base text-gray-300 leading-[1.8]">
             {narrative.contrarian.map((para, i) => (
               <p key={i} className={i < narrative.contrarian.length - 1 ? "mb-4" : ""} dangerouslySetInnerHTML={{ __html: para }} />
             ))}
@@ -273,7 +273,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {narrative?.divergence && (
         <Card className="mb-8">
           <SectionLabel>Gold/Treasury Divergence — The Canary&apos;s Core Signal</SectionLabel>
-          <div className="text-[15px] text-gray-400 leading-relaxed mb-5">
+          <div className="text-base text-gray-400 leading-relaxed mb-5">
             {narrative.divergence.description}
           </div>
           <DivergenceChart
@@ -283,7 +283,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
             goldChange={narrative.divergence.gold_change}
             yieldChange={narrative.divergence.yield_change}
           />
-          <div className="mt-5 rounded-md bg-amber-500/5 border border-amber-500/10 px-5 py-4 text-sm text-gray-300 leading-relaxed"
+          <div className="mt-5 rounded-md bg-amber-500/5 border border-amber-500/10 px-5 py-4 text-[15px] text-gray-300 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: narrative.divergence.current_reading }}
           />
         </Card>
@@ -293,16 +293,16 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {narrative?.consensus && narrative.consensus.length > 0 && (
         <Card className="mb-8">
           <SectionLabel>The Canary vs. Consensus</SectionLabel>
-          <div className="text-sm">
+          <div className="text-[15px]">
             {narrative.consensus.map((row, i) => (
-              <div key={i} className={`grid grid-cols-[120px_1fr_1fr] gap-5 py-4 ${i < narrative.consensus.length - 1 ? "border-b border-navy-800/40" : ""}`}>
-                <div className="font-semibold text-gray-200 text-sm">{row.topic}</div>
+              <div key={i} className={`grid grid-cols-[130px_1fr_1fr] gap-5 py-5 ${i < narrative.consensus.length - 1 ? "border-b border-navy-800/40" : ""}`}>
+                <div className="font-semibold text-gray-200 text-[15px]">{row.topic}</div>
                 <div>
-                  <div className="text-[11px] text-gray-500 uppercase tracking-[0.08em] mb-1.5">Wall Street</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-[0.08em] mb-1.5">Wall Street</div>
                   <div className="text-gray-400 leading-snug">{row.wall_street}</div>
                 </div>
                 <div>
-                  <div className="text-[11px] text-gold-400 uppercase tracking-[0.08em] mb-1.5">The Canary</div>
+                  <div className="text-xs text-gold-400 uppercase tracking-[0.08em] mb-1.5">The Canary</div>
                   <div className="text-gray-300 leading-snug">{row.atlas}</div>
                 </div>
               </div>
@@ -315,13 +315,13 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       <div className="rounded-lg border border-gold-500/25 bg-gradient-to-b from-navy-900/90 to-navy-950/90 px-8 py-10 text-center mb-8">
         {!waitlisted ? (
           <>
-            <div className="text-lg font-semibold text-white mb-1.5">
+            <div className="text-xl font-semibold text-white mb-2">
               Full Dashboard Coming Soon
             </div>
-            <div className="text-sm text-gray-400 max-w-[500px] mx-auto mb-2 leading-relaxed">
+            <div className="text-base text-gray-400 max-w-[520px] mx-auto mb-2 leading-relaxed">
               Built for investors who want signal before the consensus catches up. Positioning guidance, escalation triggers, historical track record, and the full 20-indicator evidence table will be available to paid subscribers.
             </div>
-            <div className="text-xs text-gray-500 max-w-[440px] mx-auto mb-6">
+            <div className="text-sm text-gray-500 max-w-[460px] mx-auto mb-6">
               Join the waitlist to be notified when subscriptions launch. No obligation — your information is only used to send updates.
             </div>
             <form onSubmit={handleWaitlist} className="flex flex-col gap-2 max-w-[400px] mx-auto">
