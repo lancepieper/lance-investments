@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import RegimeHistoryChart from "@/components/RegimeHistoryChart";
 import DivergenceChart from "@/components/DivergenceChart";
-import type { AtlasData, AtlasIndicator, NarrativeData } from "@/app/atlas/page";
+import type { AtlasData, AtlasIndicator, NarrativeData } from "@/app/canary/page";
 
 
 /* ── Helpers ─────────────────────────────────────────── */
@@ -171,7 +171,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
     if (!name.trim() || !email.includes("@")) return;
     setSubmitting(true);
     try {
-      await fetch("/api/atlas-subscribe", {
+      await fetch("/api/canary-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name.trim(), email }),
