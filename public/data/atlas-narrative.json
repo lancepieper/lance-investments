@@ -39,7 +39,7 @@
   },
   "triggers": {
     "escalation": [
-      "Fed shifts to <strong>long-duration purchases</strong> \u2192 immediate Transition (Override Rule #4). This is the bright red line.",
+      "Fed shifts to <strong>long-duration purchases</strong> while framework reads Elevated or above \u2192 immediate Transition (Override Rule #4). QE launched from Stable does not trigger \u2014 it\u2019s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
       "Treasury auction B/C drops below <strong>2.0</strong> \u2192 demand crisis signal. Currently masked by Fed purchases \u2014 watch what happens if they pause.",
       "Tier 2 confirming score reaches <strong>\u22656</strong> (currently 5/18) \u2192 triggers Transition via combined T1+T2 gate. Watch copper premiums, China controls, and Fed deferred asset for movement.",
       "Gold 8-week momentum breaks <strong>+15%</strong> \u2192 acceleration signal. Currently at +14.4% \u2014 at the threshold."
