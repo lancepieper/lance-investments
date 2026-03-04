@@ -67,7 +67,7 @@ function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublev
           <div key={stage.num} className="flex items-center flex-1">
             <div className="flex flex-col items-center flex-1">
               <div
-                className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all ${
+                className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all ${
                   isActive
                     ? "bg-gold-500/20 border-gold-500 text-gold-400 ring-2 ring-gold-500/20"
                     : isPast
@@ -77,20 +77,20 @@ function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublev
               >
                 {stage.num}
               </div>
-              <div className={`mt-1.5 text-center ${isActive ? "text-gold-400" : isPast ? "text-gray-500" : "text-gray-600"}`}>
-                <div className="text-[9px] font-semibold uppercase tracking-[0.05em] leading-tight">
+              <div className={`mt-2 text-center ${isActive ? "text-gold-400" : isPast ? "text-gray-500" : "text-gray-600"}`}>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.05em] leading-tight">
                   {stage.label}
                 </div>
-                <div className={`text-[8px] mt-0.5 ${isActive ? "text-gold-400/60" : isPast ? "text-gray-600" : "text-gray-700"}`}>
+                <div className={`text-[10px] mt-0.5 ${isActive ? "text-gold-400/60" : isPast ? "text-gray-600" : "text-gray-700"}`}>
                   {stage.era}
                 </div>
                 {isActive && (
-                  <div className="text-[8px] text-gold-400/80 font-semibold mt-0.5">{sublevel}</div>
+                  <div className="text-[10px] text-gold-400/80 font-semibold mt-0.5">{sublevel}</div>
                 )}
               </div>
             </div>
             {!isLast && (
-              <div className={`h-px flex-shrink-0 w-4 -mt-5 ${isPast ? "bg-gray-600" : "bg-navy-700"}`} />
+              <div className={`h-px flex-shrink-0 w-6 -mt-6 ${isPast ? "bg-gray-600" : "bg-navy-700"}`} />
             )}
           </div>
         );
@@ -103,7 +103,7 @@ function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublev
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-medium mb-4">
+    <div className="text-xs uppercase tracking-[0.2em] text-gold-400 font-medium mb-4">
       {children}
     </div>
   );
@@ -111,7 +111,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`rounded-lg border border-navy-800 bg-navy-900/60 p-6 ${className}`}>
+    <div className={`rounded-lg border border-navy-800 bg-navy-900/60 p-7 ${className}`}>
       {children}
     </div>
   );
@@ -122,10 +122,10 @@ function TierBarCompact({ label, score, max }: { label: string; score: number; m
   return (
     <div className="flex-1">
       <div className="flex justify-between mb-1">
-        <span className="text-[10px] uppercase tracking-[0.1em] text-gray-500">{label}</span>
+        <span className="text-[11px] uppercase tracking-[0.1em] text-gray-500">{label}</span>
         <span className="font-mono text-sm font-bold text-gray-200">{score}<span className="text-gray-500 font-normal">/{max}</span></span>
       </div>
-      <div className="h-[5px] rounded-full bg-navy-800">
+      <div className="h-[6px] rounded-full bg-navy-800">
         <div className={`h-full rounded-full ${barFillColor(pct)} opacity-70`} style={{ width: `${Math.max(pct * 100, 2)}%` }} />
       </div>
     </div>
@@ -202,10 +202,10 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {/* ═══════ REGIME STATUS + WHAT CHANGED ═══════ */}
       <section className="mb-10">
         <SectionLabel>The Canary</SectionLabel>
-        <div className="text-sm text-gray-400 -mt-2 mb-4 italic">The signal before the system breaks</div>
+        <div className="text-base text-gray-400 -mt-2 mb-5 italic">The signal before the system breaks</div>
 
         {/* 5-Stage Cycle Indicator */}
-        <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-5 mb-4">
+        <div className="rounded-lg border border-navy-800 bg-navy-900/60 p-6 mb-5">
           <CycleIndicator activeStage={info.activeStage} sublevel={info.sublevel} />
         </div>
 
@@ -214,14 +214,14 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
           <span className={`font-mono text-[22px] font-bold tracking-wide ${rc.text}`}>
             {info.sublevel}
           </span>
-          <span className="text-[11px] text-gray-400 mt-1">{info.subtitle}</span>
+          <span className="text-[13px] text-gray-400 mt-1">{info.subtitle}</span>
         </div>
         <div className="text-xs text-gray-500 font-mono mb-4">{dateStr}</div>
 
         {current.overrides.length > 0 && (
           <div className="mb-4 space-y-2">
             {current.overrides.map((o, i) => (
-              <div key={i} className="rounded border border-amber-500/20 bg-amber-500/5 px-3 py-2 text-xs text-amber-400/80">
+              <div key={i} className="rounded border border-amber-500/20 bg-amber-500/5 px-3.5 py-2.5 text-sm text-amber-400/80">
                 {o}
               </div>
             ))}
@@ -231,12 +231,12 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         {/* What Changed */}
         {narrative?.what_changed && narrative.what_changed.length > 0 && (
           <div className="rounded-md bg-navy-800/40 border border-navy-800 p-4">
-            <div className="text-[10px] uppercase tracking-[0.15em] text-gold-400 font-medium mb-2">
+            <div className="text-xs uppercase tracking-[0.15em] text-gold-400 font-medium mb-3">
               Current Readings
             </div>
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-2">
               {narrative.what_changed.map((item, i) => (
-                <div key={i} className="text-[13px] text-gray-300">
+                <div key={i} className="text-sm text-gray-300">
                   {item.type === "new" ? (
                     <span className="text-red-400 font-semibold">▲ NEW</span>
                   ) : (
@@ -273,7 +273,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {narrative?.divergence && (
         <Card className="mb-8">
           <SectionLabel>Gold/Treasury Divergence — The Canary&apos;s Core Signal</SectionLabel>
-          <div className="text-sm text-gray-400 leading-relaxed mb-4">
+          <div className="text-[15px] text-gray-400 leading-relaxed mb-5">
             {narrative.divergence.description}
           </div>
           <DivergenceChart
@@ -283,7 +283,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
             goldChange={narrative.divergence.gold_change}
             yieldChange={narrative.divergence.yield_change}
           />
-          <div className="mt-4 rounded-md bg-amber-500/5 border border-amber-500/10 px-4 py-3 text-[13px] text-gray-300 leading-relaxed"
+          <div className="mt-5 rounded-md bg-amber-500/5 border border-amber-500/10 px-5 py-4 text-sm text-gray-300 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: narrative.divergence.current_reading }}
           />
         </Card>
@@ -293,16 +293,16 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       {narrative?.consensus && narrative.consensus.length > 0 && (
         <Card className="mb-8">
           <SectionLabel>The Canary vs. Consensus</SectionLabel>
-          <div className="text-[13px]">
+          <div className="text-sm">
             {narrative.consensus.map((row, i) => (
-              <div key={i} className={`grid grid-cols-[120px_1fr_1fr] gap-4 py-3.5 ${i < narrative.consensus.length - 1 ? "border-b border-navy-800/40" : ""}`}>
-                <div className="font-semibold text-gray-200 text-[13px]">{row.topic}</div>
+              <div key={i} className={`grid grid-cols-[120px_1fr_1fr] gap-5 py-4 ${i < narrative.consensus.length - 1 ? "border-b border-navy-800/40" : ""}`}>
+                <div className="font-semibold text-gray-200 text-sm">{row.topic}</div>
                 <div>
-                  <div className="text-[10px] text-gray-500 uppercase tracking-[0.08em] mb-1">Wall Street</div>
+                  <div className="text-[11px] text-gray-500 uppercase tracking-[0.08em] mb-1.5">Wall Street</div>
                   <div className="text-gray-400 leading-snug">{row.wall_street}</div>
                 </div>
                 <div>
-                  <div className="text-[10px] text-gold-400 uppercase tracking-[0.08em] mb-1">The Canary</div>
+                  <div className="text-[11px] text-gold-400 uppercase tracking-[0.08em] mb-1.5">The Canary</div>
                   <div className="text-gray-300 leading-snug">{row.atlas}</div>
                 </div>
               </div>
