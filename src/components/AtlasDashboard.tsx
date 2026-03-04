@@ -249,7 +249,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
               Positioning guidance, escalation triggers, the framework&apos;s historical track record, and the full 20-indicator evidence table will be available to paid subscribers.
             </div>
             <div className="text-xs text-gray-500 max-w-[440px] mx-auto mb-6">
-              Join the waitlist to be notified when subscriptions launch.
+              Join the waitlist to be notified when subscriptions launch. No obligation — your information is only used to send updates.
             </div>
             <form onSubmit={handleWaitlist} className="flex flex-col gap-2 max-w-[400px] mx-auto">
               <input
