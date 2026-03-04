@@ -4,7 +4,7 @@ import { join } from "path";
 import AtlasDashboard from "@/components/AtlasDashboard";
 
 export const metadata: Metadata = {
-  title: "Atlas Regime Dashboard",
+  title: "Monetary Regime Dashboard",
   description:
     "Real-time macro regime assessment across 20 indicators. Track monetary, fiscal, and structural signals that precede regime transitions.",
 };
@@ -91,7 +91,7 @@ export default function AtlasPage() {
     return (
       <div className="mx-auto max-w-5xl px-6 py-20 text-center">
         <h1 className="text-2xl font-bold text-white">
-          Atlas Regime Dashboard
+          Monetary Regime Dashboard
         </h1>
         <p className="mt-4 text-gray-400">
           Scores have not been published yet. Check back soon.
