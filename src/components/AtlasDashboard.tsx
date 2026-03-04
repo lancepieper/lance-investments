@@ -73,6 +73,7 @@ function TierBarCompact({ label, score, max }: { label: string; score: number; m
 
 function IndicatorRow({ indicator }: { indicator: AtlasIndicator }) {
   const sc = scoreColor(indicator.score);
+  const isUnprecedented = indicator.num >= 18;
   return (
     <div className="flex items-start gap-2.5 py-[7px] border-b border-navy-800/40 last:border-0">
       <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded min-w-[28px] text-center ${sc.bg} ${sc.text}`}>
@@ -82,6 +83,11 @@ function IndicatorRow({ indicator }: { indicator: AtlasIndicator }) {
         <span className="text-[13px] text-gray-300">
           <span className="text-gray-500 font-mono text-[11px]">#{indicator.num} </span>
           {indicator.name}
+          {isUnprecedented && (
+            <span className="ml-1.5 text-[9px] font-semibold uppercase tracking-[0.05em] text-violet-400/70 bg-violet-500/8 border border-violet-500/15 rounded px-1.5 py-px align-middle">
+              New signal
+            </span>
+          )}
         </span>
         {indicator.notes && (
           <div className="text-[11px] text-gray-500 font-mono mt-0.5">{indicator.notes}</div>
@@ -402,6 +408,9 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
                     ))}
                   </div>
                 ))}
+                <div className="mt-3 rounded-md bg-violet-500/5 border border-violet-500/10 px-4 py-3 text-[11px] text-gray-400 leading-relaxed">
+                  <span className="text-violet-400/70 font-semibold">New signal</span> indicators (#18-20) track unprecedented structural conditions with no historical analogue. Their value is as forward-looking thesis conviction, not validated pattern recognition. Indicators #1-17 have been back-tested across nine historical periods with near-zero false positives.
+                </div>
               </div>
             )}
           </div>
