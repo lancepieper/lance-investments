@@ -27,19 +27,19 @@
     { "topic": "Copper supply", "wall_street": "Inventories high \u2014 no shortage", "atlas": "TC/RCs at $0 says smelters are in crisis. Headline inventory masks geographic dislocation and tariff front-loading" }
   ],
   "positioning": {
-    "intro": "<strong>Elevated is the building phase, not the panic phase.</strong> Historically, the transition from Elevated to Crisis takes 6\u201318 months, and the largest gains in gold, Bitcoin, and hard assets occur <em>during</em> the transition \u2014 not after crisis is confirmed. The Canary includes a short-term Treasury buffer \u2014 not a duration bet or a conviction compromise, but a liquidity parking lot that gets eliminated at Regime 4 when Treasuries themselves become the problem.",
+    "intro": "<strong>Elevated is the building phase, not the panic phase.</strong> Historically, the transition from Elevated to Crisis takes 6\u201318 months, and the largest gains in gold, Bitcoin, and hard assets occur <em>during</em> the transition \u2014 not after crisis is confirmed. The Canary includes a short-term Treasury buffer \u2014 not a duration bet or a conviction compromise, but a liquidity parking lot that gets eliminated at Crisis Acceleration when Treasuries themselves become the problem.",
     "posture": [
       { "color": "emerald", "label": "Gold \u2014 overweight", "reason": "Gold Momentum + Divergence both at 2 simultaneously. This signal cluster has preceded every major regime transition. At +78% YoY, momentum has already exceeded the Score 2 threshold." },
       { "color": "emerald", "label": "Bitcoin \u2014 overweight", "reason": "Functions as high-beta gold in monetary regime transitions. Dropped 57% in 2020 acute crisis, then 18x\u2019d. Position size for volatility." },
-      { "color": "amber", "label": "Short-term Treasuries \u2014 hold", "reason": "T-bills under 1-year maturity. Reduces portfolio volatility and provides dry powder to deploy during drawdowns. Eliminated at Regime 4 when Treasuries themselves become the problem." },
+      { "color": "amber", "label": "Short-term Treasuries \u2014 hold", "reason": "T-bills under 1-year maturity. Reduces portfolio volatility and provides dry powder to deploy during drawdowns. Eliminated at Crisis Acceleration when Treasuries themselves become the problem." },
       { "color": "amber", "label": "Critical materials \u2014 overweight", "reason": "Copper TC/RCs scoring at 2 (smelters paying miners). Physical premium at 4% \u2014 below the 5% trigger but elevated. If China escalates export controls, conviction increases." },
-      { "color": "red", "label": "Equities \u2014 underweight", "reason": "S&P/Gold ratio at 1.34 and falling \u2014 equities losing purchasing power in real terms. Full elimination at Transition." },
+      { "color": "red", "label": "Equities \u2014 underweight", "reason": "S&P/Gold ratio at 1.34 and falling \u2014 equities losing purchasing power in real terms. Full elimination at Crisis Acceleration." },
       { "color": "red", "label": "Long Treasuries \u2014 underweight", "reason": "The Gold/Treasury Divergence says yields are artificially suppressed. The T-bill buffer gives short-duration exposure; long duration carries asymmetric downside when the divergence closes." }
     ]
   },
   "triggers": {
     "escalation": [
-      "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Elevated or above \u2192 immediate Transition (Override Rule #4). QE launched from Stable does not trigger \u2014 it\u2019s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
+      "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Elevated or above \u2192 immediate Crisis Acceleration (Override Rule #4). QE launched from Stable does not trigger \u2014 it\u2019s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
       "Treasury auction B/C drops below <strong>2.0</strong> \u2192 demand crisis signal. Currently masked by Fed purchases \u2014 watch what happens if they pause.",
       "Tier 2 confirming score reaches <strong>\u22656</strong> (currently 5/18) \u2192 triggers Transition via combined T1+T2 gate. Watch copper premiums, China controls, and Fed deferred asset for movement.",
       "Gold 8-week momentum breaks <strong>+15%</strong> \u2192 acceleration signal. Currently at +14.4% \u2014 at the threshold."
@@ -54,8 +54,8 @@
   "track_record": {
     "intro": "Applied retroactively across nine historical periods, The Canary identified every major regime transition 3\u20136 months early with near-zero false positives.",
     "confirmed": [
-      { "year": "1971\u201373", "label": "Nixon Shock", "signal": "Elevated \u2192 Transition", "lead": "6 months early", "result": "Gold +375% over next 3 years", "grade": "B+" },
-      { "year": "2008\u201309", "label": "Global Financial Crisis", "signal": "Elevated \u2192 Transition", "lead": "3 months before QE1", "result": "Gold +170% from crisis to peak", "grade": "A\u2212" },
+      { "year": "1971\u201373", "label": "Nixon Shock", "signal": "Elevated \u2192 Crisis Acceleration", "lead": "6 months early", "result": "Gold +375% over next 3 years", "grade": "B+" },
+      { "year": "2008\u201309", "label": "Global Financial Crisis", "signal": "Elevated \u2192 Crisis Acceleration", "lead": "3 months before QE1", "result": "Gold +170% from crisis to peak", "grade": "A\u2212" },
       { "year": "2020", "label": "COVID Monetary Flood", "signal": "Elevated at onset", "lead": "Real-time detection", "result": "Gold +30%, BTC +1,692% from lows", "grade": "A" }
     ],
     "adversarial": [
