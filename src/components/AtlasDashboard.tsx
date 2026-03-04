@@ -99,19 +99,20 @@ function IndicatorRow({ indicator }: { indicator: AtlasIndicator }) {
 /* ── Main Dashboard ──────────────────────────────────── */
 
 export default function AtlasDashboard({ data, narrative }: { data: AtlasData; narrative: NarrativeData | null }) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [waitlisted, setWaitlisted] = useState(false);
 
   const handleWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.includes("@")) return;
+    if (!name.trim() || !email.includes("@")) return;
     setSubmitting(true);
     try {
       await fetch("/api/atlas-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ name: name.trim(), email }),
       });
     } catch {
       // Still mark as waitlisted — email was sent fire-and-forget
@@ -250,22 +251,32 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
             <div className="text-xs text-gray-500 max-w-[440px] mx-auto mb-6">
               Join the waitlist to be notified when subscriptions launch.
             </div>
-            <form onSubmit={handleWaitlist} className="flex gap-2 justify-center max-w-[400px] mx-auto">
+            <form onSubmit={handleWaitlist} className="flex flex-col gap-2 max-w-[400px] mx-auto">
               <input
-                type="email"
+                type="text"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                className="flex-1 rounded-md border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gold-500/60 focus:outline-none focus:ring-1 focus:ring-gold-500/30"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full name"
+                className="rounded-md border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gold-500/60 focus:outline-none focus:ring-1 focus:ring-gold-500/30"
               />
-              <button
-                type="submit"
-                disabled={submitting}
-                className="rounded-md bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 disabled:opacity-50 cursor-pointer"
-              >
-                {submitting ? "..." : "Join Waitlist"}
-              </button>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="flex-1 rounded-md border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gold-500/60 focus:outline-none focus:ring-1 focus:ring-gold-500/30"
+                />
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="rounded-md bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 disabled:opacity-50 cursor-pointer"
+                >
+                  {submitting ? "..." : "Join Waitlist"}
+                </button>
+              </div>
             </form>
           </>
         ) : (

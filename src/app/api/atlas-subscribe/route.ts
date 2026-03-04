@@ -5,7 +5,7 @@ const GOOGLE_SHEET_WEBHOOK =
 
 export async function POST(req: NextRequest) {
   try {
-    const { email } = await req.json();
+    const { name, email } = await req.json();
 
     if (!email || !email.includes("@")) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     fetch(GOOGLE_SHEET_WEBHOOK, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ name: name || "", email }),
       redirect: "follow",
     }).catch(() => {});
 
