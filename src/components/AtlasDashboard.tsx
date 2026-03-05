@@ -248,11 +248,8 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       </div>
 
       {/* ═══════ SCORING KEY ═══════ */}
-      <details className="mb-10 group">
-        <summary className="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors select-none">
-          How scoring works ›
-        </summary>
-        <div className="mt-3 rounded-md border border-navy-800 bg-navy-900/60 p-5 text-sm text-gray-400 leading-relaxed space-y-3">
+      <div className="mb-10 rounded-md border border-navy-800 bg-navy-900/60 p-5 text-sm text-gray-400 leading-relaxed space-y-3">
+        <h3 className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-3">How Scoring Works</h3>
           <p>
             Each of the 20 indicators scores <span className="text-gray-300 font-medium">0</span> (no signal),{" "}
             <span className="text-amber-400 font-medium">1</span> (emerging), or{" "}
@@ -277,8 +274,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
             <span className="text-red-400">Crisis Confirmed</span>.
             Escalation indicators must also fire before the status advances beyond Early Warning.
           </p>
-        </div>
-      </details>
+      </div>
 
       {/* ═══════ ROW A: CONTRARIAN + DIVERGENCE ═══════ */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
