@@ -218,16 +218,6 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         </div>
         <div className="text-sm text-gray-500 font-mono mb-4">{dateStr}</div>
 
-        {current.overrides.length > 0 && (
-          <div className="mb-4 space-y-2">
-            {current.overrides.map((o, i) => (
-              <div key={i} className="rounded border border-amber-500/20 bg-amber-500/5 px-3.5 py-2.5 text-sm text-amber-400/80">
-                {o}
-              </div>
-            ))}
-          </div>
-        )}
-
         {/* What Changed */}
         {narrative?.what_changed && narrative.what_changed.length > 0 && (
           <div className="rounded-md bg-navy-800/40 border border-navy-800 p-5">

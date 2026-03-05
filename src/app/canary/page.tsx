@@ -40,7 +40,7 @@ export interface AtlasData {
     tier3_score: number;
     tier3_max: number;
     tier3_count: number;
-    overrides: string[];
+    overrides?: string[];
     indicators: AtlasIndicator[];
   };
   history: AtlasHistory[];
