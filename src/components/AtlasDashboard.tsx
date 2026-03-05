@@ -197,7 +197,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
   const info = regimeDisplayInfo(current.regime_status);
 
   return (
-    <div className="mx-auto max-w-[740px] px-6 pt-12 pb-20">
+    <div className="mx-auto max-w-[1100px] px-6 pt-12 pb-20">
 
       {/* ═══════ REGIME STATUS + WHAT CHANGED ═══════ */}
       <section className="mb-10">
@@ -241,43 +241,77 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       </section>
 
       {/* ═══════ TIER BARS ═══════ */}
-      <div className="flex gap-5 mb-10">
-        <TierBarCompact label="Primary" score={current.tier1_score} max={current.tier1_max} />
-        <TierBarCompact label="Confirming" score={current.tier2_score} max={current.tier2_max} />
+      <div className="flex gap-5 mb-4">
+        <TierBarCompact label="Lead Signals" score={current.tier1_score} max={current.tier1_max} />
+        <TierBarCompact label="Escalation" score={current.tier2_score} max={current.tier2_max} />
         <TierBarCompact label="Structural" score={current.tier3_score} max={current.tier3_max} />
       </div>
 
-      {/* ═══════ CONTRARIAN READ ═══════ */}
-      {narrative?.contrarian && narrative.contrarian.length > 0 && (
-        <Card className="mb-8">
-          <SectionLabel>What the Consensus Is Missing</SectionLabel>
-          <div className="text-base text-gray-300 leading-[1.8]">
-            {narrative.contrarian.map((para, i) => (
-              <p key={i} className={i < narrative.contrarian.length - 1 ? "mb-4" : ""} dangerouslySetInnerHTML={{ __html: para }} />
-            ))}
+      {/* ═══════ SCORING KEY ═══════ */}
+      <details className="mb-10 group">
+        <summary className="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors select-none">
+          How scoring works ›
+        </summary>
+        <div className="mt-3 rounded-md border border-navy-800 bg-navy-900/60 p-5 text-sm text-gray-400 leading-relaxed space-y-3">
+          <p>
+            Each of the 20 indicators scores <span className="text-gray-300 font-medium">0</span> (no signal),{" "}
+            <span className="text-amber-400 font-medium">1</span> (emerging), or{" "}
+            <span className="text-red-400 font-medium">2</span> (confirmed). Tier scores are the sum of their indicators.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-[13px]">
+            <div>
+              <span className="text-gray-300 font-semibold">Lead Signals</span> — the early movers: gold momentum, gold/Treasury divergence, Fed balance sheet, auction demand, interbank stress.
+            </div>
+            <div>
+              <span className="text-gray-300 font-semibold">Escalation</span> — what confirms crisis is spreading: foreign Treasury holdings, credit stress, copper premiums, dollar weakness, supply-chain strain.
+            </div>
+            <div>
+              <span className="text-gray-300 font-semibold">Structural</span> — slow-moving conditions that make the system vulnerable: deficit levels, debt service costs, central bank gold buying, equity/gold ratio.
+            </div>
           </div>
-        </Card>
-      )}
+          <p>
+            The overall status is driven primarily by the Lead Signals tier:{" "}
+            <span className="text-emerald-400">Monitoring</span> →{" "}
+            <span className="text-amber-400">Early Warning</span> →{" "}
+            <span className="text-orange-400">Accelerating</span> →{" "}
+            <span className="text-red-400">Crisis Confirmed</span>.
+            Escalation indicators must also fire before the status advances beyond Early Warning.
+          </p>
+        </div>
+      </details>
 
-      {/* ═══════ DIVERGENCE CHART ═══════ */}
-      {narrative?.divergence && (
-        <Card className="mb-8">
-          <SectionLabel>Gold/Treasury Divergence — The Canary&apos;s Core Signal</SectionLabel>
-          <div className="text-base text-gray-400 leading-relaxed mb-5">
-            {narrative.divergence.description}
-          </div>
-          <DivergenceChart
-            months={narrative.divergence.months}
-            gold={narrative.divergence.gold}
-            yields={narrative.divergence.yields}
-            goldChange={narrative.divergence.gold_change}
-            yieldChange={narrative.divergence.yield_change}
-          />
-          <div className="mt-5 rounded-md bg-amber-500/5 border border-amber-500/10 px-5 py-4 text-[15px] text-gray-300 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: narrative.divergence.current_reading }}
-          />
-        </Card>
-      )}
+      {/* ═══════ ROW A: CONTRARIAN + DIVERGENCE ═══════ */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        {narrative?.contrarian && narrative.contrarian.length > 0 && (
+          <Card className="flex flex-col">
+            <SectionLabel>What the Consensus Is Missing</SectionLabel>
+            <div className="text-base text-gray-300 leading-[1.8]">
+              {narrative.contrarian.map((para, i) => (
+                <p key={i} className={i < narrative.contrarian.length - 1 ? "mb-4" : ""} dangerouslySetInnerHTML={{ __html: para }} />
+              ))}
+            </div>
+          </Card>
+        )}
+
+        {narrative?.divergence && (
+          <Card className="flex flex-col">
+            <SectionLabel>Gold/Treasury Divergence — The Canary&apos;s Core Signal</SectionLabel>
+            <div className="text-base text-gray-400 leading-relaxed mb-5">
+              {narrative.divergence.description}
+            </div>
+            <DivergenceChart
+              months={narrative.divergence.months}
+              gold={narrative.divergence.gold}
+              yields={narrative.divergence.yields}
+              goldChange={narrative.divergence.gold_change}
+              yieldChange={narrative.divergence.yield_change}
+            />
+            <div className="mt-5 rounded-md bg-amber-500/5 border border-amber-500/10 px-5 py-4 text-[15px] text-gray-300 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: narrative.divergence.current_reading }}
+            />
+          </Card>
+        )}
+      </div>
 
       {/* ═══════ FRAMEWORK VS CONSENSUS ═══════ */}
       {narrative?.consensus && narrative.consensus.length > 0 && (

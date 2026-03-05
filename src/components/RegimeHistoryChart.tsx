@@ -12,8 +12,8 @@ interface HistoryPoint {
 }
 
 const TIERS = [
-  { key: "tier1_score" as const, color: "#ef4444", label: "Tier 1 — Primary" },
-  { key: "tier2_score" as const, color: "#d4a84b", label: "Tier 2 — Confirming" },
+  { key: "tier1_score" as const, color: "#ef4444", label: "Tier 1 — Lead Signals" },
+  { key: "tier2_score" as const, color: "#d4a84b", label: "Tier 2 — Escalation" },
   { key: "tier3_score" as const, color: "#8faadc", label: "Tier 3 — Structural" },
 ];
 
