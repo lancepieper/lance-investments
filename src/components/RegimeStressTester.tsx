@@ -181,9 +181,9 @@ function ComparisonBars({ results }: { results: Result[] }) {
     <div style={{ display: "flex", alignItems: "flex-end", gap: 8, height: 120, padding: "0 4px" }}>
       {results.map((r: Result) => (
         <div key={r.regime.id} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-          <span style={{ fontSize: 11, fontWeight: 600, color: r.regime.color }}>{"-" + r.maxDD.toFixed(0) + "%"}</span>
+          <span style={{ fontSize: 13, fontWeight: 600, color: r.regime.color }}>{"-" + r.maxDD.toFixed(0) + "%"}</span>
           <div style={{ width: "100%", maxWidth: 48, height: (r.maxDD / (maxDD * 1.15)) * 100 + "%", minHeight: 4, background: r.regime.color, opacity: 0.7, borderRadius: "4px 4px 0 0" }} />
-          <span style={{ fontSize: 8, color: "rgba(255,255,255,0.35)", textAlign: "center", lineHeight: 1.2 }}>{r.regime.shortName}</span>
+          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", textAlign: "center", lineHeight: 1.2 }}>{r.regime.shortName}</span>
         </div>
       ))}
     </div>
@@ -201,7 +201,7 @@ export default function RegimeStressTester() {
   const avgDD = results.reduce((s: number, r: Result) => s + r.maxDD, 0) / results.length;
   const survivedAll = results.every((r: Result) => r.recoveryMonths !== null);
   const fmt = (v: number): string => Math.abs(v) >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : Math.abs(v) >= 1e3 ? "$" + (v / 1e3).toFixed(0) + "K" : "$" + Math.round(v).toLocaleString();
-  const toggleBtn = (active: boolean): React.CSSProperties => ({ padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 500, letterSpacing: 0.3, cursor: "pointer", border: "none", background: active ? "rgba(99,200,170,0.12)" : "transparent", color: active ? "#63c8aa" : "rgba(255,255,255,0.35)", fontFamily: "'DM Sans',system-ui,sans-serif", transition: "all 0.15s ease" });
+  const toggleBtn = (active: boolean): React.CSSProperties => ({ padding: "8px 16px", borderRadius: 8, fontSize: 14, fontWeight: 500, letterSpacing: 0.3, cursor: "pointer", border: "none", background: active ? "rgba(99,200,170,0.12)" : "transparent", color: active ? "#63c8aa" : "rgba(255,255,255,0.35)", fontFamily: "var(--font-geist-sans),system-ui,sans-serif", transition: "all 0.15s ease" });
 
   const summaryRows: [string, string, string][] = [
     ["Worst drawdown", "-" + worstDD.toFixed(1) + "%", "#ef4444"],
@@ -210,14 +210,14 @@ export default function RegimeStressTester() {
   ];
 
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#0d1117 0%,#111820 40%,#0f1923 100%)", color: "#f0f0f0", fontFamily: "var(--font-dm-sans),'DM Sans',system-ui,sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#0d1117 0%,#111820 40%,#0f1923 100%)", color: "#f0f0f0", fontFamily: "var(--font-geist-sans),system-ui,sans-serif" }}>
       <style>{`input[type=range]{width:100%;height:4px;appearance:none;-webkit-appearance:none;background:rgba(255,255,255,0.08);border-radius:2px;outline:none;cursor:pointer}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#63c8aa;cursor:pointer;border:2px solid #0d1117;box-shadow:0 0 6px rgba(99,200,170,0.3)}`}</style>
 
       <div style={{ padding: "24px 28px 8px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12 }}>
         <div>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>Historical Stress Test</div>
-          <h1 style={{ fontSize: 28, fontFamily: "'DM Serif Display',serif", fontWeight: 400, margin: 0 }}>Portfolio Regime Tester</h1>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", marginTop: 6, maxWidth: 520 }}>Pick your allocation. See how it would have performed through the worst market crises of the last 50 years.</p>
+          <div style={{ fontSize: 13, letterSpacing: 3, textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>Historical Stress Test</div>
+          <h1 style={{ fontSize: 34, fontWeight: 400, margin: 0 }}>Portfolio Regime Tester</h1>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.35)", marginTop: 6, maxWidth: 520 }}>Pick your allocation. See how it would have performed through the worst market crises of the last 50 years.</p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 1, marginTop: 4, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: 3 }}>
           <button onClick={() => setUseRealReturns(false)} style={toggleBtn(!useRealReturns)}>Nominal</button>
@@ -228,13 +228,13 @@ export default function RegimeStressTester() {
       <div style={{ display: "grid", gridTemplateColumns: "300px 1fr", gap: 20, padding: "16px 28px 40px", alignItems: "start" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: 20 }}>
-            <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 12 }}>Preset Portfolios</div>
+            <div style={{ fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 12 }}>Preset Portfolios</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
               {PRESETS.map((p: Preset) => {
                 const active = JSON.stringify(allocation) === JSON.stringify(p.alloc);
                 return (<button key={p.name} onClick={() => setAllocation({...p.alloc})} style={{ background: active ? "rgba(99,200,170,0.08)" : "rgba(255,255,255,0.02)", border: active ? "1px solid rgba(99,200,170,0.2)" : "1px solid rgba(255,255,255,0.04)", borderRadius: 10, padding: "8px 10px", cursor: "pointer", textAlign: "left" as const, color: "#f0f0f0" }}>
-                  <div style={{ fontSize: 12, fontFamily: "'DM Serif Display',serif" }}>{p.name}</div>
-                  <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", marginTop: 2 }}>{p.desc}</div>
+                  <div style={{ fontSize: 14, }}>{p.name}</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 2 }}>{p.desc}</div>
                 </button>);
               })}
             </div>
@@ -242,17 +242,17 @@ export default function RegimeStressTester() {
 
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: 20 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 14 }}>
-              <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500 }}>Allocation</div>
-              <div style={{ fontSize: 13, fontFamily: "'DM Serif Display',serif", color: total === 100 ? "#63c8aa" : "#ef4444" }}>{total}%{total !== 100 && <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginLeft: 4 }}>({total < 100 ? "under" : "over"})</span>}</div>
+              <div style={{ fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500 }}>Allocation</div>
+              <div style={{ fontSize: 16, color: total === 100 ? "#63c8aa" : "#ef4444" }}>{total}%{total !== 100 && <span style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", marginLeft: 4 }}>({total < 100 ? "under" : "over"})</span>}</div>
             </div>
             {ASSET_KEYS.map((key: AssetKey) => (
               <div key={key} style={{ marginBottom: 10 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 4 }}>
                   <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
                     <span style={{ width: 8, height: 8, borderRadius: "50%", background: ASSET_COLORS[key], display: "inline-block" }} />
-                    <span style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: 0.5 }}>{ASSET_LABELS[key]}</span>
+                    <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: 0.5 }}>{ASSET_LABELS[key]}</span>
                   </span>
-                  <span style={{ fontSize: 14, fontFamily: "'DM Serif Display',serif", color: "rgba(255,255,255,0.9)" }}>{allocation[key]}%</span>
+                  <span style={{ fontSize: 16, color: "rgba(255,255,255,0.9)" }}>{allocation[key]}%</span>
                 </div>
                 <input type="range" min={0} max={100} step={5} value={allocation[key]} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAllocation((prev: Allocation) => ({ ...prev, [key]: parseInt(e.target.value) }))} />
               </div>
@@ -260,20 +260,20 @@ export default function RegimeStressTester() {
           </div>
 
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: 20 }}>
-            <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 10 }}>Starting Value</div>
+            <div style={{ fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 10 }}>Starting Value</div>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.45)" }}>Portfolio Value</span>
-              <span style={{ fontSize: 14, fontFamily: "'DM Serif Display',serif" }}>{fmt(initialValue)}</span>
+              <span style={{ fontSize: 14, color: "rgba(255,255,255,0.45)" }}>Portfolio Value</span>
+              <span style={{ fontSize: 16, }}>{fmt(initialValue)}</span>
             </div>
             <input type="range" min={50000} max={5000000} step={50000} value={initialValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInitialValue(parseInt(e.target.value))} />
           </div>
 
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: 20 }}>
-            <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 10 }}>Summary {useRealReturns && <span style={{ fontSize: 9, color: "rgba(255,255,255,0.25)", fontWeight: 400 }}>(real)</span>}</div>
+            <div style={{ fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 10 }}>Summary {useRealReturns && <span style={{ fontSize: 12, color: "rgba(255,255,255,0.25)", fontWeight: 400 }}>(real)</span>}</div>
             {summaryRows.map(([l, v, c]: [string, string, string]) => (
               <div key={l} style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                <span style={{ fontSize: 11, color: "rgba(255,255,255,0.35)" }}>{l}</span>
-                <span style={{ fontSize: 14, fontFamily: "'DM Serif Display',serif", color: c }}>{v}</span>
+                <span style={{ fontSize: 14, color: "rgba(255,255,255,0.35)" }}>{l}</span>
+                <span style={{ fontSize: 16, color: c }}>{v}</span>
               </div>
             ))}
           </div>
@@ -281,7 +281,7 @@ export default function RegimeStressTester() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: "16px 16px 8px" }}>
-            <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 8 }}>Max Drawdown Comparison {useRealReturns && <span style={{ color: "rgba(255,255,255,0.25)", fontWeight: 400 }}>(real)</span>}</div>
+            <div style={{ fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "#63c8aa", fontWeight: 500, marginBottom: 8 }}>Max Drawdown Comparison {useRealReturns && <span style={{ color: "rgba(255,255,255,0.25)", fontWeight: 400 }}>(real)</span>}</div>
             <ComparisonBars results={results} />
           </div>
 
@@ -292,32 +292,32 @@ export default function RegimeStressTester() {
               <div key={r.regime.id} onClick={() => setSelectedRegime(isOpen ? "" : r.regime.id)} style={{ background: isOpen ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.015)", border: isOpen ? "1px solid " + r.regime.color + "40" : "1px solid rgba(255,255,255,0.04)", borderRadius: 16, padding: 20, cursor: "pointer", transition: "all 0.2s" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: isOpen ? 12 : 8 }}>
                   <div>
-                    <div style={{ fontSize: 10, letterSpacing: 1, textTransform: "uppercase", color: r.regime.color, marginBottom: 4 }}>{r.regime.period}</div>
-                    <div style={{ fontSize: 16, fontFamily: "'DM Serif Display',serif", color: "rgba(255,255,255,0.9)" }}>{r.regime.name}</div>
+                    <div style={{ fontSize: 13, letterSpacing: 1, textTransform: "uppercase", color: r.regime.color, marginBottom: 4 }}>{r.regime.period}</div>
+                    <div style={{ fontSize: 20, color: "rgba(255,255,255,0.9)" }}>{r.regime.name}</div>
                   </div>
                   <div style={{ textAlign: "right" as const }}>
-                    <div style={{ fontSize: 22, fontFamily: "'DM Serif Display',serif", color: r.maxDD > 20 ? "#ef4444" : r.maxDD > 10 ? "#eab308" : "#22c55e" }}>-{r.maxDD.toFixed(1)}%</div>
-                    <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>Max Drawdown{useRealReturns ? " (real)" : ""}</div>
+                    <div style={{ fontSize: 28, color: r.maxDD > 20 ? "#ef4444" : r.maxDD > 10 ? "#eab308" : "#22c55e" }}>-{r.maxDD.toFixed(1)}%</div>
+                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>Max Drawdown{useRealReturns ? " (real)" : ""}</div>
                   </div>
                 </div>
                 {isOpen && <div style={{ marginBottom: 12, borderRadius: 8, overflow: "hidden", background: "rgba(0,0,0,0.15)", padding: "8px 4px 4px" }}><MiniChart path={r.path} color={r.regime.color} height={80} /></div>}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
-                  <div><div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>Trough</div><div style={{ fontSize: 13, fontFamily: "'DM Serif Display',serif", color: "rgba(255,255,255,0.7)" }}>{r.troughMonth} mo</div></div>
-                  <div><div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>Recovery</div><div style={{ fontSize: 13, fontFamily: "'DM Serif Display',serif", color: "rgba(255,255,255,0.7)" }}>{r.recoveryMonths !== null ? r.recoveryMonths + " mo" : "None"}</div></div>
-                  <div><div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>{fmt(initialValue) + " became"}</div><div style={{ fontSize: 13, fontFamily: "'DM Serif Display',serif", color: endVal >= initialValue ? "#63c8aa" : "#ef4444" }}>{fmt(endVal)}</div></div>
+                  <div><div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>Trough</div><div style={{ fontSize: 16, color: "rgba(255,255,255,0.7)" }}>{r.troughMonth} mo</div></div>
+                  <div><div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>Recovery</div><div style={{ fontSize: 16, color: "rgba(255,255,255,0.7)" }}>{r.recoveryMonths !== null ? r.recoveryMonths + " mo" : "None"}</div></div>
+                  <div><div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 1 }}>{fmt(initialValue) + " became"}</div><div style={{ fontSize: 16, color: endVal >= initialValue ? "#63c8aa" : "#ef4444" }}>{fmt(endVal)}</div></div>
                 </div>
                 {isOpen && (
                   <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(255,255,255,0.04)" }}>
-                    <div style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", lineHeight: 1.5, marginBottom: 6 }}>{r.regime.description}</div>
-                    <div style={{ fontSize: 11, color: "rgba(255,255,255,0.22)", lineHeight: 1.5, fontStyle: "italic", marginBottom: 10 }}>{r.regime.context}</div>
+                    <div style={{ fontSize: 14, color: "rgba(255,255,255,0.3)", lineHeight: 1.5, marginBottom: 6 }}>{r.regime.description}</div>
+                    <div style={{ fontSize: 14, color: "rgba(255,255,255,0.22)", lineHeight: 1.5, fontStyle: "italic", marginBottom: 10 }}>{r.regime.context}</div>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px" }}>
                       {ASSET_KEYS.filter((a: AssetKey) => allocation[a] > 0).sort((a: AssetKey, b: AssetKey) => r.assetReturns[b] - r.assetReturns[a]).map((a: AssetKey) => (
                         <div key={a} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                           <span style={{ display: "flex", alignItems: "center", gap: 5 }}>
                             <span style={{ width: 5, height: 5, borderRadius: "50%", background: ASSET_COLORS[a], display: "inline-block" }} />
-                            <span style={{ fontSize: 10, color: "rgba(255,255,255,0.35)" }}>{ASSET_LABELS[a]}</span>
+                            <span style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>{ASSET_LABELS[a]}</span>
                           </span>
-                          <span style={{ fontSize: 12, fontFamily: "'DM Serif Display',serif", color: r.assetReturns[a] >= 0 ? "#63c8aa" : "#ef4444" }}>{r.assetReturns[a] >= 0 ? "+" : ""}{r.assetReturns[a].toFixed(1)}%</span>
+                          <span style={{ fontSize: 15, color: r.assetReturns[a] >= 0 ? "#63c8aa" : "#ef4444" }}>{r.assetReturns[a] >= 0 ? "+" : ""}{r.assetReturns[a].toFixed(1)}%</span>
                         </div>
                       ))}
                     </div>
@@ -327,7 +327,7 @@ export default function RegimeStressTester() {
             );
           })}
 
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", lineHeight: 1.7, padding: "0 4px" }}>
+          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", lineHeight: 1.7, padding: "0 4px" }}>
             <strong style={{ color: "rgba(255,255,255,0.4)" }}>Data sources:</strong> S&amp;P 500 monthly prices and 10-year Treasury yields from Robert Shiller&apos;s ie_data.xls (Yale). Gold from LBMA monthly averages (NMA). International stocks from iShares EFA ETF monthly closes (Yahoo Finance) for 2001-2022 regimes; pre-2001 from MSCI EAFE annual returns (Brighthouse/Bloomberg). Cash from short-rate proxies. Bond returns from GS10 yield changes (modified duration 7). Real returns deflated by CPI. Monthly averages smooth daily extremes. Past performance is not indicative of future results. This tool is for educational purposes only and does not constitute financial advice. Errors or omissions may occur. Do your own research and consult a qualified, licensed adviser who understands your circumstances before acting on this content.
           </div>
         </div>
