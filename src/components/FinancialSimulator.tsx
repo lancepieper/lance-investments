@@ -266,7 +266,7 @@ export default function FinancialSimulator() {
             </div>
             <div className="sim-card">
               <div className="sim-section-title">Portfolio &amp; Contributions</div>
-              <InputField label="Current Portfolio Value" value={params.initialPortfolio} min={0} max={5000000} step={25000} onChange={(v) => update("initialPortfolio", v)} format={(v) => "$" + (v / 1000).toFixed(0) + "K"} />
+              <InputField label="Current Portfolio Value" value={params.initialPortfolio} min={0} max={10000000} step={25000} onChange={(v) => update("initialPortfolio", v)} format={(v) => v >= 1000000 ? "$" + (v / 1000000).toFixed(1) + "M" : "$" + (v / 1000).toFixed(0) + "K"} />
               <InputField label="Annual Contribution" value={params.annualContribution} min={0} max={200000} step={1000} onChange={(v) => update("annualContribution", v)} format={(v) => "$" + v.toLocaleString()} />
               <InputField label="Stop Contributing At" value={params.stopContribAge} min={params.currentAge} max={params.retirementAge} onChange={(v) => update("stopContribAge", v)} suffix=" yrs" />
             </div>
