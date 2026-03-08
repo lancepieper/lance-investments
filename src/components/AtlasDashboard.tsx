@@ -58,16 +58,16 @@ function regimeDisplayInfo(status: string): { activeStage: number; sublevel: str
 
 function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublevel: string }) {
   return (
-    <div className="flex items-center gap-0 w-full mb-3">
+    <div className="flex items-center gap-0 w-full mb-3 overflow-x-auto pb-2">
       {CYCLE_STAGES.map((stage, i) => {
         const isActive = stage.num === activeStage;
         const isPast = stage.num < activeStage;
         const isLast = i === CYCLE_STAGES.length - 1;
         return (
-          <div key={stage.num} className="flex items-center flex-1">
-            <div className="flex flex-col items-center flex-1">
+          <div key={stage.num} className="flex items-center flex-1 min-w-0">
+            <div className="flex flex-col items-center flex-1 min-w-[56px]">
               <div
-                className={`w-11 h-11 rounded-full flex items-center justify-center text-base font-bold border-2 transition-all ${
+                className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sm sm:text-base font-bold border-2 transition-all ${
                   isActive
                     ? "bg-gold-500/20 border-gold-500 text-gold-400 ring-2 ring-gold-500/20"
                     : isPast
@@ -78,7 +78,7 @@ function CycleIndicator({ activeStage, sublevel }: { activeStage: number; sublev
                 {stage.num}
               </div>
               <div className={`mt-2.5 text-center ${isActive ? "text-gold-400" : isPast ? "text-gray-500" : "text-gray-600"}`}>
-                <div className="text-xs font-semibold uppercase tracking-[0.05em] leading-tight">
+                <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.05em] leading-tight">
                   {stage.label}
                 </div>
                 <div className={`text-[11px] mt-0.5 ${isActive ? "text-gold-400/60" : isPast ? "text-gray-600" : "text-gray-700"}`}>
@@ -241,7 +241,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       </section>
 
       {/* ═══════ TIER BARS ═══════ */}
-      <div className="flex gap-5 mb-4">
+      <div className="flex flex-col sm:flex-row gap-5 mb-4">
         <TierBarCompact label="Lead Signals" score={current.tier1_score} max={current.tier1_max} />
         <TierBarCompact label="Escalation" score={current.tier2_score} max={current.tier2_max} />
         <TierBarCompact label="Structural" score={current.tier3_score} max={current.tier3_max} />
@@ -315,7 +315,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
           <SectionLabel>The Canary vs. Consensus</SectionLabel>
           <div className="text-[15px]">
             {narrative.consensus.map((row, i) => (
-              <div key={i} className={`grid grid-cols-[130px_1fr_1fr] gap-5 py-5 ${i < narrative.consensus.length - 1 ? "border-b border-navy-800/40" : ""}`}>
+              <div key={i} className={`grid grid-cols-1 sm:grid-cols-[130px_1fr_1fr] gap-3 sm:gap-5 py-5 ${i < narrative.consensus.length - 1 ? "border-b border-navy-800/40" : ""}`}>
                 <div className="font-semibold text-gray-200 text-[15px]">{row.topic}</div>
                 <div>
                   <div className="text-xs text-gray-500 uppercase tracking-[0.08em] mb-1.5">Wall Street</div>
