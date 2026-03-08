@@ -262,11 +262,11 @@ export default function FinancialSimulator() {
               <div className="sim-section-title">Client Profile</div>
               <InputField label="Current Age" value={params.currentAge} min={18} max={75} onChange={(v) => update("currentAge", v)} suffix=" yrs" />
               <InputField label="Retirement Age" value={params.retirementAge} min={params.currentAge + 1} max={85} onChange={(v) => update("retirementAge", v)} suffix=" yrs" />
-              <InputField label="Plan End Age" value={params.endAge} min={params.retirementAge + 1} max={110} onChange={(v) => update("endAge", v)} suffix=" yrs" />
+              <InputField label="Plan End Age" value={params.endAge} min={90} max={110} onChange={(v) => update("endAge", v)} suffix=" yrs" />
             </div>
             <div className="sim-card">
               <div className="sim-section-title">Portfolio &amp; Contributions</div>
-              <InputField label="Initial Portfolio" value={params.initialPortfolio} min={0} max={5000000} step={25000} onChange={(v) => update("initialPortfolio", v)} format={(v) => "$" + (v / 1000).toFixed(0) + "K"} />
+              <InputField label="Current Portfolio Value" value={params.initialPortfolio} min={0} max={5000000} step={25000} onChange={(v) => update("initialPortfolio", v)} format={(v) => "$" + (v / 1000).toFixed(0) + "K"} />
               <InputField label="Annual Contribution" value={params.annualContribution} min={0} max={200000} step={1000} onChange={(v) => update("annualContribution", v)} format={(v) => "$" + v.toLocaleString()} />
               <InputField label="Stop Contributing At" value={params.stopContribAge} min={params.currentAge} max={params.retirementAge} onChange={(v) => update("stopContribAge", v)} suffix=" yrs" />
             </div>
