@@ -281,7 +281,7 @@ export default function FinancialSimulator() {
             <div className="sim-card">
               <div className="sim-section-title">Retirement Income</div>
               <InputField label="After-Tax Income Need" value={params.incomeNeedAfterTax} min={20000} max={500000} step={5000} onChange={(v) => update("incomeNeedAfterTax", v)} format={(v) => "$" + v.toLocaleString()} />
-              <InputField label="Other Income (SS, etc.)" value={params.otherIncome} min={0} max={200000} step={2000} onChange={(v) => update("otherIncome", v)} format={(v) => "$" + v.toLocaleString()} />
+              <InputField label="Other Income (Social Security, etc.)" value={params.otherIncome} min={0} max={200000} step={2000} onChange={(v) => update("otherIncome", v)} format={(v) => "$" + v.toLocaleString()} />
               <InputField label="Effective Tax Rate" value={params.taxRate} min={0} max={0.40} step={0.01} onChange={(v) => update("taxRate", v)} format={(v) => (v * 100).toFixed(0) + "%"} />
               <div className="mt-2 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
                 <div className="flex justify-between mb-1.5">
