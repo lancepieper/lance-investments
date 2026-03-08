@@ -305,8 +305,8 @@ export default function FinancialSimulator() {
               <div className="flex flex-col gap-3 flex-1 min-w-[300px]">
                 <div className="flex gap-3 flex-wrap">
                   <StatCard label="Median Ending" value={fmt(medianEnd)} sub={"at age " + params.endAge} />
-                  <StatCard label="10th Pct" value={fmt(result.stats[result.stats.length - 1]?.p10 ?? 0)} sub="Bear case" />
-                  <StatCard label="90th Pct" value={fmt(result.stats[result.stats.length - 1]?.p90 ?? 0)} sub="Bull case" />
+                  <StatCard label="10th Pct" value={fmt(result.stats[result.stats.length - 1]?.p10 ?? 0)} sub="Downside" />
+                  <StatCard label="90th Pct" value={fmt(result.stats[result.stats.length - 1]?.p90 ?? 0)} sub="Upside" />
                 </div>
                 <div className="flex gap-3 flex-wrap">
                   <StatCard label="Portfolio @ Retire" value={fmt(retireMedian)} sub={"age " + params.retirementAge + " median"} />
