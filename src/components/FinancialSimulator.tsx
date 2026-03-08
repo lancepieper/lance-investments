@@ -225,7 +225,7 @@ export default function FinancialSimulator() {
     retireReturn: 0.08, retireStdDev: 0.06,
     taxRate: 0.15, incomeNeedAfterTax: 150000, otherIncome: 24000,
   });
-  const [numSims, setNumSims] = useState(300);
+  const numSims = 1000;
   const [runKey, setRunKey] = useState(0);
   const update = (key: keyof SimParams, val: number) => setParams((p) => ({ ...p, [key]: val }));
   const result = useMemo(() => runSimulation(params, numSims), [params, numSims, runKey]);
@@ -293,10 +293,6 @@ export default function FinancialSimulator() {
                   <span className="text-[13px]" style={{ fontFamily: "var(--font-display)", color: "var(--sim-accent)" }}>{"$" + Math.round(portfolioIncome).toLocaleString() + "/yr"}</span>
                 </div>
               </div>
-            </div>
-            <div className="sim-card">
-              <div className="sim-section-title">Simulation</div>
-              <InputField label="Number of Runs" value={numSims} min={50} max={1000} step={50} onChange={(v) => setNumSims(v)} />
             </div>
           </div>
           <div className="flex flex-col gap-5 sim-fade-in">
