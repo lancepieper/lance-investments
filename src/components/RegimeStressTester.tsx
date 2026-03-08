@@ -216,8 +216,8 @@ export default function RegimeStressTester() {
       <div style={{ padding: "24px 28px 8px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 12 }}>
         <div>
           <div style={{ fontSize: 13, letterSpacing: 3, textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>Historical Stress Test</div>
-          <h1 style={{ fontSize: 34, fontWeight: 400, margin: 0 }}>Portfolio Regime Tester</h1>
-          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.35)", marginTop: 6, maxWidth: 520 }}>Pick your allocation. See how it would have performed through the worst market crises of the last 50 years.</p>
+          <h1 style={{ fontSize: 34, fontWeight: 400, margin: 0 }}>Portfolio Stress Tester</h1>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.35)", marginTop: 6, maxWidth: 520 }}>Pick your allocation. See how it would have performed through the worst market crises of the last 60 years.</p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 1, marginTop: 4, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: 3 }}>
           <button onClick={() => setUseRealReturns(false)} style={toggleBtn(!useRealReturns)}>Nominal</button>
