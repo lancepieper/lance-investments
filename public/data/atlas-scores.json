@@ -1,7 +1,7 @@
 {
-  "published_at": "2026-03-04T18:09:46Z",
+  "published_at": "2026-03-09T12:00:00Z",
   "current": {
-    "date": "2026-03-04",
+    "date": "2026-03-09",
     "regime_status": "Emerging Disorder \u2014 Elevated",
     "tier1_score": 5.0,
     "tier1_max": 10,
@@ -9,7 +9,7 @@
     "tier2_score": 5.0,
     "tier2_max": 18,
     "tier2_count": 9,
-    "tier3_score": 6.0,
+    "tier3_score": 5.0,
     "tier3_max": 12,
     "tier3_count": 6,
     "overrides": [],
@@ -19,24 +19,24 @@
         "name": "Gold Momentum",
         "tier": 1,
         "score": 2.0,
-        "raw_value": 5152.4,
-        "notes": "Gold=$5152, YoY=+77.1%, 8wk=+15.8%"
+        "raw_value": 5081.0,
+        "notes": "Gold=$5081, YoY=+74.9%, 8wk=+10.4%"
       },
       {
         "num": 2,
         "name": "Gold/Treasury Divergence",
         "tier": 1,
         "score": 2.0,
-        "raw_value": 77.08276051690953,
-        "notes": "Gold YoY=+77.1%, 10Y chg=-0.17%. STEALTH SUPPRESSION \u2014 gold surging while yields fall"
+        "raw_value": 74.9,
+        "notes": "Gold YoY=+74.9%, 10Y chg=-0.19%. STEALTH SUPPRESSION \u2014 gold surging while yields fall"
       },
       {
         "num": 3,
         "name": "Fed Balance Sheet",
         "tier": 1,
         "score": 1.0,
-        "raw_value": 6613797.0,
-        "notes": "Assets=$6.61T. 3mo chg=+1.2%. Purchase pace=$40B/mo. Expanding via purchases"
+        "raw_value": 6630000.0,
+        "notes": "Assets=$6.63T. 3mo chg=+1.4%. Purchase pace=$40B/mo. Expanding via purchases"
       },
       {
         "num": 4,
@@ -51,15 +51,15 @@
         "name": "IORB-SOFR Spread",
         "tier": 1,
         "score": 0.0,
-        "raw_value": -5.000000000000027,
-        "notes": "IORB=3.65%, SOFR=3.70%, Spread=-5.0bps"
+        "raw_value": -1.0,
+        "notes": "IORB=3.65%, SOFR=3.66%, Spread=-1.0bps"
       },
       {
         "num": 6,
         "name": "Foreign Treasury Holdings",
         "tier": 2,
         "score": 0.0,
-        "raw_value": 9248.4,
+        "raw_value": 9200.0,
         "notes": "$9.2T, 2mo trend=stable/rising"
       },
       {
@@ -99,23 +99,23 @@
         "name": "DXY",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 98.84,
-        "notes": "DXY=98.8, 8wk chg=+0.2%"
+        "raw_value": 99.7,
+        "notes": "DXY=99.7, 8wk chg=+0.8%"
       },
       {
         "num": 12,
         "name": "Gold/Fed BS Ratio",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 0.2037176324465961,
-        "notes": "Coverage=20.4%. Gold reserves=$1.35T vs Fed=$6.61T. Target: 33-50%"
+        "raw_value": 0.20,
+        "notes": "Coverage=20.0%. Gold reserves=$1.33T vs Fed=$6.63T. Target: 33-50%"
       },
       {
         "num": 13,
         "name": "Deficit/GDP",
         "tier": 3,
         "score": 1.0,
-        "raw_value": 5.76808,
+        "raw_value": 5.8,
         "notes": "Deficit = 5.8% of GDP"
       },
       {
@@ -139,16 +139,16 @@
         "name": "S&P/Gold Ratio",
         "tier": 3,
         "score": 1.0,
-        "raw_value": 1.3230009316046891,
-        "notes": "S&P=6817 / Gold=5152 = 1.32"
+        "raw_value": 1.33,
+        "notes": "S&P=6740 / Gold=5081 = 1.33"
       },
       {
         "num": 17,
         "name": "Commodity/Gold Ratio",
         "tier": 3,
-        "score": 2.0,
-        "raw_value": 0.12616838754755066,
-        "notes": "GSCI=650, Gold=$5152, Ratio=0.1262 (YoY=-33.2%)"
+        "score": 1.0,
+        "raw_value": 0.1522,
+        "notes": "GSCI=773, Gold=$5081, Ratio=0.1522 (YoY=-19.8%)"
       },
       {
         "num": 18,
@@ -196,6 +196,13 @@
       "tier1_score": 5.0,
       "tier2_score": 5.0,
       "tier3_score": 6.0,
+      "regime_status": "Emerging Disorder \u2014 Elevated"
+    },
+    {
+      "date": "2026-03-09",
+      "tier1_score": 5.0,
+      "tier2_score": 5.0,
+      "tier3_score": 5.0,
       "regime_status": "Emerging Disorder \u2014 Elevated"
     }
   ]
