@@ -134,7 +134,7 @@ function TierBarCompact({ label, score, max }: { label: string; score: number; m
 
 function IndicatorRow({ indicator }: { indicator: AtlasIndicator }) {
   const sc = scoreColor(indicator.score);
-  const isUnprecedented = indicator.num >= 18;
+  const isUnprecedented = false;
   return (
     <div className="flex items-start gap-2.5 py-[7px] border-b border-navy-800/40 last:border-0">
       <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded min-w-[28px] text-center ${sc.bg} ${sc.text}`}>
@@ -165,6 +165,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [waitlisted, setWaitlisted] = useState(false);
+  const [showEvidence, setShowEvidence] = useState(false);
 
   const handleWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -251,7 +252,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
       <div className="mb-10 rounded-md border border-navy-800 bg-navy-900/60 p-5 text-sm text-gray-400 leading-relaxed space-y-3">
         <h3 className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-3">How Scoring Works</h3>
           <p>
-            Each of the 20 indicators scores <span className="text-gray-300 font-medium">0</span> (no signal),{" "}
+            Each of the 21 indicators scores <span className="text-gray-300 font-medium">0</span> (no signal),{" "}
             <span className="text-amber-400 font-medium">1</span> (emerging), or{" "}
             <span className="text-red-400 font-medium">2</span> (confirmed). Tier scores are the sum of their indicators.
           </p>
@@ -339,7 +340,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
               Full Dashboard Coming Soon
             </div>
             <div className="text-base text-gray-400 max-w-[520px] mx-auto mb-2 leading-relaxed">
-              Built for investors who want signal before the consensus catches up. Positioning guidance, escalation triggers, historical track record, and the full 20-indicator evidence table will be available to paid subscribers.
+              Built for investors who want signal before the consensus catches up. Positioning guidance, escalation triggers, historical track record, and the full 21-indicator evidence table will be available to paid subscribers.
             </div>
             <div className="text-sm text-gray-500 max-w-[460px] mx-auto mb-6">
               Join the waitlist to be notified when subscriptions launch. No obligation — your information is only used to send updates.
@@ -378,7 +379,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
               You&apos;re on the list
             </div>
             <div className="text-sm text-gray-400 max-w-[500px] mx-auto leading-relaxed">
-              We&apos;ll notify you when paid subscriptions launch. The full dashboard includes positioning guidance, specific escalation and de-escalation triggers, historical track record, and the complete 20-indicator evidence table.
+              We&apos;ll notify you when paid subscriptions launch. The full dashboard includes positioning guidance, specific escalation and de-escalation triggers, historical track record, and the complete 21-indicator evidence table.
             </div>
           </>
         )}

@@ -6,9 +6,9 @@
     "tier1_score": 5.0,
     "tier1_max": 10,
     "tier1_count": 5,
-    "tier2_score": 5.0,
-    "tier2_max": 18,
-    "tier2_count": 9,
+    "tier2_score": 7.0,
+    "tier2_max": 20,
+    "tier2_count": 10,
     "tier3_score": 5.0,
     "tier3_max": 12,
     "tier3_count": 6,
@@ -173,6 +173,14 @@
         "score": 2.0,
         "raw_value": 800.0,
         "notes": "Cumulative deficit=800 Moz. Latest annual=117 Moz. SLV=318M oz"
+      },
+      {
+        "num": 21,
+        "name": "Oil / SPR Capacity Ratio",
+        "tier": 2,
+        "score": 2.0,
+        "raw_value": 260.0,
+        "notes": "Oil=$108, SPR=415M bbl. Ratio=260. Highest in history."
       }
     ]
   },
@@ -201,7 +209,7 @@
     {
       "date": "2026-03-09",
       "tier1_score": 5.0,
-      "tier2_score": 5.0,
+      "tier2_score": 7.0,
       "tier3_score": 5.0,
       "regime_status": "Emerging Disorder \u2014 Elevated"
     }

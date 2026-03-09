@@ -6,7 +6,7 @@ import AtlasDashboard from "@/components/AtlasDashboard";
 export const metadata: Metadata = {
   title: "The Canary | Lance Pieper",
   description:
-    "A live dashboard tracking 20 macro indicators to detect monetary system transitions and investment implications.",
+    "A live dashboard tracking 21 macro indicators to detect monetary system transitions and investment implications.",
 };
 
 export interface AtlasIndicator {
