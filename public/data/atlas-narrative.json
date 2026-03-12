@@ -1,71 +1,212 @@
 {
   "what_changed": [
-    { "type": "new", "text": "Gold surged past +75% YoY with 8-week momentum at +10%. Both Gold Momentum and Treasury Divergence at maximum." },
-    { "type": "new", "text": "DXY remains below 100 at 99.7. Dollar weakness score escalated 0 \u2192 1." },
-    { "type": "new", "text": "Commodity/Gold ratio down 20% YoY \u2014 scoring at 1. This is a monetary signal, not inflation." },
-    { "type": "new", "text": "Oil/SPR Capacity Ratio added at score 2 (260). Oil at $108 with SPR at 415M barrels — highest reading in history. The primary circuit breaker for oil shocks cannot function at the scale needed." }
+    {
+      "type": "new",
+      "text": "Status escalated to Crisis Acceleration — Transition. Tier 2 confirming score reached 6/20, crossing the combined T1+T2 gate."
+    },
+    {
+      "type": "new",
+      "text": "Gold at $5,069 with YoY at +72% and 8-week momentum at +9.8%. Both Gold Momentum and Treasury Divergence at maximum."
+    },
+    {
+      "type": "new",
+      "text": "Commodity/Gold ratio collapsed 25% YoY — scoring at 1. Gold repricing against everything, not an inflation trade."
+    },
+    {
+      "type": "new",
+      "text": "Oil/SPR Capacity Ratio at score 2. Oil at $96 with SPR at 415M barrels — refill capacity severely constrained at current prices."
+    }
   ],
   "contrarian": [
-    "Wall Street is framing gold\u2019s run as an inflation trade. <strong>The Canary says otherwise.</strong> If this were inflation, commodities would be running with gold \u2014 copper, oil, and the GSCI would be surging. Instead, the commodity/gold ratio has collapsed 20%. Gold is repricing against <em>everything</em>: stocks, bonds, and commodities alike.",
-    "This is a monetary confidence signal. Gold is telling you something about the monetary system itself, not about CPI prints. Gold has posted +75% YoY while Treasury yields stayed flat \u2014 the last time a divergence this extreme appeared was the early 1970s, after Nixon closed the gold window but before the market fully processed the implications.",
-    "Meanwhile, the Fed is quietly expanding its balance sheet through $40B/month in short-duration purchases while publicly maintaining a tightening stance. The Canary sees through the narrative to the mechanism: the balance sheet is growing, and the purchases are only \u201cshort duration\u201d for now. New supply-chain indicators add another layer: copper smelters are paying miners to take concentrate (TC/RCs at $0), and the silver market is running its 5th consecutive annual deficit with 800 million ounces of cumulative shortfall. Meanwhile, crude oil has surged from under $70 to $108 in nine days while the SPR sits at 58% capacity \u2014 the Oil/SPR Capacity Ratio is at its highest reading in history."
+    "Wall Street is framing gold’s run as an inflation trade. <strong>The Canary says otherwise.</strong> If this were inflation, commodities would be running with gold — copper, oil, and the GSCI would be surging. Instead, the commodity/gold ratio has collapsed 25%. Gold is repricing against <em>everything</em>: stocks, bonds, and commodities alike.",
+    "This is a monetary confidence signal. Gold is telling you something about the monetary system itself, not about CPI prints. Gold has posted +72% YoY while Treasury yields stayed flat — the last time a divergence this extreme appeared was the early 1970s, after Nixon closed the gold window but before the market fully processed the implications.",
+    "Meanwhile, the Fed is quietly expanding its balance sheet through $40B/month in short-duration purchases while publicly maintaining a tightening stance. The Canary sees through the narrative to the mechanism: the balance sheet is growing, and the purchases are only “short duration” for now. New supply-chain indicators add another layer: copper smelters are paying miners to take concentrate (TC/RCs at $0), and the silver market is running its 5th consecutive annual deficit with 800 million ounces of cumulative shortfall. Meanwhile, crude oil is at $96 while the SPR sits at 58% capacity — refill capacity is severely constrained at current prices."
   ],
   "divergence": {
-    "description": "The single most predictive indicator in The Canary. When gold surges and yields don\u2019t follow, the bond market is being artificially suppressed \u2014 either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
-    "months": ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
-    "gold": [3120, 3210, 3370, 3340, 3350, 3550, 3870, 4000, 4240, 4310, 4620, 5081],
-    "yields": [4.17, 4.25, 4.46, 4.26, 4.23, 4.28, 4.12, 4.13, 4.09, 4.19, 4.29, 3.97],
-    "gold_change": "+75%",
-    "yield_change": "\u22120.19%",
-    "current_reading": "<strong>Current reading:</strong> Gold +75% YoY while 10Y yields are flat (\u22120.19%). The gold-colored area shows the divergence at its widest point in modern history \u2014 gold has nearly doubled in a year while the bond market hasn\u2019t moved. Historically, this gap closes violently: either yields spike to catch up (bad for bonds), or gold is proven right about debasement (bad for the monetary system). At this magnitude, the divergence has moved beyond \u201ctension\u201d into \u201cstealth suppression.\u201d"
+    "description": "The single most predictive indicator in The Canary. When gold surges and yields don’t follow, the bond market is being artificially suppressed — either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
+    "months": [
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+      "Jan",
+      "Feb",
+      "Mar"
+    ],
+    "gold": [
+      3120,
+      3210,
+      3370,
+      3340,
+      3350,
+      3550,
+      3870,
+      4000,
+      4240,
+      4310,
+      4620,
+      5069
+    ],
+    "yields": [
+      4.17,
+      4.25,
+      4.46,
+      4.26,
+      4.23,
+      4.28,
+      4.12,
+      4.13,
+      4.09,
+      4.19,
+      4.29,
+      4.21
+    ],
+    "gold_change": "+72%",
+    "yield_change": "flat",
+    "current_reading": "<strong>Current reading:</strong> Gold +72% YoY while 10Y yields are flat. The gold-colored area shows the divergence at its widest point in modern history — gold has nearly doubled in a year while the bond market hasn’t moved. Historically, this gap closes violently: either yields spike to catch up (bad for bonds), or gold is proven right about debasement (bad for the monetary system). At this magnitude, the divergence has moved beyond “tension” into “stealth suppression.”"
   },
   "consensus": [
-    { "topic": "Gold\u2019s rally", "wall_street": "Inflation hedge / geopolitical risk premium", "atlas": "Monetary confidence erosion \u2014 confirmed by commodity/gold ratio collapse" },
-    { "topic": "Oil shock", "wall_street": "Strategic Petroleum Reserve has 415 million barrels \u2014 adequate reserve capacity", "atlas": "Oil/SPR ratio at 260 \u2014 highest in history. The 2022 circuit breaker required 180M barrels at $120 oil. Repeating it today would drain reserves to crisis lows." },
-    { "topic": "Fed policy", "wall_street": "Tightening cycle complete, cuts coming", "atlas": "Stealth expansion: $40B/mo purchases, QT over. Direction matters more than rate level" },
-    { "topic": "Treasury market", "wall_street": "Yields stable = market functioning", "atlas": "Yields suppressed by Fed purchases. Auction demand masked. Real demand deteriorating" },
-    { "topic": "Dollar outlook", "wall_street": "Structurally strong, reserve currency status intact", "atlas": "DXY broke 100. Foreign official holders reducing. Early stage of reserve diversification" },
-    { "topic": "Copper supply", "wall_street": "Inventories high \u2014 no shortage", "atlas": "TC/RCs at $0 says smelters are in crisis. Headline inventory masks geographic dislocation and tariff front-loading" }
+    {
+      "topic": "Gold’s rally",
+      "wall_street": "Inflation hedge / geopolitical risk premium",
+      "atlas": "Monetary confidence erosion — confirmed by commodity/gold ratio collapse"
+    },
+    {
+      "topic": "Oil shock",
+      "wall_street": "Strategic Petroleum Reserve has 415 million barrels — adequate reserve capacity",
+      "atlas": "Oil at $96 with SPR at 415M bbl. The 2022 circuit breaker required 180M barrels at $120 oil. Refill capacity constrained — limited room to repeat the 2022 intervention."
+    },
+    {
+      "topic": "Fed policy",
+      "wall_street": "Tightening cycle complete, cuts coming",
+      "atlas": "Stealth expansion: $40B/mo purchases, QT over. Direction matters more than rate level"
+    },
+    {
+      "topic": "Treasury market",
+      "wall_street": "Yields stable = market functioning",
+      "atlas": "Yields suppressed by Fed purchases. Auction demand masked. Real demand deteriorating"
+    },
+    {
+      "topic": "Dollar outlook",
+      "wall_street": "Structurally strong, reserve currency status intact",
+      "atlas": "DXY broke 100. Foreign official holders reducing. Early stage of reserve diversification"
+    },
+    {
+      "topic": "Copper supply",
+      "wall_street": "Inventories high — no shortage",
+      "atlas": "TC/RCs at $0 says smelters are in crisis. Headline inventory masks geographic dislocation and tariff front-loading"
+    }
   ],
   "positioning": {
-    "intro": "<strong>Early Warning is the building phase, not the panic phase.</strong> Historically, the transition from Early Warning to Crisis takes 6\u201318 months, and the largest gains in gold, Bitcoin, and hard assets occur <em>during</em> the transition \u2014 not after crisis is confirmed. The Canary includes a short-term Treasury buffer \u2014 not a duration bet or a conviction compromise, but a liquidity parking lot that gets eliminated at Crisis Acceleration when Treasuries themselves become the problem.",
+    "intro": "<strong>Crisis Acceleration — Transition is the phase where signals compound.</strong> The Canary has crossed the combined T1+T2 gate. Historically, the largest gains in gold, Bitcoin, and hard assets occur <em>during</em> this transition — not after crisis is fully confirmed. The short-term Treasury buffer remains for now as a liquidity parking lot, but gets eliminated if the framework reaches full Crisis Acceleration — the point where Treasuries themselves become the problem.",
     "posture": [
-      { "color": "emerald", "label": "Gold \u2014 overweight", "reason": "Gold Momentum + Divergence both at 2 simultaneously. This signal cluster has preceded every major regime transition. At +75% YoY, momentum has already exceeded the Score 2 threshold." },
-      { "color": "emerald", "label": "Bitcoin \u2014 overweight", "reason": "Functions as high-beta gold in monetary regime transitions. Dropped 57% in 2020 acute crisis, then 18x\u2019d. Position size for volatility." },
-      { "color": "amber", "label": "Short-term Treasuries \u2014 hold", "reason": "T-bills under 1-year maturity. Reduces portfolio volatility and provides dry powder to deploy during drawdowns. Eliminated at Crisis Acceleration when Treasuries themselves become the problem." },
-      { "color": "amber", "label": "Critical materials \u2014 overweight", "reason": "Copper TC/RCs scoring at 2 (smelters paying miners). Physical premium at 4% \u2014 below the 5% trigger but elevated. If China escalates export controls, conviction increases." },
-      { "color": "red", "label": "Equities \u2014 underweight", "reason": "S&P/Gold ratio at 1.33 and falling \u2014 equities losing purchasing power in real terms. Full elimination at Crisis Acceleration." },
-      { "color": "red", "label": "Long Treasuries \u2014 underweight", "reason": "The Gold/Treasury Divergence says yields are artificially suppressed. The T-bill buffer gives short-duration exposure; long duration carries asymmetric downside when the divergence closes." }
+      {
+        "color": "emerald",
+        "label": "Gold — overweight",
+        "reason": "Gold Momentum + Divergence both at 2 simultaneously. This signal cluster has preceded every major regime transition. At +72% YoY, momentum has already exceeded the Score 2 threshold."
+      },
+      {
+        "color": "emerald",
+        "label": "Bitcoin — overweight",
+        "reason": "Functions as high-beta gold in monetary regime transitions. Dropped 57% in 2020 acute crisis, then 18x’d. Position size for volatility."
+      },
+      {
+        "color": "amber",
+        "label": "Short-term Treasuries — hold",
+        "reason": "T-bills under 1-year maturity. Reduces portfolio volatility and provides dry powder to deploy during drawdowns. Eliminated at Crisis Acceleration when Treasuries themselves become the problem."
+      },
+      {
+        "color": "amber",
+        "label": "Critical materials — overweight",
+        "reason": "Copper TC/RCs scoring at 2 (smelters paying miners). Physical premium at 4% — below the 5% trigger but elevated. If China escalates export controls, conviction increases."
+      },
+      {
+        "color": "red",
+        "label": "Equities — underweight",
+        "reason": "S&P/Gold ratio at 1.34 and falling — equities losing purchasing power in real terms. Full elimination at Crisis Acceleration."
+      },
+      {
+        "color": "red",
+        "label": "Long Treasuries — underweight",
+        "reason": "The Gold/Treasury Divergence says yields are artificially suppressed. The T-bill buffer gives short-duration exposure; long duration carries asymmetric downside when the divergence closes."
+      }
     ]
   },
   "triggers": {
     "escalation": [
-      "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Early Warning or above \u2192 immediate Crisis Acceleration (Override Rule #4). QE launched from Stable does not trigger \u2014 it\u2019s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
-      "Treasury auction B/C drops below <strong>2.0</strong> \u2192 demand crisis signal. Currently masked by Fed purchases \u2014 watch what happens if they pause.",
-      "Tier 2 confirming score reaches <strong>\u22656</strong> (currently 7/20) \u2192 triggers Transition via combined T1+T2 gate. Watch copper premiums, China controls, and Fed deferred asset for movement.",
-      "Gold 8-week momentum breaks <strong>+15%</strong> \u2192 acceleration signal. Currently at +10.4% \u2014 below the threshold."
+      "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Early Warning or above → immediate Crisis Acceleration (Override Rule #4). QE launched from Stable does not trigger — it’s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
+      "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis signal. Currently masked by Fed purchases — watch what happens if they pause.",
+      "Tier 2 confirming score reaches <strong>≥6</strong> (currently 6/20) → triggers Transition via combined T1+T2 gate. Watch copper premiums, China controls, and Fed deferred asset for movement.",
+      "Gold 8-week momentum breaks <strong>+15%</strong> → acceleration signal. Currently at +9.8% — below the threshold."
     ],
     "deescalation": [
-      "Gold YoY drops below <strong>+30%</strong> while yields rise \u2192 genuine tightening. Divergence closes from the gold side.",
-      "Fed <strong>resumes QT</strong> at full pace \u2192 balance sheet contracting. Not just slowing purchases \u2014 actively shrinking.",
-      "Tier 1 drops to <strong>0\u20132</strong> (currently 5/10) \u2192 returns to Stable. Would require gold momentum AND divergence to normalize.",
-      "Deficit/GDP falls below <strong>5%</strong> \u2192 structural fiscal pressure easing. Currently at 5.8% and rising."
+      "Gold YoY drops below <strong>+30%</strong> while yields rise → genuine tightening. Divergence closes from the gold side.",
+      "Fed <strong>resumes QT</strong> at full pace → balance sheet contracting. Not just slowing purchases — actively shrinking.",
+      "Tier 1 drops to <strong>0–2</strong> (currently 5/10) → returns to Stable. Would require gold momentum AND divergence to normalize.",
+      "Deficit/GDP falls below <strong>5%</strong> → structural fiscal pressure easing. Currently at ?% and rising."
     ]
   },
   "track_record": {
-    "intro": "Applied retroactively across nine historical periods, The Canary identified every major regime transition 3\u20136 months early with near-zero false positives.",
+    "intro": "Applied retroactively across nine historical periods, The Canary identified every major regime transition 3–6 months early with near-zero false positives.",
     "confirmed": [
-      { "year": "1971\u201373", "label": "Nixon Shock", "signal": "Early Warning \u2192 Crisis Acceleration", "lead": "6 months early", "result": "Gold +375% over next 3 years" },
-      { "year": "2008\u201309", "label": "Global Financial Crisis", "signal": "Early Warning \u2192 Crisis Acceleration", "lead": "3 months before QE1", "result": "Gold +170% from crisis to peak" },
-      { "year": "2020", "label": "COVID Monetary Flood", "signal": "Early Warning at onset", "lead": "Real-time detection", "result": "Gold +30%, BTC +1,692% from lows" }
+      {
+        "year": "1971–73",
+        "label": "Nixon Shock",
+        "signal": "Early Warning → Crisis Acceleration",
+        "lead": "6 months early",
+        "result": "Gold +375% over next 3 years"
+      },
+      {
+        "year": "2008–09",
+        "label": "Global Financial Crisis",
+        "signal": "Early Warning → Crisis Acceleration",
+        "lead": "3 months before QE1",
+        "result": "Gold +170% from crisis to peak"
+      },
+      {
+        "year": "2020",
+        "label": "COVID Monetary Flood",
+        "signal": "Early Warning at onset",
+        "lead": "Real-time detection",
+        "result": "Gold +30%, BTC +1,692% from lows"
+      }
     ],
     "adversarial": [
-      { "year": "2015\u201316", "label": "Gold rally (+25%)", "result": "No signal \u2714 \u2014 cyclical bounce with no yield divergence or Fed expansion. Gold reversed within a year." },
-      { "year": "2013\u201315", "label": "Gold bear market (\u221245%)", "result": "No false signal \u2714 \u2014 real tightening with rising yields. The system correctly read this as non-monetary." },
-      { "year": "2018", "label": "Fed tightening cycle", "result": "No false signal \u2714 \u2014 QT was running and balance sheet shrinking. No divergence to trigger on." },
-      { "year": "1998", "label": "LTCM / Russia crisis", "result": "Correctly filtered \u2714 \u2014 financial stress but no monetary regime implications. Fed cut rates and markets stabilized." },
-      { "year": "2022\u201323", "label": "SVB banking stress", "result": "Brief signal, self-corrected \u2714 \u2014 initial spike in Fed lending resolved within weeks. No sustained monetary shift." },
-      { "year": "Japan", "label": "30-year balance sheet expansion", "result": "Right on direction, open on timing \u2014 BOJ\u2019s experiment is still running. The framework flags the trajectory correctly but can\u2019t call the endpoint." }
+      {
+        "year": "2015–16",
+        "label": "Gold rally (+25%)",
+        "result": "No signal ✔ — cyclical bounce with no yield divergence or Fed expansion. Gold reversed within a year."
+      },
+      {
+        "year": "2013–15",
+        "label": "Gold bear market (−45%)",
+        "result": "No false signal ✔ — real tightening with rising yields. The system correctly read this as non-monetary."
+      },
+      {
+        "year": "2018",
+        "label": "Fed tightening cycle",
+        "result": "No false signal ✔ — QT was running and balance sheet shrinking. No divergence to trigger on."
+      },
+      {
+        "year": "1998",
+        "label": "LTCM / Russia crisis",
+        "result": "Correctly filtered ✔ — financial stress but no monetary regime implications. Fed cut rates and markets stabilized."
+      },
+      {
+        "year": "2022–23",
+        "label": "SVB banking stress",
+        "result": "Brief signal, self-corrected ✔ — initial spike in Fed lending resolved within weeks. No sustained monetary shift."
+      },
+      {
+        "year": "Japan",
+        "label": "30-year balance sheet expansion",
+        "result": "Right on direction, open on timing — BOJ’s experiment is still running. The framework flags the trajectory correctly but can’t call the endpoint."
+      }
     ]
   }
 }
