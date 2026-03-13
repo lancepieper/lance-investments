@@ -385,9 +385,137 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         )}
       </div>
 
-      {/* ═══════ PAID CONTENT — uncomment when subscription system is ready ═══════ */}
-      {/* Paid sections: Positioning, Triggers, Track Record, History Chart, Evidence Table */}
-      {/* These are rendered from narrative JSON and scores JSON — code preserved in git history */}
+      {/* ═══════ ROW C: POSITIONING + TRIGGERS ═══════ */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        {narrative?.positioning && (
+          <Card className="flex flex-col">
+            <SectionLabel>What to Do About It</SectionLabel>
+            <div className="text-base text-gray-300 leading-[1.8] mb-4"
+              dangerouslySetInnerHTML={{ __html: narrative.positioning.intro }}
+            />
+            <div className="rounded-md bg-navy-800/50 p-5">
+              <div className="text-xs text-gold-400 font-semibold uppercase tracking-[0.08em] mb-3">
+                Canary Posture — {regimeDisplayInfo(current.regime_status).sublevel}
+              </div>
+              {narrative.positioning.posture.map((item: { color: string; label: string; reason: string }, i: number) => (
+                <div key={i} className={`py-2.5 ${i < narrative.positioning.posture.length - 1 ? "border-b border-navy-800/40" : ""}`}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className={`text-sm ${postureColor(item.color)}`}>■</span>
+                    <span className="text-[15px] font-semibold text-gray-200">{item.label}</span>
+                  </div>
+                  <div className="text-sm text-gray-400 ml-[22px] leading-relaxed">{item.reason}</div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        )}
+
+        {narrative?.triggers && (
+          <Card className="flex flex-col">
+            <SectionLabel>What Would Change This Reading</SectionLabel>
+            <div className="space-y-4">
+              <div className="rounded-md bg-red-500/5 border border-red-500/12 p-4">
+                <div className="text-xs text-red-400 font-semibold uppercase tracking-[0.08em] mb-2.5">▲ Escalation Triggers</div>
+                <div className="text-[15px] text-gray-300 leading-relaxed space-y-2">
+                  {narrative.triggers.escalation.map((t: string, i: number) => (
+                    <div key={i} dangerouslySetInnerHTML={{ __html: t }} />
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-md bg-emerald-500/5 border border-emerald-500/12 p-4">
+                <div className="text-xs text-emerald-400 font-semibold uppercase tracking-[0.08em] mb-2.5">▼ De-escalation Signals</div>
+                <div className="text-[15px] text-gray-300 leading-relaxed space-y-2">
+                  {narrative.triggers.deescalation.map((t: string, i: number) => (
+                    <div key={i} dangerouslySetInnerHTML={{ __html: t }} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Card>
+        )}
+      </div>
+
+      {/* ═══════ TRACK RECORD ═══════ */}
+      {narrative?.track_record && (
+        <Card className="mb-8">
+          <SectionLabel>Track Record</SectionLabel>
+          <div className="text-base text-gray-300 leading-relaxed mb-5">
+            {narrative.track_record.intro}
+          </div>
+
+          <div className="mb-5">
+            <div className="text-xs text-emerald-400 font-semibold uppercase tracking-[0.08em] mb-2.5">
+              Confirmed Transitions
+            </div>
+            {narrative.track_record.confirmed.map((e: { year: string; label: string; signal: string; lead: string; result: string }, i: number) => (
+              <div key={i} className="flex gap-4 items-start px-4 py-3 mb-2 rounded-md bg-navy-800/40 border-l-[3px] border-l-emerald-500">
+                <div className="min-w-[70px]">
+                  <div className="font-mono text-sm text-gold-400 font-semibold">{e.year}</div>
+                  <div className="text-[11px] text-gray-500 mt-0.5">{e.lead}</div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[15px] text-gray-200 font-medium">{e.label}</div>
+                  <div className="text-sm text-gray-400 mt-0.5">{e.signal} → {e.result}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <div className="text-xs text-gray-500 font-semibold uppercase tracking-[0.08em] mb-2.5">
+              Adversarial Tests — Periods Where The Canary Should Not Fire
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              {narrative.track_record.adversarial.map((e: { year: string; label: string; result: string }, i: number) => (
+                <div key={i} className="rounded-md bg-navy-800/30 border border-navy-800/60 px-3 py-2.5">
+                  <div className="font-mono text-xs text-gray-400">{e.year}</div>
+                  <div className="text-sm text-gray-300 mt-0.5">{e.label}</div>
+                  <div className="text-xs text-emerald-400 mt-1">{e.result}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Card>
+      )}
+
+      {/* ═══════ SCORE HISTORY ═══════ */}
+      <Card className="mb-8">
+        <SectionLabel>Score History</SectionLabel>
+        {history.length < 2 ? (
+          <p className="py-8 text-center text-sm text-gray-500">
+            Historical tracking begins now. This chart will populate as daily scores accumulate.
+          </p>
+        ) : (
+          <RegimeHistoryChart history={history} />
+        )}
+      </Card>
+
+      {/* ═══════ EVIDENCE — collapsible ═══════ */}
+      <div className="mb-8">
+        <button
+          onClick={() => setShowEvidence(!showEvidence)}
+          className="flex w-full justify-between items-center cursor-pointer py-3 border-b border-navy-800"
+        >
+          <SectionLabel>Full 21-Indicator Evidence</SectionLabel>
+          <span className="text-xs text-gray-500">{showEvidence ? "Hide ▲" : "Show ▼"}</span>
+        </button>
+        {showEvidence && (
+          <div className="mt-3">
+            {[
+              { tier: 1, label: "Tier 1 — Lead Signals", indicators: tier1 },
+              { tier: 2, label: "Tier 2 — Escalation", indicators: tier2 },
+              { tier: 3, label: "Tier 3 — Structural", indicators: tier3 },
+            ].map(({ tier, label, indicators }) => (
+              <div key={tier} className="mb-4">
+                <div className="text-xs text-gray-500 font-semibold uppercase tracking-[0.08em] mb-1.5">{label}</div>
+                {indicators.map((ind) => (
+                  <IndicatorRow key={ind.num} indicator={ind} />
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Disclaimer */}
       <div className="mt-10 border-t border-navy-800/60 pt-6">
