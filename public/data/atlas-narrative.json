@@ -2,24 +2,24 @@
   "what_changed": [
     {
       "type": "new",
-      "text": "Status escalated to Crisis Acceleration — Transition. Tier 2 confirming score reached 6/20, crossing the combined T1+T2 gate."
+      "text": "Status remains Crisis Acceleration — Transition. Gold pulled back to $4,879 but both primary indicators still at maximum score."
     },
     {
       "type": "new",
-      "text": "Gold at $5,069 with YoY at +72% and 8-week momentum at +9.8%. Both Gold Momentum and Treasury Divergence at maximum."
+      "text": "Gold at $4,879 with YoY at +61%. 8-week momentum cooled to +1.0% — short-term deceleration, but annual signal still extreme."
     },
     {
       "type": "new",
-      "text": "Commodity/Gold ratio collapsed 25% YoY — scoring at 1. Gold repricing against everything, not an inflation trade."
+      "text": "Commodity/Gold ratio down 18% YoY — narrower than the 25% reading two weeks ago but still confirming gold is outpacing commodities."
     },
     {
       "type": "new",
-      "text": "Oil/SPR Capacity Ratio at score 2. Oil at $96 with SPR at 415M barrels — refill capacity severely constrained at current prices."
+      "text": "Oil/SPR Capacity Ratio holds at score 2. Oil at $96 with SPR at 415M barrels — refill capacity still constrained at current prices."
     }
   ],
   "contrarian": [
-    "Wall Street is framing gold’s run as an inflation trade. <strong>The Canary says otherwise.</strong> If this were inflation, commodities would be running with gold — copper, oil, and the GSCI would be surging. Instead, the commodity/gold ratio has collapsed 25%. Gold is repricing against <em>everything</em>: stocks, bonds, and commodities alike.",
-    "This is a monetary confidence signal. Gold is telling you something about the monetary system itself, not about CPI prints. Gold has posted +72% YoY while Treasury yields stayed flat — the last time a divergence this extreme appeared was the early 1970s, after Nixon closed the gold window but before the market fully processed the implications.",
+    "Wall Street is framing gold’s run as an inflation trade. <strong>The Canary says otherwise.</strong> If this were inflation, commodities would be running with gold — copper, oil, and the GSCI would be surging. Instead, the commodity/gold ratio has fallen 18% YoY. Gold is repricing against <em>everything</em>: stocks, bonds, and commodities alike.",
+    "This is a monetary confidence signal. Gold is telling you something about the monetary system itself, not about CPI prints. Gold has posted +61% YoY while Treasury yields stayed flat — the last time a divergence this extreme appeared was the early 1970s, after Nixon closed the gold window but before the market fully processed the implications.",
     "Meanwhile, the Fed is quietly expanding its balance sheet through $40B/month in short-duration purchases while publicly maintaining a tightening stance. The Canary sees through the narrative to the mechanism: the balance sheet is growing, and the purchases are only “short duration” for now. New supply-chain indicators add another layer: copper smelters are paying miners to take concentrate (TC/RCs at $0), and the silver market is running its 5th consecutive annual deficit with 800 million ounces of cumulative shortfall. Meanwhile, crude oil is at $96 while the SPR sits at 58% capacity — refill capacity is severely constrained at current prices."
   ],
   "divergence": {
@@ -50,7 +50,7 @@
       4240,
       4310,
       4620,
-      5069
+      4879
     ],
     "yields": [
       4.17,
@@ -64,11 +64,11 @@
       4.09,
       4.19,
       4.29,
-      4.21
+      4.23
     ],
-    "gold_change": "+72%",
+    "gold_change": "+61%",
     "yield_change": "flat",
-    "current_reading": "<strong>Current reading:</strong> Gold +72% YoY while 10Y yields are flat. The gold-colored area shows the divergence at its widest point in modern history — gold has nearly doubled in a year while the bond market hasn’t moved. Historically, this gap closes violently: either yields spike to catch up (bad for bonds), or gold is proven right about debasement (bad for the monetary system). At this magnitude, the divergence has moved beyond “tension” into “stealth suppression.”"
+    "current_reading": "<strong>Current reading:</strong> Gold +61% YoY while 10Y yields are flat. The gold-colored area shows the divergence near its widest point in modern history — gold has surged over 60% in a year while the bond market hasn’t moved. Short-term momentum has cooled (+1% over 8 weeks vs. +10% two weeks ago), but the annual signal remains extreme. Historically, this gap closes violently: either yields spike to catch up (bad for bonds), or gold is proven right about debasement (bad for the monetary system)."
   },
   "consensus": [
     {
@@ -108,7 +108,7 @@
       {
         "color": "emerald",
         "label": "Gold — overweight",
-        "reason": "Gold Momentum + Divergence both at 2 simultaneously. This signal cluster has preceded every major regime transition. At +72% YoY, momentum has already exceeded the Score 2 threshold."
+        "reason": "Gold Momentum + Divergence both at 2 simultaneously. This signal cluster has preceded every major regime transition. At +61% YoY, momentum remains well above the Score 2 threshold despite short-term cooling."
       },
       {
         "color": "emerald",
@@ -128,7 +128,7 @@
       {
         "color": "red",
         "label": "Equities — underweight",
-        "reason": "S&P/Gold ratio at 1.34 and falling — equities losing purchasing power in real terms. Full elimination at Crisis Acceleration."
+        "reason": "S&P/Gold ratio at 1.38 — equities losing purchasing power in real terms. Full elimination at Crisis Acceleration."
       },
       {
         "color": "red",
@@ -142,13 +142,13 @@
       "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Early Warning or above → immediate Crisis Acceleration (Override Rule #4). QE launched from Stable does not trigger — it’s a crisis response, not a cause. Explicit YCC (stated yield target) triggers unconditionally.",
       "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis signal. Currently masked by Fed purchases — watch what happens if they pause.",
       "Tier 2 confirming score reaches <strong>≥6</strong> (currently 6/20) → triggers Transition via combined T1+T2 gate. Watch copper premiums, China controls, and Fed deferred asset for movement.",
-      "Gold 8-week momentum breaks <strong>+15%</strong> → acceleration signal. Currently at +9.8% — below the threshold."
+      "Gold 8-week momentum breaks <strong>+15%</strong> → acceleration signal. Currently at +1.0% — well below the threshold after cooling."
     ],
     "deescalation": [
       "Gold YoY drops below <strong>+30%</strong> while yields rise → genuine tightening. Divergence closes from the gold side.",
       "Fed <strong>resumes QT</strong> at full pace → balance sheet contracting. Not just slowing purchases — actively shrinking.",
       "Tier 1 drops to <strong>0–2</strong> (currently 5/10) → returns to Stable. Would require gold momentum AND divergence to normalize.",
-      "Deficit/GDP falls below <strong>5%</strong> → structural fiscal pressure easing. Currently at ?% and rising."
+      "Deficit/GDP falls below <strong>5%</strong> → structural fiscal pressure easing. Currently at 5.8% and rising."
     ]
   },
   "track_record": {
