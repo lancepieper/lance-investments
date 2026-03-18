@@ -149,52 +149,6 @@ export default async function Home() {
         </section>
       )}
 
-      {/* What I Write About */}
-      <section className="border-t border-navy-800 bg-navy-900/40">
-        <div className="mx-auto max-w-5xl px-6 py-20">
-          <h2 className="text-center text-2xl font-bold text-white md:text-3xl">
-            What I Write About
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-gray-400">
-            Topics I explore on my Substack and across my research.
-          </p>
-
-          <AnimateIn>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                title: "Macro & Markets",
-                description:
-                  "Global economic trends, monetary policy, and how they shape investment opportunities.",
-              },
-              {
-                title: "Technology & Innovation",
-                description:
-                  "How emerging technologies create asymmetric upside and reshape entire industries.",
-              },
-              {
-                title: "Long-Term Thinking",
-                description:
-                  "Mental models, patience, and the compounding power of disciplined investing.",
-              },
-            ].map((card) => (
-              <div
-                key={card.title}
-                className="rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
-              >
-                <h3 className="text-lg font-semibold text-gold-400">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                  {card.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          </AnimateIn>
-        </div>
-      </section>
-
       {/* Tools */}
       <section className="border-t border-navy-800 bg-navy-900/40">
         <div className="mx-auto max-w-5xl px-6 py-20">
@@ -202,11 +156,26 @@ export default async function Home() {
             Interactive Tools
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-gray-400">
-            Tools to help you think through portfolio construction and financial planning.
+            Live dashboards and simulators for macro analysis, portfolio construction, and financial planning.
           </p>
 
           <AnimateIn>
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            <Link
+              href="/canary"
+              className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
+            >
+              <h3 className="text-lg font-semibold text-gold-400">
+                The Canary
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                A live dashboard tracking 21 macro indicators to detect monetary system transitions before the consensus catches up. Updated regularly with fresh data from FRED, Yahoo Finance, and primary sources.
+              </p>
+              <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
+                View dashboard &rarr;
+              </span>
+            </Link>
+
             <Link
               href="/simulator"
               className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
@@ -227,10 +196,10 @@ export default async function Home() {
               className="group rounded-lg border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-gold-500/40"
             >
               <h3 className="text-lg font-semibold text-gold-400">
-                Portfolio Regime Stress Tester
+                Portfolio Stress Tester
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                See how your portfolio allocation would have performed through the worst market crises of the last 50 years — from 1970s stagflation to the 2022 rate shock. Built on verified data from Shiller, LBMA, and EFA.
+                See how your portfolio would have performed through the worst crises of the last 50 years — from 1970s stagflation to the 2022 rate shock. Built on verified data from Shiller, LBMA, and EFA.
               </p>
               <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
                 Try it &rarr;
