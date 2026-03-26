@@ -1,15 +1,15 @@
 {
-  "published_at": "2026-03-18T12:00:00Z",
+  "published_at": "2026-03-26T12:00:00Z",
   "current": {
-    "date": "2026-03-18",
-    "regime_status": "Crisis Acceleration \u2014 Transition",
-    "tier1_score": 5.0,
+    "date": "2026-03-26",
+    "regime_status": "Emerging Disorder \u2014 Elevated",
+    "tier1_score": 3.0,
     "tier1_max": 10,
     "tier1_count": 5,
     "tier2_score": 6.0,
     "tier2_max": 20,
     "tier2_count": 10,
-    "tier3_score": 5.0,
+    "tier3_score": 4.0,
     "tier3_max": 12,
     "tier3_count": 6,
     "indicators": [
@@ -17,25 +17,25 @@
         "num": 1,
         "name": "Gold Momentum",
         "tier": 1,
-        "score": 2.0,
-        "raw_value": 5069.3,
-        "notes": "Gold=$5069, YoY=+72.5%, 8wk=+9.8%"
+        "score": 1.0,
+        "raw_value": 4432.0,
+        "notes": "Gold=$4432, YoY=+46.7%, 8wk=-16.7%"
       },
       {
         "num": 2,
         "name": "Gold/Treasury Divergence",
         "tier": 1,
-        "score": 2.0,
-        "raw_value": 72.47796944642919,
-        "notes": "Gold YoY=+72.5%, 10Y chg=-0.11%. STEALTH SUPPRESSION \u2014 gold surging while yields fall"
+        "score": 1.0,
+        "raw_value": 46.7,
+        "notes": "Gold YoY=+46.7%, 10Y chg=+0.04%. TENSION \u2014 gold rising, yields stable"
       },
       {
         "num": 3,
         "name": "Fed Balance Sheet",
         "tier": 1,
         "score": 1.0,
-        "raw_value": 6646344.0,
-        "notes": "Assets=$6.65T. 3mo chg=+1.6%. Purchase pace=$40B/mo. Expanding via purchases"
+        "raw_value": 6660000.0,
+        "notes": "Assets=$6.66T. 3mo chg=+1.1%. Purchase pace=$40B/mo. Expanding via purchases"
       },
       {
         "num": 4,
@@ -50,7 +50,7 @@
         "name": "IORB-SOFR Spread",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 0.9999999999999787,
+        "raw_value": 1.0,
         "notes": "IORB=3.65%, SOFR=3.64%, Spread=1.0bps"
       },
       {
@@ -83,7 +83,7 @@
         "tier": 2,
         "score": 0.0,
         "raw_value": 4.0,
-        "notes": "4.0% premium. Elevated but below 5% trigger. Monitor weekly. "
+        "notes": "4.0% premium. Elevated but below 5% trigger. Monitor weekly."
       },
       {
         "num": 10,
@@ -99,22 +99,22 @@
         "tier": 2,
         "score": 1.0,
         "raw_value": 99.75,
-        "notes": "DXY=99.8, 8wk chg=+0.4%"
+        "notes": "DXY=99.8, 8wk chg=+3.7%"
       },
       {
         "num": 12,
         "name": "Gold/Fed BS Ratio",
         "tier": 2,
         "score": 0.0,
-        "raw_value": 0.1994504806810782,
-        "notes": "Coverage=19.9%. Gold reserves=$1.33T vs Fed=$6.65T. Target: 33-50%"
+        "raw_value": 0.174,
+        "notes": "Coverage=17.4%. Gold reserves=$1.16T vs Fed=$6.66T. Target: 33-50%"
       },
       {
         "num": 13,
         "name": "Deficit/GDP",
         "tier": 3,
         "score": 1.0,
-        "raw_value": 5.76808,
+        "raw_value": 5.77,
         "notes": "Deficit = 5.8% of GDP"
       },
       {
@@ -138,16 +138,16 @@
         "name": "S&P/Gold Ratio",
         "tier": 3,
         "score": 1.0,
-        "raw_value": 1.3366342493046377,
-        "notes": "S&P=6776 / Gold=5069 = 1.34"
+        "raw_value": 1.49,
+        "notes": "S&P=6592 / Gold=4432 = 1.49"
       },
       {
         "num": 17,
         "name": "Commodity/Gold Ratio",
         "tier": 3,
-        "score": 1.0,
-        "raw_value": 0.14164677568895112,
-        "notes": "GSCI=718, Gold=$5069, Ratio=0.1416 (YoY=-24.7%)"
+        "score": 0.0,
+        "raw_value": 0.1626,
+        "notes": "GSCI=721, Gold=$4432, Ratio=0.1626 (YoY=-12.5%)"
       },
       {
         "num": 18,
@@ -155,7 +155,7 @@
         "tier": 2,
         "score": 2.0,
         "raw_value": -60.0,
-        "notes": "Benchmark=$0/t. Spot=$-60/t. 2026 annual benchmark: $0/t (Antofagasta/Chinese smelter). Record low. Prior year was $21.25/t.. Fastmarkets spot TC index approx -$60 to -$67/t as of Dec 2025. Smelters paying miners."
+        "notes": "Benchmark=$0/t. Spot=$-60/t. 2026 annual benchmark: $0/t (Antofagasta/Chinese smelter). Record low. Prior year was $21.25/t. Smelters paying miners."
       },
       {
         "num": 19,
@@ -178,8 +178,8 @@
         "name": "Oil / SPR Capacity Ratio",
         "tier": 2,
         "score": 2.0,
-        "raw_value": 232.12048192771084,
-        "notes": "Oil=$96, SPR=415M bbl. Ratio=232."
+        "raw_value": 228.0,
+        "notes": "Oil=$95, SPR=415M bbl. Ratio=228."
       }
     ]
   },
@@ -225,6 +225,20 @@
       "tier2_score": 6.0,
       "tier3_score": 5.0,
       "regime_status": "Crisis Acceleration \u2014 Transition"
+    },
+    {
+      "date": "2026-03-18",
+      "tier1_score": 5.0,
+      "tier2_score": 6.0,
+      "tier3_score": 5.0,
+      "regime_status": "Crisis Acceleration \u2014 Transition"
+    },
+    {
+      "date": "2026-03-26",
+      "tier1_score": 3.0,
+      "tier2_score": 6.0,
+      "tier3_score": 4.0,
+      "regime_status": "Emerging Disorder \u2014 Elevated"
     }
   ]
 }
