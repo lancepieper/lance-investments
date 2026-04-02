@@ -166,6 +166,11 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
   const [submitting, setSubmitting] = useState(false);
   const [waitlisted, setWaitlisted] = useState(false);
   const [showEvidence, setShowEvidence] = useState(false);
+  const [isLocal, setIsLocal] = useState(false);
+
+  useEffect(() => {
+    setIsLocal(window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+  }, []);
 
   const handleWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -385,6 +390,8 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         )}
       </div>
 
+      {/* ═══════ PAID CONTENT — only visible on localhost until subscription system is ready ═══════ */}
+      {isLocal && <>
       {/* ═══════ ROW C: POSITIONING + TRIGGERS ═══════ */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         {narrative?.positioning && (
@@ -516,6 +523,7 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
           </div>
         )}
       </div>
+      </>}
 
       {/* Disclaimer */}
       <div className="mt-10 border-t border-navy-800/60 pt-6">
