@@ -2,30 +2,29 @@
   "what_changed": [
     {
       "type": "new",
-      "text": "De-escalation: status drops from Crisis Acceleration — Transition back to Emerging Disorder — Elevated. Gold fell from $5,069 to $4,432, pulling both primary Tier 1 indicators from score 2 to score 1."
+      "text": "Gold recovers to $4,703 — up 6% from last week's $4,432 pullback low. The 8-week momentum has improved dramatically from -16.7% to -3.3%, confirming the pullback was a correction within the trend, not a reversal."
     },
     {
       "type": "new",
-      "text": "Gold at $4,432 with YoY still at +46.7%, but 8-week momentum has flipped sharply negative at -16.7%. The annual signal remains well above the Score 1 threshold — the pullback is violent in speed but hasn't broken the structural trend."
+      "text": "Oil surges to $112, pushing the Oil/SPR Capacity Ratio from 228 to 270. At this price, the SPR's 415M barrels cannot be deployed as a market stabilizer — the 2022 intervention playbook is off the table."
     },
     {
       "type": "new",
-      "text": "Tier 1 drops from 5/10 to 3/10 — the combined T1+T2 gate that triggered Crisis Acceleration is no longer met. Tier 2 holds at 6/20, Tier 3 eases to 4/12 as Commodity/Gold ratio narrows."
+      "text": "Credit stress quietly building: Baa spreads widen from 2.17% to 2.40%. Still below the scoring threshold, but the direction matters — credit markets are starting to price in risk that equity markets are ignoring."
     },
     {
       "type": "new",
-      "text": "Supply-side indicators unchanged: Copper TC/RCs still at $0 benchmark (score 2), silver deficit at 800M oz cumulative (score 2), Oil/SPR ratio at 228 (score 2). The structural signals haven't budged — only the price-momentum signals have cooled."
+      "text": "Scores hold steady at T1=3/10, T2=6/20, T3=4/12 — same as last week. The raw values are moving but haven't crossed scoring thresholds. The framework is in a coiling pattern: structural pressure building without triggering escalation yet."
     }
   ],
   "contrarian": [
-    "Gold dropped 12% in a week and the financial media is calling it a top. <strong>The Canary disagrees.</strong> Every structural indicator that drove the rally — copper smelter crisis, silver deficit, SPR constraints — is unchanged. What changed is the price of gold, not the condition of the monetary system. The framework correctly de-escalated because momentum cooled, but it did not return to Stable.",
-    "This is the kind of pullback the framework was built to contextualize. At +46.7% YoY, gold is still running one of the strongest annual moves in modern history — it just stopped accelerating. The 8-week momentum flipped to -16.7%, which mechanically dropped the Gold Momentum score from 2 to 1. But the divergence between gold and Treasury yields persists: gold is up 47% on the year while 10Y yields are flat. The bond market hasn't caught up, and the Fed is still expanding.",
-    "Meanwhile, the structural signals are screaming in the background: copper smelters are still paying miners to take concentrate (TC/RCs at $0), the silver market has run five consecutive annual deficits totaling 800 million ounces, and crude oil at $95 keeps the SPR at 58% capacity with no room to repeat the 2022 intervention. The pullback in gold creates a gap between price and fundamentals — historically, that gap closes with price snapping back to match the structural reality, not the other way around."
+    "Gold recovered $271 in a week and nobody noticed. <strong>The Canary did.</strong> The financial media spent last week writing obituaries for the gold rally after the $637 pullback from $5,069. Now gold is quietly rebuilding at $4,703 with 8-week momentum recovering from -16.7% to just -3.3%. The annual divergence with Treasury yields remains extreme at +50% vs flat yields. The structural story never changed — the price is catching back up.",
+    "Oil at $112 is the indicator most people are ignoring. The Oil/SPR Capacity Ratio jumped from 228 to 270 in one week — the largest single-week move in this indicator's history. In 2022, the administration released 180 million barrels from the SPR to cap oil at $120. That tool is now functionally unavailable: the SPR sits at 415M barrels (58% capacity) and refill costs would be ruinous at current prices. The next oil shock has no circuit breaker.",
+    "The S&P/Gold ratio fell to 1.40 — meaning equities are losing purchasing power faster than they're gaining nominal value. Two weeks ago at the gold pullback low, this ratio was 1.49. Now gold has recovered while equities haven't, and the ratio is at its lowest this cycle. In real terms, the stock market is shrinking. The people celebrating flat equity markets are measuring their wealth in a unit that's devaluing."
   ],
   "divergence": {
     "description": "The single most predictive indicator in The Canary. When gold surges and yields don't follow, the bond market is being artificially suppressed — either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
     "months": [
-      "Apr",
       "May",
       "Jun",
       "Jul",
@@ -36,10 +35,10 @@
       "Dec",
       "Jan",
       "Feb",
-      "Mar"
+      "Mar",
+      "Apr"
     ],
     "gold": [
-      3120,
       3210,
       3370,
       3340,
@@ -50,10 +49,10 @@
       4240,
       4310,
       4620,
-      4432
+      4432,
+      4703
     ],
     "yields": [
-      4.17,
       4.25,
       4.46,
       4.26,
@@ -64,22 +63,23 @@
       4.09,
       4.19,
       4.29,
-      4.23
+      4.23,
+      4.21
     ],
-    "gold_change": "+47%",
+    "gold_change": "+50%",
     "yield_change": "flat",
-    "current_reading": "<strong>Current reading:</strong> Gold +47% YoY while 10Y yields are flat. The divergence has narrowed from its peak (+72% two weeks ago) but remains historically extreme. The gold-colored area still shows one of the widest gaps in modern history. Gold pulled back $637 from its March 18 high — the sharpest weekly decline this cycle — but the annual divergence remains intact. Historically, pullbacks within a divergence this wide are buying opportunities, not reversals. The gap closes when yields spike (bad for bonds) or gold resumes (confirming debasement)."
+    "current_reading": "<strong>Current reading:</strong> Gold +50% YoY while 10Y yields are flat. The divergence has re-widened after last week's pullback narrowed it temporarily. Gold's recovery from $4,432 to $4,703 while yields remain pinned near 4.2% confirms this is not a speculative mania — it's a structural repricing that yields are being prevented from reflecting. The gold-colored area continues to show one of the widest sustained gaps in modern history. The bond market is telling you everything is fine; the gold market is telling you the monetary system is under stress. One of them is wrong."
   },
   "consensus": [
     {
-      "topic": "Gold pullback",
-      "wall_street": "Blow-off top, time to take profits — gold was overbought",
-      "atlas": "Momentum cooled but structural drivers unchanged. Every supply-side indicator still at maximum score. Framework correctly de-escalated on price, but didn't go to Stable."
+      "topic": "Gold recovery",
+      "wall_street": "Dead cat bounce — the pullback showed gold was overbought and speculative",
+      "atlas": "8-week momentum recovered from -16.7% to -3.3% in one week. Every structural driver intact. The pullback was a shakeout, not a top — and it's already being reclaimed."
     },
     {
-      "topic": "Oil shock",
-      "wall_street": "Strategic Petroleum Reserve has 415 million barrels — adequate reserve capacity",
-      "atlas": "Oil at $95 with SPR at 415M bbl. The 2022 circuit breaker required 180M barrels at $120 oil. Refill capacity constrained — limited room to repeat the 2022 intervention."
+      "topic": "Oil at $112",
+      "wall_street": "Temporary supply disruption, OPEC+ will increase production to stabilize",
+      "atlas": "Oil/SPR ratio at 270 — the highest this cycle. SPR intervention is no longer viable at these prices. The 2022 playbook required 180M barrels at $120; the reserve can't absorb that draw again."
     },
     {
       "topic": "Fed policy",
@@ -87,14 +87,14 @@
       "atlas": "Stealth expansion: $40B/mo purchases, QT over. Direction matters more than rate level"
     },
     {
-      "topic": "Treasury market",
-      "wall_street": "Yields stable = market functioning",
-      "atlas": "Yields suppressed by Fed purchases. Auction demand masked. Real demand deteriorating"
+      "topic": "Credit spreads",
+      "wall_street": "Baa at 2.40% is historically normal — no stress",
+      "atlas": "Direction matters: widened from 2.17% in a week. Equities haven't noticed. Credit markets often lead equity markets by 3-6 months."
     },
     {
       "topic": "Dollar outlook",
-      "wall_street": "Structurally strong, reserve currency status intact",
-      "atlas": "DXY just below 100. 8-week change +3.7% — short-term bounce, but the structural trend is lower. Foreign official holders reducing."
+      "wall_street": "DXY holding 100 — dollar resilience confirmed",
+      "atlas": "DXY at 100 with 8-week change slowing from +3.7% to +2.2%. The bounce is losing momentum. Foreign official holders continue reducing Treasury exposure."
     },
     {
       "topic": "Copper supply",
@@ -103,49 +103,49 @@
     }
   ],
   "positioning": {
-    "intro": "<strong>Emerging Disorder — Elevated is the phase where signals are confirmed but not yet compounding.</strong> The framework has stepped back from Crisis Acceleration after gold's pullback reduced Tier 1 from 5/10 to 3/10. This is the system working as designed — mechanical de-escalation when momentum cools. But the structural indicators (copper, silver, oil/SPR) haven't budged. Positioning shifts toward building positions during the pullback rather than chasing the rally.",
+    "intro": "<strong>Emerging Disorder — Elevated holds for the second consecutive week, but the underlying data is shifting fast.</strong> Gold's recovery and oil's surge are building pressure beneath unchanged scores. The framework's thresholds haven't been crossed, but the raw values are moving toward them. This is the coiling phase — structural indicators at maximum scores, price indicators recovering toward escalation triggers. Position for the spring, not the current calm.",
     "posture": [
       {
         "color": "emerald",
         "label": "Gold — overweight",
-        "reason": "Still +47% YoY with the divergence intact. The pullback from $5,069 to $4,432 is the sharpest this cycle but hasn't broken the structural trend. Every prior pullback within a divergence this wide was a buying opportunity."
+        "reason": "Recovered to $4,703 from pullback low of $4,432. YoY at +50% with 8-week momentum healing fast (-3.3% vs -16.7% last week). The divergence with yields re-widened. The pullback was the buying opportunity the framework identified last week."
       },
       {
         "color": "emerald",
         "label": "Bitcoin — overweight",
-        "reason": "Functions as high-beta gold in monetary regime transitions. Dropped 57% in 2020 acute crisis, then 18x'd. Position size for volatility."
+        "reason": "Functions as high-beta gold in monetary regime transitions. With gold's structural trend confirmed by the recovery, BTC's correlation should strengthen. Position size for volatility."
       },
       {
         "color": "amber",
         "label": "Short-term Treasuries — hold",
-        "reason": "T-bills under 1-year maturity. Reduces portfolio volatility and provides dry powder to deploy during pullbacks like this one. Eliminated at Crisis Acceleration when Treasuries themselves become the problem."
+        "reason": "T-bills under 1-year maturity. Dry powder for deployment if the coiling pattern breaks toward escalation. Eliminated at Crisis Acceleration when Treasuries themselves become the problem."
       },
       {
         "color": "amber",
         "label": "Critical materials — overweight",
-        "reason": "Copper TC/RCs scoring at 2 (smelters paying miners). Physical premium at 4% — below the 5% trigger but elevated. Silver deficit cumulative at 800M oz. These haven't changed despite gold's pullback."
+        "reason": "Copper TC/RCs still at $0 (score 2), silver deficit at 800M oz cumulative (score 2), oil/SPR ratio now at 270 (score 2). All three supply-side indicators at maximum. The physical market is tighter than the financial market reflects."
       },
       {
         "color": "red",
         "label": "Equities — underweight",
-        "reason": "S&P/Gold ratio at 1.49 — equities still losing purchasing power in real terms despite gold's pullback. The ratio was 1.34 two weeks ago; it widened only because gold fell, not because stocks gained."
+        "reason": "S&P/Gold ratio at 1.40 — the lowest this cycle. Equities are losing purchasing power in real terms. The ratio fell even as gold pulled back last week, and has dropped further now that gold is recovering."
       },
       {
         "color": "red",
         "label": "Long Treasuries — underweight",
-        "reason": "The Gold/Treasury Divergence says yields are artificially suppressed. The T-bill buffer gives short-duration exposure; long duration carries asymmetric downside when the divergence closes."
+        "reason": "The Gold/Treasury Divergence says yields are artificially suppressed. With oil at $112 adding inflationary pressure, long-duration bonds carry asymmetric downside when the divergence closes."
       }
     ]
   },
   "triggers": {
     "escalation": [
-      "Gold 8-week momentum recovers above <strong>+10%</strong> → Gold Momentum returns to Score 2 and Tier 1 re-escalates. Currently at -16.7% — a sharp reversal would signal renewed acceleration.",
+      "Gold 8-week momentum recovers above <strong>+10%</strong> → Gold Momentum returns to Score 2 and Tier 1 re-escalates. Currently at -3.3% and recovering fast — could cross within 2-3 weeks at this pace.",
       "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Early Warning or above → immediate Crisis Acceleration (Override Rule #4). QE launched from Stable does not trigger — it's a crisis response, not a cause.",
       "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis signal. Currently masked by Fed purchases — watch what happens if they pause.",
-      "Tier 2 confirming score reaches <strong>≥8</strong> → triggers Transition via combined T1+T2 gate. Currently at 6/20. Watch copper premiums, China controls, and Fed deferred asset for movement."
+      "Tier 2 confirming score reaches <strong>≥8</strong> → triggers Transition via combined T1+T2 gate. Currently at 6/20. Baa spreads widening toward threshold — watch copper premiums and China controls for additional movement."
     ],
     "deescalation": [
-      "Gold YoY drops below <strong>+30%</strong> while yields rise → genuine tightening. Currently at +47% — still far above this threshold despite the pullback.",
+      "Gold YoY drops below <strong>+30%</strong> while yields rise → genuine tightening. Currently at +50% — far above this threshold and moving away from it.",
       "Fed <strong>resumes QT</strong> at full pace → balance sheet contracting. Not just slowing purchases — actively shrinking.",
       "Tier 1 drops to <strong>0\u20132</strong> (currently 3/10) → returns to Stable. Would require gold momentum AND divergence to normalize further.",
       "Deficit/GDP falls below <strong>5%</strong> → structural fiscal pressure easing. Currently at 5.8% and rising."
