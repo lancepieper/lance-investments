@@ -1,7 +1,7 @@
 {
-  "published_at": "2026-04-02T12:00:00Z",
+  "published_at": "2026-04-23T12:00:00Z",
   "current": {
-    "date": "2026-04-02",
+    "date": "2026-04-23",
     "regime_status": "Emerging Disorder \u2014 Elevated",
     "tier1_score": 3.0,
     "tier1_max": 10,
@@ -9,7 +9,7 @@
     "tier2_score": 6.0,
     "tier2_max": 20,
     "tier2_count": 10,
-    "tier3_score": 4.0,
+    "tier3_score": 3.0,
     "tier3_max": 12,
     "tier3_count": 6,
     "indicators": [
@@ -18,24 +18,24 @@
         "name": "Gold Momentum",
         "tier": 1,
         "score": 1.0,
-        "raw_value": 4703.0,
-        "notes": "Gold=$4703, YoY=+49.8%, 8wk=-3.3%"
+        "raw_value": 4729.0,
+        "notes": "Gold=$4729, YoY=+44.3%, 8wk=-8.6%"
       },
       {
         "num": 2,
         "name": "Gold/Treasury Divergence",
         "tier": 1,
         "score": 1.0,
-        "raw_value": 49.8,
-        "notes": "Gold YoY=+49.8%, 10Y chg=+0.13%. TENSION \u2014 gold rising, yields stable"
+        "raw_value": 44.3,
+        "notes": "Gold YoY=+44.3%, 10Y chg=-0.10%. TENSION \u2014 gold rising, yields stable"
       },
       {
         "num": 3,
         "name": "Fed Balance Sheet",
         "tier": 1,
         "score": 1.0,
-        "raw_value": 6680000.0,
-        "notes": "Assets=$6.68T. 3mo chg=+0.5%. Purchase pace=$40B/mo. Expanding via purchases"
+        "raw_value": 6710000.0,
+        "notes": "Assets=$6.71T. 3mo chg=+1.8%. Purchase pace=$40B/mo. Expanding via purchases"
       },
       {
         "num": 4,
@@ -50,8 +50,8 @@
         "name": "IORB-SOFR Spread",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 0.0,
-        "notes": "IORB=3.65%, SOFR=3.65%, Spread=0.0bps"
+        "raw_value": 1.0,
+        "notes": "IORB=3.65%, SOFR=3.64%, Spread=1.0bps"
       },
       {
         "num": 6,
@@ -98,8 +98,8 @@
         "name": "DXY",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 100.0,
-        "notes": "DXY=100.0, 8wk chg=+2.2%"
+        "raw_value": 98.7,
+        "notes": "DXY=98.7, 8wk chg=+1.0%"
       },
       {
         "num": 12,
@@ -107,7 +107,7 @@
         "tier": 2,
         "score": 0.0,
         "raw_value": 0.184,
-        "notes": "Coverage=18.4%. Gold reserves=$1.23T vs Fed=$6.68T. Target: 33-50%"
+        "notes": "Coverage=18.4%. Gold reserves=$1.24T vs Fed=$6.71T. Target: 33-50%"
       },
       {
         "num": 13,
@@ -137,17 +137,17 @@
         "num": 16,
         "name": "S&P/Gold Ratio",
         "tier": 3,
-        "score": 1.0,
-        "raw_value": 1.40,
-        "notes": "S&P=6575 / Gold=4703 = 1.40"
+        "score": 0.0,
+        "raw_value": 1.51,
+        "notes": "S&P=7138 / Gold=4729 = 1.51"
       },
       {
         "num": 17,
         "name": "Commodity/Gold Ratio",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 0.1641,
-        "notes": "GSCI=772, Gold=$4703, Ratio=0.1641 (YoY=-9.8%)"
+        "raw_value": 0.1542,
+        "notes": "GSCI=729, Gold=$4729, Ratio=0.1542 (YoY=-5.2%)"
       },
       {
         "num": 18,
@@ -178,8 +178,8 @@
         "name": "Oil / SPR Capacity Ratio",
         "tier": 2,
         "score": 2.0,
-        "raw_value": 270.0,
-        "notes": "Oil=$112, SPR=415M bbl. Ratio=270."
+        "raw_value": 231.0,
+        "notes": "Oil=$96, SPR=415M bbl. Ratio=231."
       }
     ]
   },
@@ -245,6 +245,13 @@
       "tier1_score": 3.0,
       "tier2_score": 6.0,
       "tier3_score": 4.0,
+      "regime_status": "Emerging Disorder \u2014 Elevated"
+    },
+    {
+      "date": "2026-04-23",
+      "tier1_score": 3.0,
+      "tier2_score": 6.0,
+      "tier3_score": 3.0,
       "regime_status": "Emerging Disorder \u2014 Elevated"
     }
   ]
