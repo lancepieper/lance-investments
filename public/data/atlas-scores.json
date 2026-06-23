@@ -1,12 +1,12 @@
 {
-  "published_at": "2026-06-17T19:52:05Z",
+  "published_at": "2026-06-23T16:49:49Z",
   "current": {
-    "date": "2026-06-17",
-    "regime_status": "Emerging Disorder \u2014 Stable",
+    "date": "2026-06-23",
+    "regime_status": "Crisis Acceleration \u2014 Transition",
     "tier1_score": 1.0,
     "tier1_max": 10,
     "tier1_count": 5,
-    "tier2_score": 5.0,
+    "tier2_score": 8.0,
     "tier2_max": 20,
     "tier2_count": 10,
     "tier3_score": 3.0,
@@ -18,48 +18,48 @@
         "name": "Gold Momentum",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 4382.4,
-        "notes": "Gold=$4382, YoY=+29.4%, 8wk=-7.4%"
+        "raw_value": 4153.2,
+        "notes": "Gold=$4153, YoY=+23.0%, 8wk=-9.5%"
       },
       {
         "num": 2,
         "name": "Gold/Treasury Divergence",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 29.404122128388348,
-        "notes": "Gold YoY=+29.4%, 10Y chg=+0.08%. BASELINE \u2014 no significant divergence"
+        "raw_value": 22.959410249578116,
+        "notes": "Gold YoY=+23.0%, 10Y chg=+0.12%. BASELINE \u2014 no significant divergence"
       },
       {
         "num": 3,
         "name": "Fed Balance Sheet",
         "tier": 1,
         "score": 1.0,
-        "raw_value": 6725397.0,
-        "notes": "Assets=$6.73T. 3mo chg=+1.0%. Purchase pace=$40B/mo. Expanding via purchases"
+        "raw_value": 6736424.0,
+        "notes": "Assets=$6.74T. 3mo chg=+1.2%. Purchase pace=$40B/mo. Expanding via purchases"
       },
       {
         "num": 4,
         "name": "Treasury Auction Demand",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 2.35,
-        "notes": "10Y B/C=2.45. 30Y B/C=2.35. \u26a0 Signal masked by Fed purchases"
+        "raw_value": 2.43,
+        "notes": "10Y B/C=2.45. 30Y B/C=2.43. \u26a0 Signal masked by Fed purchases"
       },
       {
         "num": 5,
         "name": "IORB-SOFR Spread",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 2.0000000000000018,
-        "notes": "IORB=3.65%, SOFR=3.63%, Spread=2.0bps"
+        "raw_value": 4.0000000000000036,
+        "notes": "IORB=3.65%, SOFR=3.61%, Spread=4.0bps"
       },
       {
         "num": 6,
         "name": "Foreign Treasury Holdings",
         "tier": 2,
         "score": 0.0,
-        "raw_value": 9248.4,
-        "notes": "$9.2T, 2mo trend=stable/rising"
+        "raw_value": 9270.9,
+        "notes": "$9.3T, 2mo trend=stable/rising"
       },
       {
         "num": 7,
@@ -73,17 +73,17 @@
         "num": 8,
         "name": "Private Credit Stress",
         "tier": 2,
-        "score": 0.0,
+        "score": 2.0,
         "raw_value": 2.47,
-        "notes": "Baa spread=2.47%"
+        "notes": "Fund gates=4. GATES: Blue Owl, BlackRock HPS, Morgan Stanley North Haven, Apollo Debt Solutions all capped redemptions H1 2026"
       },
       {
         "num": 9,
         "name": "Copper Physical Premium",
         "tier": 2,
         "score": 0.0,
-        "raw_value": 4.0,
-        "notes": "4.0% premium. Elevated but below 5% trigger. Monitor weekly. "
+        "raw_value": 3.0,
+        "notes": "3.0% premium. COMEX spot premium ~3% over LME (LME exec); below 5% trigger "
       },
       {
         "num": 10,
@@ -98,16 +98,16 @@
         "name": "DXY",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 99.69,
-        "notes": "DXY=99.7, 8wk chg=+1.1%"
+        "raw_value": 101.38,
+        "notes": "DXY=101.4, 8wk chg=+2.8%"
       },
       {
         "num": 12,
         "name": "Gold/Fed BS Ratio",
         "tier": 2,
         "score": 0.0,
-        "raw_value": 0.170397806003482,
-        "notes": "Coverage=17.0%. Gold reserves=$1.15T vs Fed=$6.73T. Target: 33-50%"
+        "raw_value": 0.16122164214473436,
+        "notes": "Coverage=16.1%. Gold reserves=$1.09T vs Fed=$6.74T. Target: 33-50%"
       },
       {
         "num": 13,
@@ -130,32 +130,32 @@
         "name": "CB Gold Purchases",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 863.0,
-        "notes": "863 tonnes annualized. WGC 2025 estimate. Below 2023-24 record pace."
+        "raw_value": 976.0,
+        "notes": "976 tonnes annualized. CB buying 244t in Q1 2026 (WGC Apr 29), ~976t annualized"
       },
       {
         "num": 16,
         "name": "S&P/Gold Ratio",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 1.7139809236947794,
-        "notes": "S&P=7511 / Gold=4382 = 1.71"
+        "raw_value": 1.799284888760474,
+        "notes": "S&P=7473 / Gold=4153 = 1.80"
       },
       {
         "num": 17,
         "name": "Commodity/Gold Ratio",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 0.14738043081416577,
-        "notes": "GSCI=646, Gold=$4382, Ratio=0.1474 (YoY=-13.7%)"
+        "raw_value": 0.1516180294712511,
+        "notes": "GSCI=630, Gold=$4153, Ratio=0.1516 (YoY=-9.0%)"
       },
       {
         "num": 18,
         "name": "Copper TC/RCs",
         "tier": 2,
         "score": 2.0,
-        "raw_value": -60.0,
-        "notes": "Benchmark=$0/t. Spot=$-60/t. 2026 annual benchmark: $0/t (Antofagasta/Chinese smelter). Record low. Prior year was $21.25/t.. Fastmarkets spot TC index approx -$60 to -$67/t as of Dec 2025. Smelters paying miners."
+        "raw_value": -43.0,
+        "notes": "Benchmark=$0/t. Spot=$-43/t. 2026 annual benchmark: $0/t (Antofagasta/Chinese smelter). Record low. Prior year was $21.25/t.. Spot TC/RC ~-$43/mt (Q4 range -40 to -45); smelters still paying miners"
       },
       {
         "num": 19,
@@ -177,9 +177,9 @@
         "num": 21,
         "name": "Oil / SPR Capacity Ratio",
         "tier": 2,
-        "score": 1.0,
-        "raw_value": 181.83132530120483,
-        "notes": "Oil=$75, SPR=415M bbl. Ratio=182."
+        "score": 2.0,
+        "raw_value": 229.41176470588235,
+        "notes": "Oil=$78, SPR=340M bbl. Ratio=229. "
       }
     ]
   },
@@ -260,6 +260,20 @@
       "tier2_score": 5.0,
       "tier3_score": 3.0,
       "regime_status": "Emerging Disorder \u2014 Stable"
+    },
+    {
+      "date": "2026-06-22",
+      "tier1_score": 1.0,
+      "tier2_score": 6.0,
+      "tier3_score": 3.0,
+      "regime_status": "Emerging Disorder \u2014 Stable"
+    },
+    {
+      "date": "2026-06-23",
+      "tier1_score": 1.0,
+      "tier2_score": 8.0,
+      "tier3_score": 3.0,
+      "regime_status": "Crisis Acceleration \u2014 Transition"
     }
   ]
 }

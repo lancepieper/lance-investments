@@ -2,153 +2,114 @@
   "what_changed": [
     {
       "type": "new",
-      "text": "Oil keeps falling — from $96 to $75. The Oil/SPR Capacity Ratio drops from 231 to 182, and the score finally steps down from 2 to 1. The acute price pressure has eased materially. The structural vulnerability — a reserve at 58% capacity with no political will to refill it — is still there, but at $75 the framework no longer flags it at maximum."
+      "text": "Status jumps from Emerging Disorder — Stable to Crisis Acceleration — Transition — and not from the signal you'd expect. Tier 1 is quiet (1/10). The escalation is Override Rule #5: private-credit fund gates appearing in the same month the Fed is still expanding its balance sheet. The framework was built to fire on exactly this configuration."
     },
     {
       "type": "new",
-      "text": "Gold cools to $4,382, with YoY decelerating from +44% to +29%. That pushes the Gold/Treasury Divergence indicator down to baseline for the first time this cycle: gold's annual pace has slowed while the 10Y ticked up to 4.47%. The framework's single most predictive signal has gone quiet — not reversed, quiet. Annual trends don't unwind in weeks, but the gap is no longer scoring."
+      "text": "Four flagship private-credit funds gated redemptions in H1 2026 — Blue Owl, BlackRock's HPS Lending Fund, Morgan Stanley's North Haven, and Apollo's Debt Solutions vehicle. Blackstone avoided a gate only by injecting its own capital against $3.8B of requests. Private Credit Stress steps from 0 to 2."
     },
     {
       "type": "new",
-      "text": "S&P/Gold ratio climbs again, from 1.51 to 1.71, as equities extend their run and gold pulls back. Tier 3 holds at 3/12. Equities are reclaiming purchasing power in gold terms for a second consecutive reading — the framework records the move accurately rather than dismissing it."
+      "text": "Brent fell to $78 on the US–Iran de-escalation and the reopening of the Strait of Hormuz — yet the Oil/SPR Capacity Ratio rose to 229 and the score climbed back to 2. The March emergency drained 172M barrels (the US share of a coordinated 400M release), leaving the reserve near 340M (~48% of capacity). Lower price, far less buffer."
     },
     {
       "type": "held",
-      "text": "Scores ease to T1=1/10, T2=5/20, T3=3/12. Status steps down from Emerging Disorder — Elevated to Emerging Disorder — Stable. The acute readings of April have relaxed: oil lower, gold cooler, the divergence at baseline. But the structural supply indicators — copper TC/RCs at $0, silver deficit at 800M oz — are still pinned at maximum. The phase hasn't changed. The temperature has."
+      "text": "Gold cooled to $4,153, +23% YoY with 8-week momentum at −9.5%, and the Gold/Treasury Divergence stays at baseline as yields firmed to ~4.5%. Tiers move to T1=1/10, T2=8/20, T3=3/12. The marquee Tier 1 signals are dormant — this transition is being driven by the plumbing, not the monetary-momentum complex."
     }
   ],
   "contrarian": [
-    "Oil fell to $75 and everyone called it the all-clear. <strong>The Canary isn't buying it.</strong> At $75, refilling the SPR to pre-2022 levels would still cost tens of billions and take years to execute. The 2022 release required drawing 180M barrels at $120 — that intervention stabilized markets temporarily. The reserve now sits at 415M barrels (58% capacity), and the political will to refill it doesn't exist at any price. The score eased from 2 to 1 because the acute price pressure lifted — not because the circuit breaker came back. A drop to $75 doesn't refill the reserve.",
-    "Gold pulled back to $4,382 and the consensus declared the trade over. But step back: gold is still up +29% over the year, and the dollar is hovering just below 100 at 99.7. The Gold/Treasury Divergence eased to baseline this reading — gold's annual pace slowed while yields ticked up — but a divergence going quiet after a +44% run is consolidation, not reversal. The framework reads the cooling honestly. It doesn't mistake a pause for a top.",
-    "The S&P 'recovered' against gold again. The ratio moved from 1.51 to 1.71. But zoom out: the S&P/Gold ratio peaked near 2.5 in late 2021. It now sits at 1.71 — meaning equities have surrendered roughly 30% of their purchasing power in gold terms over four years. Two good readings don't change the structural direction. The framework records them accurately. It doesn't change the interpretation."
+    "Wall Street sees gold off its highs, oil back below $80, and the dollar firm, and calls the all-clear. <strong>The Canary reads the opposite.</strong> The stress didn't dissipate — it migrated. It left the monetary-momentum signals (gold, the divergence) and reappeared in the credit plumbing: four private-credit funds slammed the redemption window shut in a single half-year. A crisis that changes venue is not a crisis that ended.",
+    "A gate is a confession. When a fund suspends redemptions, it is telling you the marks on its book cannot survive contact with real exit demand. Blue Owl, BlackRock, Morgan Stanley, and Apollo all did exactly that while the Fed quietly expanded its balance sheet at $40B/month. That specific pairing — illiquid-credit stress alongside monetary accommodation — is Override Rule #5, and it is the configuration the framework was designed to catch early. It is live now.",
+    "Oil at $78 looks like relief. It isn't. The Strategic Petroleum Reserve sits near 340M barrels — under half of capacity — after March's 172M-barrel emergency draw. The 2022 circuit breaker required 180M barrels at $120 oil; there is no longer that much dry powder in the reserve, and no political will to refill it. The price came down while the vulnerability went up. The framework scores the buffer, not the headline."
   ],
   "divergence": {
     "description": "The single most predictive indicator in The Canary. When gold surges and yields don't follow, the bond market is being artificially suppressed — either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
-    "months": [
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr"
-    ],
-    "gold": [
-      3210,
-      3370,
-      3340,
-      3350,
-      3550,
-      3870,
-      4000,
-      4240,
-      4310,
-      4620,
-      4432,
-      4382
-    ],
-    "yields": [
-      4.25,
-      4.46,
-      4.26,
-      4.23,
-      4.28,
-      4.12,
-      4.13,
-      4.09,
-      4.19,
-      4.29,
-      4.23,
-      4.47
-    ],
-    "gold_change": "+29%",
-    "yield_change": "flat",
-    "current_reading": "<strong>Current reading:</strong> Gold +29% YoY while 10Y yields are flat to slightly higher at 4.47%. The gap has narrowed enough that the Gold/Treasury Divergence indicator dropped to baseline this reading — the first time this cycle. That matters: this is the framework's core signal, and it has gone quiet. But quiet is not the same as resolved. Gold is still up sharply over the year, the dollar is hovering just below 100, and the multi-year divergence between gold and suppressed yields remains one of the widest in modern monetary history. The bond market is telling you everything is fine. The gold market and the dollar are no longer shouting — but they haven't changed their story."
+    "months": ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "gold": [3309, 3432, 3775, 3966, 4218, 4529, 5302, 5231, 4492, 4592, 4499, 4153],
+    "yields": [4.42, 4.22, 4.20, 3.99, 4.02, 4.14, 4.26, 3.97, 4.44, 4.36, 4.45, 4.46],
+    "gold_change": "+23%",
+    "yield_change": "+0.12%",
+    "current_reading": "<strong>Current reading:</strong> Gold is +23% YoY while the 10Y has firmed to ~4.5% — the gap that defined this cycle has closed from the gold side. Gold peaked near $5,300 in January and has since cooled to $4,153, while yields drifted up rather than down. The Gold/Treasury Divergence — the framework's most predictive indicator — has gone quiet, and it is not what is driving this escalation. That is the point worth sitting with: the regime moved to Transition with the marquee signal dormant. The stress is now in credit, not in the bond–gold spread. When a transition fires without the divergence, the system is telling you the next leg runs through the plumbing."
   },
   "consensus": [
     {
-      "topic": "Oil falling to $75",
-      "wall_street": "Supply normalization — OPEC+ responding, demand concerns easing. Energy price pressure is behind us.",
-      "atlas": "The SPR is still at 58% capacity. The circuit breaker that worked in 2022 is still unavailable. The score eased from 2 to 1 because the acute price pressure lifted — but the indicator measures the underlying vulnerability, not the spot price, and that vulnerability remains."
+      "topic": "Private credit gates",
+      "wall_street": "Idiosyncratic — a few funds managing liquidity prudently.",
+      "atlas": "Four flagship funds gating in one half-year is not idiosyncratic. With the Fed expanding simultaneously, it trips Override Rule #5 → immediate Transition."
     },
     {
-      "topic": "Dollar at 99.7",
-      "wall_street": "Dollar firming back toward 100 — the weakness was a blip. Reserve status intact.",
-      "atlas": "Still below the 100 floor it broke earlier this cycle, with the 8-week trend up just +1.1%. A bounce inside a broken level isn't a recovery. Gold at $4,382 alongside a sub-100 dollar is still the monetary backdrop the framework watches — the urgency has eased, the setup hasn't."
+      "topic": "Gold's pullback",
+      "wall_street": "The run is over; the safe-haven bid has faded.",
+      "atlas": "Gold +23% YoY, consolidating after a ~$5,300 peak. Cooling momentum is not reversal — and the escalation isn't coming from gold anyway."
     },
     {
-      "topic": "Equities recovering vs gold",
-      "wall_street": "S&P at 7,511 confirms the bull market is intact. Gold was the overreaction.",
-      "atlas": "S&P/Gold at 1.71 vs the 2021 peak of ~2.5. Equities are up nominally, but down ~30% in gold terms over 4 years. Two readings of outperformance are recorded accurately by the framework — they don't change the 4-year trend."
+      "topic": "Oil below $80",
+      "wall_street": "Energy risk resolved — Hormuz reopened, supply normalizing.",
+      "atlas": "SPR near 48% after the 172M-bbl March draw. Lower price, depleted buffer — the ratio rose to 229. The circuit breaker is spent."
     },
     {
       "topic": "Fed policy",
-      "wall_street": "Tightening cycle complete, cuts coming",
-      "atlas": "Balance sheet still growing — +1.0% over 3 months — at a $40B/mo purchase pace. Direction matters more than rate level. The stealth expansion continues, even as the pace cools."
+      "wall_street": "Tightening cycle complete, cuts coming.",
+      "atlas": "Balance sheet still expanding at $40B/mo. That expansion is half of the Override #5 trigger now firing."
     },
     {
       "topic": "Credit spreads",
-      "wall_street": "Baa at 2.47% is historically normal — no stress",
-      "atlas": "Ticked up from 2.40% to 2.47%. Still well inside normal, but the direction is the wrong way. Watch whether this drifts wider over the next few readings."
+      "wall_street": "Baa spreads benign — no systemic stress.",
+      "atlas": "Spreads lag gates. Redemption suspensions are the leading signal; spreads are the confirmation that hasn't arrived yet."
     },
     {
       "topic": "Copper supply",
-      "wall_street": "Inventories high — no shortage",
-      "atlas": "TC/RCs at $0 says smelters are in crisis. Headline inventory masks geographic dislocation and tariff front-loading."
+      "wall_street": "Inventories ample — no shortage.",
+      "atlas": "TC/RCs still negative — smelters paying miners. The structural concentrate shortage is unmoved by the macro tape."
     }
   ],
   "positioning": {
-    "intro": "<strong>The status steps down to Emerging Disorder — Stable.</strong> Oil fell to $75, gold cooled to +29% YoY, and the Gold/Treasury Divergence dropped to baseline — the acute April readings have relaxed across Tier 1. The framework records this honestly: short-term mean reversion is real and worth tracking. But the structural indicators haven't moved — copper smelters are still paying miners, silver deficits are compounding, and the Fed's balance sheet is still growing. The temperature has come down; the phase has not. Position for the structure, not the noise.",
+    "intro": "<strong>The status escalates to Crisis Acceleration — Transition.</strong> The trigger is not gold — it's Override Rule #5: private-credit gates plus an expanding Fed, firing in the same month. This is the phase the framework was built to flag early, when the largest moves in hard assets historically occur. The short-term Treasury buffer now begins to wind down — Transition is the point where the framework starts treating Treasuries themselves as part of the problem, not the parking lot.",
     "posture": [
       {
         "color": "emerald",
         "label": "Gold — overweight",
-        "reason": "Pulled back to $4,382, +29% YoY with 8-week momentum negative at -7.4%. The annual trend has cooled and the Gold/Treasury Divergence eased to baseline this reading — gold is consolidating, not breaking. The structural case (dollar below 100, Fed still expanding) is intact; the tactical setup has softened. A pause after a +44% run is normal."
+        "reason": "Tier 1 is quiet, but the structural case is intact: a Fed still expanding, central banks buying 244t in Q1 (≈976t annualized), and a credit system that just started gating. Gold's pullback to $4,153 is consolidation inside a monetary regime change, not its end. Add on weakness."
       },
       {
         "color": "emerald",
         "label": "Bitcoin — overweight",
-        "reason": "Functions as high-beta gold in monetary regime transitions. The same backdrop — a sub-100 dollar and a Fed still buying — is the setup BTC correlates with most strongly. Position size for volatility, especially while gold consolidates."
+        "reason": "High-beta gold. In a credit-led transition, BTC is the cleanest expression of the monetary-accommodation response that follows forced liquidity. Size for volatility — it will draw down with risk assets before it leads."
       },
       {
-        "color": "amber",
-        "label": "Short-term Treasuries — hold",
-        "reason": "T-bills under 1-year maturity. Dry powder for deployment if the coiling pattern breaks toward escalation. Eliminated at Crisis Acceleration when Treasuries themselves become the problem."
+        "color": "red",
+        "label": "Short-term Treasuries — reduce",
+        "reason": "Transition is the wind-down point. The T-bill buffer that made sense at Elevated now starts coming off as the framework shifts to treating Treasuries as the problem rather than the parking lot. Keep only what funds near-term liquidity."
       },
       {
-        "color": "amber",
+        "color": "emerald",
         "label": "Critical materials — overweight",
-        "reason": "Copper TC/RCs still at $0 (score 2) and silver deficit at 800M oz cumulative (score 2) — both supply-side indicators pinned at maximum. Oil/SPR eased to a score of 1 as crude fell to $75, but the reserve is still at 58% capacity. The structural shortages are unmoved by the price pullback."
+        "reason": "Copper TC/RCs still negative, silver in a sixth straight deficit year. The Material Ledger doesn't care about the macro tape — physical tightness is unmoved by gold's pullback or oil's drop."
       },
       {
         "color": "red",
         "label": "Equities — underweight",
-        "reason": "S&P/Gold ratio rose to 1.71 from the 1.40 low — the framework records this. But the 4-year trend shows equities have lost ~30% of their purchasing power in gold terms since 2021. Nominal gains masking real losses."
+        "reason": "S&P/Gold at 1.80 — nominal highs masking a multi-year loss of purchasing power in gold terms. A credit-led transition is precisely when equity multiples are most exposed."
       },
       {
         "color": "red",
         "label": "Long Treasuries — underweight",
-        "reason": "Yields ticked up to 4.47% but remain structurally suppressed against a Fed that is still buying. With the dollar hovering below 100, the case for long-duration bonds remains weak even as the acute divergence eases."
+        "reason": "Yields firmed to ~4.5% against a Fed still buying and a credit system gating. Long duration carries asymmetric downside when forced liquidity meets a depleted fiscal buffer."
       }
     ]
   },
   "triggers": {
     "escalation": [
-      "Gold 8-week momentum recovers above <strong>+10%</strong> → Gold Momentum returns to Score 2 and Tier 1 re-escalates. Currently at -7.4% — the window has widened as gold consolidates.",
-      "Fed shifts to <strong>long-duration purchases</strong> while The Canary reads Early Warning or above → immediate Crisis Acceleration (Override Rule #4). QE launched from Stable does not trigger — it's a crisis response, not a cause.",
-      "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis signal. Currently masked by Fed purchases — watch what happens if they pause.",
-      "Tier 2 confirming score reaches <strong>≥8</strong> → triggers Transition via combined T1+T2 gate. Currently at 5/20. If credit spreads keep drifting wider or foreign holdings drop, the path to 8 shortens."
+      "A fifth or sixth private-credit gate, or a gate that drags in a bank counterparty → pushes Private Credit Stress toward systemic and Tier 2 higher.",
+      "Fed shifts to <strong>long-duration purchases</strong> (Override #4) → immediate confirmation. Currently bills-only.",
+      "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis. Currently firm (10Y 2.45, 30Y 2.43) — watch the next refunding.",
+      "Gold 8-week momentum recovers above <strong>+10%</strong> → Tier 1 re-engages on top of the credit signal. Currently −9.5%."
     ],
     "deescalation": [
-      "Gold YoY drops below <strong>+30%</strong> while yields rise → genuine tightening. Currently at +29% — just crossed below the threshold, but yields are flat rather than rising, so this reads as gold cooling, not genuine tightening.",
-      "Fed <strong>resumes QT</strong> at full pace → balance sheet contracting. Not just slowing purchases — actively shrinking. Balance sheet is still growing, though the pace has cooled to +1.0% over 3 months.",
-      "Tier 1 drops to <strong>0–2</strong> (currently 1/10) → returns to Stable. Tier 1 is now at 1/10 — this condition is met, which is what pulled the status down to Stable.",
-      "Deficit/GDP falls below <strong>5%</strong> → structural fiscal pressure easing. Currently at 5.8% and rising."
+      "Gated funds reopen redemptions in orderly fashion → Override #5 clears. None have reopened yet.",
+      "Fed <strong>resumes QT</strong> at full pace → removes half the Override #5 trigger. Balance sheet still growing at $40B/mo.",
+      "SPR refill begins at scale → restores the oil circuit breaker. No refill underway; reserve near 48% of capacity.",
+      "Tier 2 falls back below <strong>6</strong> with no active overrides → returns to Stable. Currently 8/20 with Override #5 live."
     ]
   },
   "track_record": {
