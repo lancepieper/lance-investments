@@ -10,7 +10,7 @@
     },
     {
       "type": "new",
-      "text": "The Treasury Department — not the Fed — has started leaning on the long end. On Aug 19 it at least doubled its long-dated liquidity-support buybacks (10–20 and 20–30 year sectors) from a $2B maximum to $4B+ per operation through the Nov 4 refunding, after 10- and 30-year yields hit multi-year highs; on Sep 9 and again on Sep 23 it sized 10–20 year operations at up to $6B, triple the old cap. Treasury frames it as liquidity support, and the amounts are small next to Fed QE. But the direction matters: the issuer is now buying back its own long bonds to steady the market. The framework does not yet score Treasury buybacks; they are tracked here as context."
+      "text": "The Treasury Department — not the Fed — has started leaning on the long end. On Aug 19 it at least doubled its long-dated liquidity-support buybacks (10–20 and 20–30 year sectors) from a $2B maximum to $4B+ per operation through the Nov 4 refunding, after 10- and 30-year yields hit multi-year highs; on Sep 9 and again on Sep 23 it sized 10–20 year operations at up to $6B, triple the old cap. Treasury frames it as liquidity support, and the amounts are small next to Fed QE. But the direction matters: the issuer is now buying back its own long bonds to steady the market. The framework now scores this directly: new Indicator #22, Treasury Long-End Support, reads 1 (operations at 3x the routine cap). To offset the added indicator, Tier 2's status thresholds rise by one."
     },
     {
       "type": "new",
@@ -18,7 +18,7 @@
     },
     {
       "type": "held",
-      "text": "Private-credit gating narrowed but didn't end. In Q3, Apollo Debt Solutions (14.7% of shares requested, 5% paid) and BlackRock's HPS Corporate Lending Fund (11.5% requested) are still prorating redemptions; requests are easing from Q2. Private Credit Stress stays at 2. Tiers move to T1=1/10, T2=9/20, T3=3/12."
+      "text": "Private-credit gating narrowed but didn't end. In Q3, Apollo Debt Solutions (14.7% of shares requested, 5% paid) and BlackRock's HPS Corporate Lending Fund (11.5% requested) are still prorating redemptions; requests are easing from Q2. Private Credit Stress stays at 2. Tiers move to T1=1/10, T2=10/22, T3=3/12."
     }
   ],
   "contrarian": [
@@ -150,7 +150,7 @@
     "escalation": [
       "A new flagship private-credit gate, or one that drags in a bank counterparty → pushes Private Credit Stress toward systemic. Currently 2 funds prorating in Q3.",
       "Fed shifts to <strong>long-duration purchases</strong> (Override #4) → immediate confirmation. Currently bills and ≤3-year coupons only, and RMPs paused.",
-      "Treasury extends or enlarges long-end buybacks at the <strong>Nov 4 refunding</strong>, or the Fed begins buying long duration alongside it → suppression moves from liquidity support toward policy. Currently up to $6B per 10–20 year operation, through Nov 4.",
+      "Treasury extends or enlarges long-end buybacks at the <strong>Nov 4 refunding</strong>, or the Fed begins buying long duration alongside it → Treasury Long-End Support steps from 1 to 2 above $10B per operation, or on any stated yield aim. Currently up to $6B per 10–20 year operation, through Nov 4.",
       "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis. Currently strong (10Y 2.71, 30Y 2.61).",
       "China's suspended rare-earth export controls <strong>resume on Nov 10</strong> → China Export Controls re-scores. Currently suspended.",
       "Gold 8-week momentum recovers above <strong>+10%</strong> → Tier 1 re-engages on top of the credit signal. Currently +5.3%."
@@ -159,7 +159,7 @@
       "Gated funds meet redemption requests in full → Override #5 clears. Q3 requests are easing, but Apollo and BlackRock HPS are still prorating.",
       "Fed <strong>formally ends</strong> reserve-management purchases → removes half the Override #5 trigger. Currently paused through at least Oct 14; program still standing.",
       "SPR refill begins at scale → restores the oil circuit breaker. Reserve at 284.6M bbl, lowest since 1982; no refill underway.",
-      "Tier 2 falls back below <strong>6</strong> with no active overrides → returns to Stable. Currently 9/20 with Override #5 live."
+      "Tier 2 falls back below <strong>7</strong> with no active overrides → returns to Stable. Currently 10/22 with Override #5 live."
     ]
   },
   "track_record": {

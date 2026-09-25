@@ -1,14 +1,14 @@
 {
-  "published_at": "2026-09-25T20:46:38Z",
+  "published_at": "2026-09-25T21:29:26Z",
   "current": {
     "date": "2026-09-25",
     "regime_status": "Crisis Acceleration \u2014 Transition",
     "tier1_score": 1.0,
     "tier1_max": 10,
     "tier1_count": 5,
-    "tier2_score": 9.0,
-    "tier2_max": 20,
-    "tier2_count": 10,
+    "tier2_score": 10.0,
+    "tier2_max": 22,
+    "tier2_count": 11,
     "tier3_score": 3.0,
     "tier3_max": 12,
     "tier3_count": 6,
@@ -43,7 +43,7 @@
         "tier": 1,
         "score": 0.0,
         "raw_value": 2.61,
-        "notes": "10Y B/C=2.71. 30Y B/C=2.61"
+        "notes": "10Y B/C=2.71. 30Y B/C=2.61. \u26a0 Signal masked by Treasury buybacks"
       },
       {
         "num": 5,
@@ -180,6 +180,14 @@
         "score": 2.0,
         "raw_value": 403.6893886156008,
         "notes": "Oil=$115, SPR=285M bbl. Ratio=404. Highest in history."
+      },
+      {
+        "num": 22,
+        "name": "Treasury Long-End Support",
+        "tier": 2,
+        "score": 1.0,
+        "raw_value": 6.0,
+        "notes": "Max long-end buyback=$6B (3.0x routine cap). Up to $6B 10-20yr operations Sep 10 and Sep 23 (3x $2B routine cap); long-end ops at least doubled Aug 19 through Nov 4 refunding"
       }
     ]
   },
@@ -278,7 +286,7 @@
     {
       "date": "2026-09-25",
       "tier1_score": 1.0,
-      "tier2_score": 9.0,
+      "tier2_score": 10.0,
       "tier3_score": 3.0,
       "regime_status": "Crisis Acceleration \u2014 Transition"
     }

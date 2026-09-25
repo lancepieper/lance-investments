@@ -169,7 +169,7 @@ export default async function Home() {
                 The Canary
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                A live dashboard tracking 21 macro indicators to detect monetary system transitions before the consensus catches up. Updated regularly with fresh data from FRED, Yahoo Finance, and primary sources.
+                A live dashboard tracking 22 macro indicators to detect monetary system transitions before the consensus catches up. Updated regularly with fresh data from FRED, Yahoo Finance, and primary sources.
               </p>
               <span className="mt-4 inline-block text-sm font-medium text-gold-400/70 transition-colors group-hover:text-gold-400">
                 View dashboard &rarr;
