@@ -10,6 +10,10 @@
     },
     {
       "type": "new",
+      "text": "The Treasury Department — not the Fed — has started leaning on the long end. On Aug 19 it at least doubled its long-dated liquidity-support buybacks (10–20 and 20–30 year sectors) from a $2B maximum to $4B+ per operation through the Nov 4 refunding, after 10- and 30-year yields hit multi-year highs; on Sep 9 and again on Sep 23 it sized 10–20 year operations at up to $6B, triple the old cap. Treasury frames it as liquidity support, and the amounts are small next to Fed QE. But the direction matters: the issuer is now buying back its own long bonds to steady the market. The framework does not yet score Treasury buybacks; they are tracked here as context."
+    },
+    {
+      "type": "new",
       "text": "The 10-year Treasury yield has risen to 5.18%, up a full percentage point year over year. Auctions cleared well (10Y bid-to-cover 2.71, 30Y 2.61) — the demand is there, but only at a price. Copper Inventories step from 0 to 1: COMEX now holds ~70% of visible exchange stocks as tariff-driven flows pull metal into the US, with COMEX copper at a record $6.83/lb."
     },
     {
@@ -20,7 +24,7 @@
   "contrarian": [
     "Wall Street sees the private-credit wave cresting and the Fed stepping back from bill purchases, and reads it as normalization. <strong>The Canary reads it differently.</strong> Redemption requests are easing, but two flagship funds are still paying out less than half of what investors asked for, three quarters into the year. And the Fed's pause isn't a policy reversal — the reserve-management program is still standing, and the plumbing that forced it into existence last December hasn't changed.",
     "The oil shock is the stress test the SPR can no longer pass. In 2022, the answer to $120 oil was a 180M-barrel release. Today the reserve holds 284.6M barrels — its lowest since 1982 — after March's 172M-barrel emergency draw. With Brent back near $115, there is no comparable buffer left to deploy. The framework scores the buffer, not the headline, and the buffer is the thinnest it has ever measured.",
-    "A 5% ten-year with strong auction demand looks like a healthy market. Read it the other way: the bond market is clearing at a rate that raises the government's own funding cost every time debt rolls — and CBO already puts interest at 18.6% of federal revenue this year, above the 1991 high. Rising yields alongside an energy shock is the combination that makes monetary accommodation harder to avoid, not easier."
+    "A 5% ten-year with strong auction demand looks like a healthy market. Read it the other way: the bond market is clearing at a rate that raises the government's own funding cost every time debt rolls — CBO already puts interest at 18.6% of federal revenue this year, above the 1991 high — and the Treasury has responded by tripling its long-end buybacks. Critics call that a holding action, not QE, and on size they're right. But a debt manager stepping in to support its own long bonds is the first rung of the ladder that ends with the central bank doing it. Rising yields alongside an energy shock make the next rung harder to avoid, not easier."
   ],
   "divergence": {
     "description": "The single most predictive indicator in The Canary. When gold surges and yields don't follow, the bond market is being artificially suppressed — either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
@@ -68,7 +72,7 @@
     ],
     "gold_change": "+15%",
     "yield_change": "+1.00%",
-    "current_reading": "<strong>Current reading:</strong> Gold is +15% YoY at ~$4,324, while the 10-year has climbed a full point to 5.18%. The divergence that defined this cycle — gold surging while yields were held down — has reversed: yields are now rising faster than gold. The Gold/Treasury Divergence stays at baseline, and it is not what holds the framework at Transition. The escalation continues to run through the plumbing (private-credit gates, a depleted SPR, a Fed program on pause rather than withdrawn). A bond market repricing higher at the same time as an oil shock is the setup where suppression pressure tends to return — watch for the divergence to re-open from the yield side if the Fed is forced back in."
+    "current_reading": "<strong>Current reading:</strong> Gold is +15% YoY at ~$4,324, while the 10-year has climbed a full point to 5.18%. The divergence that defined this cycle — gold surging while yields were held down — has reversed: yields are now rising faster than gold. The Gold/Treasury Divergence stays at baseline, and it is not what holds the framework at Transition. But suppression pressure is already returning — from the Treasury rather than the Fed. Since September, Treasury has been buying back up to $6B of long bonds per operation, triple its old cap, to support the long end. If those buybacks grow, or the Fed is drawn in, watch for the divergence to re-open from the yield side."
   },
   "consensus": [
     {
@@ -90,6 +94,11 @@
       "topic": "10-year at 5%",
       "wall_street": "Strong auctions prove demand is healthy.",
       "atlas": "Demand is there at a price. A 100bp rise in a year pushes interest costs past 18% of revenue and raises the pressure for accommodation."
+    },
+    {
+      "topic": "Treasury buybacks",
+      "wall_street": "Routine liquidity support for off-the-run bonds — not policy.",
+      "atlas": "Doubled on Aug 19, then up to $6B per operation in September — triple the old cap, aimed at the long end as yields hit multi-year highs. Small in size, but it is the issuer supporting its own long bonds. Next decision: Nov 4 refunding."
     },
     {
       "topic": "Gold's consolidation",
@@ -141,6 +150,7 @@
     "escalation": [
       "A new flagship private-credit gate, or one that drags in a bank counterparty → pushes Private Credit Stress toward systemic. Currently 2 funds prorating in Q3.",
       "Fed shifts to <strong>long-duration purchases</strong> (Override #4) → immediate confirmation. Currently bills and ≤3-year coupons only, and RMPs paused.",
+      "Treasury extends or enlarges long-end buybacks at the <strong>Nov 4 refunding</strong>, or the Fed begins buying long duration alongside it → suppression moves from liquidity support toward policy. Currently up to $6B per 10–20 year operation, through Nov 4.",
       "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis. Currently strong (10Y 2.71, 30Y 2.61).",
       "China's suspended rare-earth export controls <strong>resume on Nov 10</strong> → China Export Controls re-scores. Currently suspended.",
       "Gold 8-week momentum recovers above <strong>+10%</strong> → Tier 1 re-engages on top of the credit signal. Currently +5.3%."
