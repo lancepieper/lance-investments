@@ -1,12 +1,12 @@
 {
-  "published_at": "2026-06-23T16:49:49Z",
+  "published_at": "2026-09-25T20:46:38Z",
   "current": {
-    "date": "2026-06-23",
+    "date": "2026-09-25",
     "regime_status": "Crisis Acceleration \u2014 Transition",
     "tier1_score": 1.0,
     "tier1_max": 10,
     "tier1_count": 5,
-    "tier2_score": 8.0,
+    "tier2_score": 9.0,
     "tier2_max": 20,
     "tier2_count": 10,
     "tier3_score": 3.0,
@@ -18,40 +18,40 @@
         "name": "Gold Momentum",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 4153.2,
-        "notes": "Gold=$4153, YoY=+23.0%, 8wk=-9.5%"
+        "raw_value": 4323.8,
+        "notes": "Gold=$4324, YoY=+14.7%, 8wk=+5.3%"
       },
       {
         "num": 2,
         "name": "Gold/Treasury Divergence",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 22.959410249578116,
-        "notes": "Gold YoY=+23.0%, 10Y chg=+0.12%. BASELINE \u2014 no significant divergence"
+        "raw_value": 14.656201108429908,
+        "notes": "Gold YoY=+14.7%, 10Y chg=+1.00%. BASELINE \u2014 no significant divergence"
       },
       {
         "num": 3,
         "name": "Fed Balance Sheet",
         "tier": 1,
         "score": 1.0,
-        "raw_value": 6736424.0,
-        "notes": "Assets=$6.74T. 3mo chg=+1.2%. Purchase pace=$40B/mo. Expanding via purchases"
+        "raw_value": 6747704.0,
+        "notes": "Assets=$6.75T. 3mo chg=+0.2%. Balance sheet expanding"
       },
       {
         "num": 4,
         "name": "Treasury Auction Demand",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 2.43,
-        "notes": "10Y B/C=2.45. 30Y B/C=2.43. \u26a0 Signal masked by Fed purchases"
+        "raw_value": 2.61,
+        "notes": "10Y B/C=2.71. 30Y B/C=2.61"
       },
       {
         "num": 5,
         "name": "IORB-SOFR Spread",
         "tier": 1,
         "score": 0.0,
-        "raw_value": 4.0000000000000036,
-        "notes": "IORB=3.65%, SOFR=3.61%, Spread=4.0bps"
+        "raw_value": 2.0000000000000018,
+        "notes": "IORB=3.90%, SOFR=3.88%, Spread=2.0bps"
       },
       {
         "num": 6,
@@ -66,24 +66,24 @@
         "name": "Fed Deferred Asset",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 245.0,
-        "notes": "$245B. Cumulative deferred asset per H.4.1. Growing."
+        "raw_value": 233.0,
+        "notes": "$233B. $233B per H.4.1 Sep 23; shrinking from $245B in Feb"
       },
       {
         "num": 8,
         "name": "Private Credit Stress",
         "tier": 2,
         "score": 2.0,
-        "raw_value": 2.47,
-        "notes": "Fund gates=4. GATES: Blue Owl, BlackRock HPS, Morgan Stanley North Haven, Apollo Debt Solutions all capped redemptions H1 2026"
+        "raw_value": 2.69,
+        "notes": "Fund gates=2. Q3 GATES: Apollo Debt Solutions (14.7% requested, 5% paid), BlackRock HPS HLEND (11.5% requested, 5% paid). Requests easing vs Q2"
       },
       {
         "num": 9,
         "name": "Copper Physical Premium",
         "tier": 2,
         "score": 0.0,
-        "raw_value": 3.0,
-        "notes": "3.0% premium. COMEX spot premium ~3% over LME (LME exec); below 5% trigger "
+        "raw_value": 1.5,
+        "notes": "1.5% premium. COMEX $6.83/lb vs LME ~$14,833/t (Sep 22-23), ~1.5% premium "
       },
       {
         "num": 10,
@@ -91,23 +91,23 @@
         "tier": 2,
         "score": 0.0,
         "raw_value": 0.0,
-        "notes": "Current scope: Ga, Ge, Sb, enriched isotopes. Stable."
+        "notes": "Oct 2025 rare-earth controls suspended until Nov 10, 2026. Watch expiry"
       },
       {
         "num": 11,
         "name": "DXY",
         "tier": 2,
         "score": 1.0,
-        "raw_value": 101.38,
-        "notes": "DXY=101.4, 8wk chg=+2.8%"
+        "raw_value": 101.02,
+        "notes": "DXY=101.0, 8wk chg=+1.2%"
       },
       {
         "num": 12,
         "name": "Gold/Fed BS Ratio",
         "tier": 2,
         "score": 0.0,
-        "raw_value": 0.16122164214473436,
-        "notes": "Coverage=16.1%. Gold reserves=$1.09T vs Fed=$6.74T. Target: 33-50%"
+        "raw_value": 0.16756352327233087,
+        "notes": "Coverage=16.8%. Gold reserves=$1.13T vs Fed=$6.75T. Target: 33-50%"
       },
       {
         "num": 13,
@@ -122,32 +122,32 @@
         "name": "Debt Service/Revenue",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 20.0,
-        "notes": "20.0% of revenue. CBO estimate. At threshold and rising."
+        "raw_value": 18.6,
+        "notes": "18.6% of revenue. CBO Feb 2026 outlook: net interest 18.6% of revenue in 2026"
       },
       {
         "num": 15,
         "name": "CB Gold Purchases",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 976.0,
-        "notes": "976 tonnes annualized. CB buying 244t in Q1 2026 (WGC Apr 29), ~976t annualized"
+        "raw_value": 1156.0,
+        "notes": "1156 tonnes annualized. WGC Q2 2026: 289t (record Q2), ~1,156t annualized; H1 only 345t after weak Q1"
       },
       {
         "num": 16,
         "name": "S&P/Gold Ratio",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 1.799284888760474,
-        "notes": "S&P=7473 / Gold=4153 = 1.80"
+        "raw_value": 1.7817961052777649,
+        "notes": "S&P=7704 / Gold=4324 = 1.78"
       },
       {
         "num": 17,
         "name": "Commodity/Gold Ratio",
         "tier": 3,
         "score": 0.0,
-        "raw_value": 0.1516180294712511,
-        "notes": "GSCI=630, Gold=$4153, Ratio=0.1516 (YoY=-9.0%)"
+        "raw_value": 0.17060687358342197,
+        "notes": "GSCI=738, Gold=$4324, Ratio=0.1706 (YoY=+15.3%)"
       },
       {
         "num": 18,
@@ -161,25 +161,25 @@
         "num": 19,
         "name": "Copper Inventories",
         "tier": 2,
-        "score": 0.0,
-        "raw_value": 967000.0,
-        "notes": "Total=967kt. ~13 days demand. COMEX=55%. LME=19%. SHFE=26%. 3mo trend=+0.0%"
+        "score": 1.0,
+        "raw_value": 992676.0,
+        "notes": "Total=993kt. ~14 days demand. COMEX=70%. LME=26%. SHFE=4%. \u26a0 Geographic dislocation"
       },
       {
         "num": 20,
         "name": "Silver Market Balance",
         "tier": 3,
         "score": 2.0,
-        "raw_value": 800.0,
-        "notes": "Cumulative deficit=800 Moz. Latest annual=117 Moz. SLV=318M oz"
+        "raw_value": 762.1,
+        "notes": "Cumulative deficit=762 Moz. Latest annual=46 Moz. SLV=318M oz"
       },
       {
         "num": 21,
         "name": "Oil / SPR Capacity Ratio",
         "tier": 2,
         "score": 2.0,
-        "raw_value": 229.41176470588235,
-        "notes": "Oil=$78, SPR=340M bbl. Ratio=229. "
+        "raw_value": 403.6893886156008,
+        "notes": "Oil=$115, SPR=285M bbl. Ratio=404. Highest in history."
       }
     ]
   },
@@ -272,6 +272,13 @@
       "date": "2026-06-23",
       "tier1_score": 1.0,
       "tier2_score": 8.0,
+      "tier3_score": 3.0,
+      "regime_status": "Crisis Acceleration \u2014 Transition"
+    },
+    {
+      "date": "2026-09-25",
+      "tier1_score": 1.0,
+      "tier2_score": 9.0,
       "tier3_score": 3.0,
       "regime_status": "Crisis Acceleration \u2014 Transition"
     }

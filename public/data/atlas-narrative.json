@@ -1,115 +1,155 @@
 {
   "what_changed": [
     {
-      "type": "new",
-      "text": "Status jumps from Emerging Disorder — Stable to Crisis Acceleration — Transition — and not from the signal you'd expect. Tier 1 is quiet (1/10). The escalation is Override Rule #5: private-credit fund gates appearing in the same month the Fed is still expanding its balance sheet. The framework was built to fire on exactly this configuration."
+      "type": "held",
+      "text": "Status holds at Crisis Acceleration — Transition. Override Rule #5 stays live, with one wrinkle worth stating plainly: the Fed has paused its reserve-management bill purchases for August through at least mid-October. The framework treats that as a pause inside a standing program, not the end of expansion — the program has not been withdrawn, and strategists expect purchases to resume. If the Fed formally ends RMPs, Override #5 clears."
     },
     {
       "type": "new",
-      "text": "Four flagship private-credit funds gated redemptions in H1 2026 — Blue Owl, BlackRock's HPS Lending Fund, Morgan Stanley's North Haven, and Apollo's Debt Solutions vehicle. Blackstone avoided a gate only by injecting its own capital against $3.8B of requests. Private Credit Stress steps from 0 to 2."
+      "text": "The oil circuit breaker is now spent. Brent is back to ~$115 on renewed Gulf supply disruption — strikes on commercial shipping and attacks on Saudi Arabia's East-West pipeline — while the Strategic Petroleum Reserve sits at 284.6M barrels, its lowest since 1982. The Oil/SPR Capacity Ratio hit 404, the highest on record. In June we wrote that the price came down while the vulnerability went up. The price has now caught up."
     },
     {
       "type": "new",
-      "text": "Brent fell to $78 on the US–Iran de-escalation and the reopening of the Strait of Hormuz — yet the Oil/SPR Capacity Ratio rose to 229 and the score climbed back to 2. The March emergency drained 172M barrels (the US share of a coordinated 400M release), leaving the reserve near 340M (~48% of capacity). Lower price, far less buffer."
+      "text": "The 10-year Treasury yield has risen to 5.18%, up a full percentage point year over year. Auctions cleared well (10Y bid-to-cover 2.71, 30Y 2.61) — the demand is there, but only at a price. Copper Inventories step from 0 to 1: COMEX now holds ~70% of visible exchange stocks as tariff-driven flows pull metal into the US, with COMEX copper at a record $6.83/lb."
     },
     {
       "type": "held",
-      "text": "Gold cooled to $4,153, +23% YoY with 8-week momentum at −9.5%, and the Gold/Treasury Divergence stays at baseline as yields firmed to ~4.5%. Tiers move to T1=1/10, T2=8/20, T3=3/12. The marquee Tier 1 signals are dormant — this transition is being driven by the plumbing, not the monetary-momentum complex."
+      "text": "Private-credit gating narrowed but didn't end. In Q3, Apollo Debt Solutions (14.7% of shares requested, 5% paid) and BlackRock's HPS Corporate Lending Fund (11.5% requested) are still prorating redemptions; requests are easing from Q2. Private Credit Stress stays at 2. Tiers move to T1=1/10, T2=9/20, T3=3/12."
     }
   ],
   "contrarian": [
-    "Wall Street sees gold off its highs, oil back below $80, and the dollar firm, and calls the all-clear. <strong>The Canary reads the opposite.</strong> The stress didn't dissipate — it migrated. It left the monetary-momentum signals (gold, the divergence) and reappeared in the credit plumbing: four private-credit funds slammed the redemption window shut in a single half-year. A crisis that changes venue is not a crisis that ended.",
-    "A gate is a confession. When a fund suspends redemptions, it is telling you the marks on its book cannot survive contact with real exit demand. Blue Owl, BlackRock, Morgan Stanley, and Apollo all did exactly that while the Fed quietly expanded its balance sheet at $40B/month. That specific pairing — illiquid-credit stress alongside monetary accommodation — is Override Rule #5, and it is the configuration the framework was designed to catch early. It is live now.",
-    "Oil at $78 looks like relief. It isn't. The Strategic Petroleum Reserve sits near 340M barrels — under half of capacity — after March's 172M-barrel emergency draw. The 2022 circuit breaker required 180M barrels at $120 oil; there is no longer that much dry powder in the reserve, and no political will to refill it. The price came down while the vulnerability went up. The framework scores the buffer, not the headline."
+    "Wall Street sees the private-credit wave cresting and the Fed stepping back from bill purchases, and reads it as normalization. <strong>The Canary reads it differently.</strong> Redemption requests are easing, but two flagship funds are still paying out less than half of what investors asked for, three quarters into the year. And the Fed's pause isn't a policy reversal — the reserve-management program is still standing, and the plumbing that forced it into existence last December hasn't changed.",
+    "The oil shock is the stress test the SPR can no longer pass. In 2022, the answer to $120 oil was a 180M-barrel release. Today the reserve holds 284.6M barrels — its lowest since 1982 — after March's 172M-barrel emergency draw. With Brent back near $115, there is no comparable buffer left to deploy. The framework scores the buffer, not the headline, and the buffer is the thinnest it has ever measured.",
+    "A 5% ten-year with strong auction demand looks like a healthy market. Read it the other way: the bond market is clearing at a rate that raises the government's own funding cost every time debt rolls — and CBO already puts interest at 18.6% of federal revenue this year, above the 1991 high. Rising yields alongside an energy shock is the combination that makes monetary accommodation harder to avoid, not easier."
   ],
   "divergence": {
     "description": "The single most predictive indicator in The Canary. When gold surges and yields don't follow, the bond market is being artificially suppressed — either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
-    "months": ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-    "gold": [3309, 3432, 3775, 3966, 4218, 4529, 5302, 5231, 4492, 4592, 4499, 4153],
-    "yields": [4.42, 4.22, 4.20, 3.99, 4.02, 4.14, 4.26, 3.97, 4.44, 4.36, 4.45, 4.46],
-    "gold_change": "+23%",
-    "yield_change": "+0.12%",
-    "current_reading": "<strong>Current reading:</strong> Gold is +23% YoY while the 10Y has firmed to ~4.5% — the gap that defined this cycle has closed from the gold side. Gold peaked near $5,300 in January and has since cooled to $4,153, while yields drifted up rather than down. The Gold/Treasury Divergence — the framework's most predictive indicator — has gone quiet, and it is not what is driving this escalation. That is the point worth sitting with: the regime moved to Transition with the marquee signal dormant. The stress is now in credit, not in the bond–gold spread. When a transition fires without the divergence, the system is telling you the next leg runs through the plumbing."
+    "months": [
+      "Oct",
+      "Nov",
+      "Dec",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "gold": [
+      3997,
+      4255,
+      4341,
+      4745,
+      5248,
+      4648,
+      4630,
+      4593,
+      4039,
+      4107,
+      4482,
+      4324
+    ],
+    "yields": [
+      4.11,
+      4.02,
+      4.18,
+      4.26,
+      3.97,
+      4.3,
+      4.4,
+      4.45,
+      4.44,
+      4.75,
+      4.75,
+      5.18
+    ],
+    "gold_change": "+15%",
+    "yield_change": "+1.00%",
+    "current_reading": "<strong>Current reading:</strong> Gold is +15% YoY at ~$4,324, while the 10-year has climbed a full point to 5.18%. The divergence that defined this cycle — gold surging while yields were held down — has reversed: yields are now rising faster than gold. The Gold/Treasury Divergence stays at baseline, and it is not what holds the framework at Transition. The escalation continues to run through the plumbing (private-credit gates, a depleted SPR, a Fed program on pause rather than withdrawn). A bond market repricing higher at the same time as an oil shock is the setup where suppression pressure tends to return — watch for the divergence to re-open from the yield side if the Fed is forced back in."
   },
   "consensus": [
     {
       "topic": "Private credit gates",
-      "wall_street": "Idiosyncratic — a few funds managing liquidity prudently.",
-      "atlas": "Four flagship funds gating in one half-year is not idiosyncratic. With the Fed expanding simultaneously, it trips Override Rule #5 → immediate Transition."
+      "wall_street": "The redemption wave has peaked; requests are falling.",
+      "atlas": "Falling from a peak is not reopening. Apollo and BlackRock HPS are still prorating in Q3 — the third straight quarter of gates for Apollo. Private Credit Stress stays at 2."
     },
     {
-      "topic": "Gold's pullback",
-      "wall_street": "The run is over; the safe-haven bid has faded.",
-      "atlas": "Gold +23% YoY, consolidating after a ~$5,300 peak. Cooling momentum is not reversal — and the escalation isn't coming from gold anyway."
+      "topic": "Fed bill purchases",
+      "wall_street": "The Fed has paused RMPs — balance-sheet support is fading.",
+      "atlas": "A pause inside a standing program. Reserve management purchases have not been withdrawn, and resumption is expected. Override #5 stays live until the program ends."
     },
     {
-      "topic": "Oil below $80",
-      "wall_street": "Energy risk resolved — Hormuz reopened, supply normalizing.",
-      "atlas": "SPR near 48% after the 172M-bbl March draw. Lower price, depleted buffer — the ratio rose to 229. The circuit breaker is spent."
+      "topic": "Oil above $110",
+      "wall_street": "A supply shock that will fade once Gulf flows normalize.",
+      "atlas": "SPR at 284.6M bbl, lowest since 1982. Oil/SPR ratio at 404, highest on record. The price may fade; the missing buffer won't refill quickly."
     },
     {
-      "topic": "Fed policy",
-      "wall_street": "Tightening cycle complete, cuts coming.",
-      "atlas": "Balance sheet still expanding at $40B/mo. That expansion is half of the Override #5 trigger now firing."
+      "topic": "10-year at 5%",
+      "wall_street": "Strong auctions prove demand is healthy.",
+      "atlas": "Demand is there at a price. A 100bp rise in a year pushes interest costs past 18% of revenue and raises the pressure for accommodation."
     },
     {
-      "topic": "Credit spreads",
-      "wall_street": "Baa spreads benign — no systemic stress.",
-      "atlas": "Spreads lag gates. Redemption suspensions are the leading signal; spreads are the confirmation that hasn't arrived yet."
+      "topic": "Gold's consolidation",
+      "wall_street": "Gold is range-bound; the trade is over.",
+      "atlas": "Central banks bought a record-for-Q2 289t while prices fell. Cooling momentum is not reversal — and Tier 1 isn't what is driving the escalation."
     },
     {
       "topic": "Copper supply",
-      "wall_street": "Inventories ample — no shortage.",
-      "atlas": "TC/RCs still negative — smelters paying miners. The structural concentrate shortage is unmoved by the macro tape."
+      "wall_street": "Record exchange inventories — no shortage.",
+      "atlas": "~70% of visible stocks now sit in COMEX warehouses, and spot TC/RCs remain negative. Plenty of metal on paper, in the wrong place."
     }
   ],
   "positioning": {
-    "intro": "<strong>The status escalates to Crisis Acceleration — Transition.</strong> The trigger is not gold — it's Override Rule #5: private-credit gates plus an expanding Fed, firing in the same month. This is the phase the framework was built to flag early, when the largest moves in hard assets historically occur. The short-term Treasury buffer now begins to wind down — Transition is the point where the framework starts treating Treasuries themselves as part of the problem, not the parking lot.",
+    "intro": "<strong>The status holds at Crisis Acceleration — Transition.</strong> Nothing in the quarter cleared the trigger: private-credit gates are still binding, and the Fed's reserve-management program is paused rather than withdrawn. Meanwhile the oil buffer the system relied on in June is now largely spent, and long yields have repriced a full point higher. The framework's posture is unchanged from June.",
     "posture": [
       {
         "color": "emerald",
         "label": "Gold — overweight",
-        "reason": "Tier 1 is quiet, but the structural case is intact: a Fed still expanding, central banks buying 244t in Q1 (≈976t annualized), and a credit system that just started gating. Gold's pullback to $4,153 is consolidation inside a monetary regime change, not its end. Add on weakness."
+        "reason": "Tier 1 is quiet (8-week momentum +5.3%), but central banks bought 289t in Q2 — a record for a second quarter — into a falling price. With interest costs at 18.6% of revenue and an oil shock underway, the structural case is intact."
       },
       {
         "color": "emerald",
         "label": "Bitcoin — overweight",
-        "reason": "High-beta gold. In a credit-led transition, BTC is the cleanest expression of the monetary-accommodation response that follows forced liquidity. Size for volatility — it will draw down with risk assets before it leads."
+        "reason": "High-beta gold. In a credit- and energy-led transition, BTC is the cleanest expression of the accommodation response that tends to follow. Size for volatility — it will draw down with risk assets before it leads."
       },
       {
         "color": "red",
         "label": "Short-term Treasuries — reduce",
-        "reason": "Transition is the wind-down point. The T-bill buffer that made sense at Elevated now starts coming off as the framework shifts to treating Treasuries as the problem rather than the parking lot. Keep only what funds near-term liquidity."
+        "reason": "Transition is the wind-down point for the T-bill buffer. With the Fed's bill purchases paused and yields rising across the curve, keep only what funds near-term liquidity."
       },
       {
         "color": "emerald",
         "label": "Critical materials — overweight",
-        "reason": "Copper TC/RCs still negative, silver in a sixth straight deficit year. The Material Ledger doesn't care about the macro tape — physical tightness is unmoved by gold's pullback or oil's drop."
+        "reason": "COMEX copper at a record $6.83/lb with ~70% of exchange stocks concentrated in US warehouses; spot TC/RCs still negative; silver in a sixth straight deficit year. Physical tightness is unmoved by the macro tape."
       },
       {
         "color": "red",
         "label": "Equities — underweight",
-        "reason": "S&P/Gold at 1.80 — nominal highs masking a multi-year loss of purchasing power in gold terms. A credit-led transition is precisely when equity multiples are most exposed."
+        "reason": "S&P/Gold at 1.78. Nominal highs, but a 5% ten-year and a $115 oil shock are the combination that pressures multiples most in a transition."
       },
       {
         "color": "red",
         "label": "Long Treasuries — underweight",
-        "reason": "Yields firmed to ~4.5% against a Fed still buying and a credit system gating. Long duration carries asymmetric downside when forced liquidity meets a depleted fiscal buffer."
+        "reason": "The 10-year rose from ~4.2% to 5.18% over the year. Long duration still carries asymmetric downside while an energy shock and a depleted fiscal buffer push the term premium higher."
       }
     ]
   },
   "triggers": {
     "escalation": [
-      "A fifth or sixth private-credit gate, or a gate that drags in a bank counterparty → pushes Private Credit Stress toward systemic and Tier 2 higher.",
-      "Fed shifts to <strong>long-duration purchases</strong> (Override #4) → immediate confirmation. Currently bills-only.",
-      "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis. Currently firm (10Y 2.45, 30Y 2.43) — watch the next refunding.",
-      "Gold 8-week momentum recovers above <strong>+10%</strong> → Tier 1 re-engages on top of the credit signal. Currently −9.5%."
+      "A new flagship private-credit gate, or one that drags in a bank counterparty → pushes Private Credit Stress toward systemic. Currently 2 funds prorating in Q3.",
+      "Fed shifts to <strong>long-duration purchases</strong> (Override #4) → immediate confirmation. Currently bills and ≤3-year coupons only, and RMPs paused.",
+      "Treasury auction B/C drops below <strong>2.0</strong> → demand crisis. Currently strong (10Y 2.71, 30Y 2.61).",
+      "China's suspended rare-earth export controls <strong>resume on Nov 10</strong> → China Export Controls re-scores. Currently suspended.",
+      "Gold 8-week momentum recovers above <strong>+10%</strong> → Tier 1 re-engages on top of the credit signal. Currently +5.3%."
     ],
     "deescalation": [
-      "Gated funds reopen redemptions in orderly fashion → Override #5 clears. None have reopened yet.",
-      "Fed <strong>resumes QT</strong> at full pace → removes half the Override #5 trigger. Balance sheet still growing at $40B/mo.",
-      "SPR refill begins at scale → restores the oil circuit breaker. No refill underway; reserve near 48% of capacity.",
-      "Tier 2 falls back below <strong>6</strong> with no active overrides → returns to Stable. Currently 8/20 with Override #5 live."
+      "Gated funds meet redemption requests in full → Override #5 clears. Q3 requests are easing, but Apollo and BlackRock HPS are still prorating.",
+      "Fed <strong>formally ends</strong> reserve-management purchases → removes half the Override #5 trigger. Currently paused through at least Oct 14; program still standing.",
+      "SPR refill begins at scale → restores the oil circuit breaker. Reserve at 284.6M bbl, lowest since 1982; no refill underway.",
+      "Tier 2 falls back below <strong>6</strong> with no active overrides → returns to Stable. Currently 9/20 with Override #5 live."
     ]
   },
   "track_record": {
