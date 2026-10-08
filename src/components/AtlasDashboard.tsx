@@ -28,15 +28,6 @@ function barFillColor(pct: number) {
   return "bg-emerald-500/60";
 }
 
-function postureColor(color: string) {
-  switch (color) {
-    case "emerald": return "text-emerald-400";
-    case "amber": return "text-amber-400";
-    case "red": return "text-red-400";
-    default: return "text-gray-500";
-  }
-}
-
 const CYCLE_STAGES = [
   { num: 1, label: "Sound Money", era: "1945–1971" },
   { num: 2, label: "Credit Expansion", era: "1971–2020" },
@@ -161,10 +152,9 @@ function IndicatorRow({ indicator }: { indicator: AtlasIndicator }) {
 /* ── Main Dashboard ──────────────────────────────────── */
 
 export default function AtlasDashboard({ data, narrative }: { data: AtlasData; narrative: NarrativeData | null }) {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [waitlisted, setWaitlisted] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
   const [showEvidence, setShowEvidence] = useState(false);
   const [isLocal, setIsLocal] = useState(false);
 
@@ -172,20 +162,20 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
     setIsLocal(window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
   }, []);
 
-  const handleWaitlist = async (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.includes("@")) return;
+    if (!email.includes("@")) return;
     setSubmitting(true);
     try {
       await fetch("/api/canary-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), email }),
+        body: JSON.stringify({ email }),
       });
     } catch {
-      // Still mark as waitlisted — email was sent fire-and-forget
+      // Still mark as subscribed — email was sent fire-and-forget
     }
-    setWaitlisted(true);
+    setSubscribed(true);
     setSubmitting(false);
   };
 
@@ -337,28 +327,17 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
         </Card>
       )}
 
-      {/* ═══════ WAITLIST GATE ═══════ */}
+      {/* ═══════ SUBSCRIBE ═══════ */}
       <div className="rounded-lg border border-gold-500/25 bg-gradient-to-b from-navy-900/90 to-navy-950/90 px-8 py-10 text-center mb-8">
-        {!waitlisted ? (
+        {!subscribed ? (
           <>
             <div className="text-xl font-semibold text-white mb-2">
-              Full Dashboard Coming Soon
-            </div>
-            <div className="text-base text-gray-400 max-w-[520px] mx-auto mb-2 leading-relaxed">
-              Built for investors who want signal before the consensus catches up. Positioning guidance, escalation triggers, historical track record, and the full 22-indicator evidence table will be available to paid subscribers.
+              Subscribe for updates
             </div>
             <div className="text-sm text-gray-500 max-w-[460px] mx-auto mb-6">
-              Join the waitlist to be notified when subscriptions launch. No obligation — your information is only used to send updates.
+              Get an email when The Canary is updated. Your address is only used to send updates.
             </div>
-            <form onSubmit={handleWaitlist} className="flex flex-col gap-2 max-w-[400px] mx-auto">
-              <input
-                type="text"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Full name"
-                className="rounded-md border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gold-500/60 focus:outline-none focus:ring-1 focus:ring-gold-500/30"
-              />
+            <form onSubmit={handleSubscribe} className="flex flex-col gap-2 max-w-[400px] mx-auto">
               <div className="flex gap-2">
                 <input
                   type="email"
@@ -373,50 +352,22 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
                   disabled={submitting}
                   className="rounded-md bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 disabled:opacity-50 cursor-pointer"
                 >
-                  {submitting ? "..." : "Join Waitlist"}
+                  {submitting ? "..." : "Subscribe"}
                 </button>
               </div>
             </form>
           </>
         ) : (
-          <>
-            <div className="text-lg font-semibold text-white mb-1.5">
-              You&apos;re on the list
-            </div>
-            <div className="text-sm text-gray-400 max-w-[500px] mx-auto leading-relaxed">
-              We&apos;ll notify you when paid subscriptions launch. The full dashboard includes positioning guidance, specific escalation and de-escalation triggers, historical track record, and the complete 22-indicator evidence table.
-            </div>
-          </>
+          <div className="text-lg font-semibold text-white">
+            Thanks — you&apos;re subscribed.
+          </div>
         )}
       </div>
 
-      {/* ═══════ PAID CONTENT — only visible on localhost until subscription system is ready ═══════ */}
+      {/* ═══════ LOCAL-ONLY SECTIONS — visible on localhost only ═══════ */}
       {isLocal && <>
-      {/* ═══════ ROW C: POSITIONING + TRIGGERS ═══════ */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        {narrative?.positioning && (
-          <Card className="flex flex-col">
-            <SectionLabel>What to Do About It</SectionLabel>
-            <div className="text-base text-gray-300 leading-[1.8] mb-4"
-              dangerouslySetInnerHTML={{ __html: narrative.positioning.intro }}
-            />
-            <div className="rounded-md bg-navy-800/50 p-5">
-              <div className="text-xs text-gold-400 font-semibold uppercase tracking-[0.08em] mb-3">
-                Canary Posture — {regimeDisplayInfo(current.regime_status).sublevel}
-              </div>
-              {narrative.positioning.posture.map((item: { color: string; label: string; reason: string }, i: number) => (
-                <div key={i} className={`py-2.5 ${i < narrative.positioning.posture.length - 1 ? "border-b border-navy-800/40" : ""}`}>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className={`text-sm ${postureColor(item.color)}`}>■</span>
-                    <span className="text-[15px] font-semibold text-gray-200">{item.label}</span>
-                  </div>
-                  <div className="text-sm text-gray-400 ml-[22px] leading-relaxed">{item.reason}</div>
-                </div>
-              ))}
-            </div>
-          </Card>
-        )}
-
+      {/* ═══════ TRIGGERS ═══════ */}
+      <div className="mb-8">
         {narrative?.triggers && (
           <Card className="flex flex-col">
             <SectionLabel>What Would Change This Reading</SectionLabel>
@@ -441,49 +392,6 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
           </Card>
         )}
       </div>
-
-      {/* ═══════ TRACK RECORD ═══════ */}
-      {narrative?.track_record && (
-        <Card className="mb-8">
-          <SectionLabel>Track Record</SectionLabel>
-          <div className="text-base text-gray-300 leading-relaxed mb-5">
-            {narrative.track_record.intro}
-          </div>
-
-          <div className="mb-5">
-            <div className="text-xs text-emerald-400 font-semibold uppercase tracking-[0.08em] mb-2.5">
-              Confirmed Transitions
-            </div>
-            {narrative.track_record.confirmed.map((e: { year: string; label: string; signal: string; lead: string; result: string }, i: number) => (
-              <div key={i} className="flex gap-4 items-start px-4 py-3 mb-2 rounded-md bg-navy-800/40 border-l-[3px] border-l-emerald-500">
-                <div className="min-w-[70px]">
-                  <div className="font-mono text-sm text-gold-400 font-semibold">{e.year}</div>
-                  <div className="text-[11px] text-gray-500 mt-0.5">{e.lead}</div>
-                </div>
-                <div className="flex-1">
-                  <div className="text-[15px] text-gray-200 font-medium">{e.label}</div>
-                  <div className="text-sm text-gray-400 mt-0.5">{e.signal} → {e.result}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div>
-            <div className="text-xs text-gray-500 font-semibold uppercase tracking-[0.08em] mb-2.5">
-              Adversarial Tests — Periods Where The Canary Should Not Fire
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-              {narrative.track_record.adversarial.map((e: { year: string; label: string; result: string }, i: number) => (
-                <div key={i} className="rounded-md bg-navy-800/30 border border-navy-800/60 px-3 py-2.5">
-                  <div className="font-mono text-xs text-gray-400">{e.year}</div>
-                  <div className="text-sm text-gray-300 mt-0.5">{e.label}</div>
-                  <div className="text-xs text-emerald-400 mt-1">{e.result}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Card>
-      )}
 
       {/* ═══════ SCORE HISTORY ═══════ */}
       <Card className="mb-8">

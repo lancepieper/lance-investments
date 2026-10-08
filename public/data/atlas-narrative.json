@@ -27,7 +27,7 @@
     "A 5% ten-year with strong auction demand looks like a healthy market. Read it the other way: the bond market is clearing at a rate that raises the government's own funding cost every time debt rolls — CBO already puts interest at 18.6% of federal revenue this year, above the 1991 high — and the Treasury has responded by tripling its long-end buybacks. Critics call that a holding action, not QE, and on size they're right. But a debt manager stepping in to support its own long bonds is the first rung of the ladder that ends with the central bank doing it. Rising yields alongside an energy shock make the next rung harder to avoid, not easier."
   ],
   "divergence": {
-    "description": "The single most predictive indicator in The Canary. When gold surges and yields don't follow, the bond market is being artificially suppressed — either through direct purchases or implicit policy. This divergence preceded every major regime transition in the last 50 years.",
+    "description": "The Canary's core signal. When gold surges and yields don't follow, the bond market is being artificially suppressed — either through direct purchases or implicit policy.",
     "months": [
       "Oct",
       "Nov",
@@ -111,41 +111,6 @@
       "atlas": "~70% of visible stocks now sit in COMEX warehouses, and spot TC/RCs remain negative. Plenty of metal on paper, in the wrong place."
     }
   ],
-  "positioning": {
-    "intro": "<strong>The status holds at Crisis Acceleration — Transition.</strong> Nothing in the quarter cleared the trigger: private-credit gates are still binding, and the Fed's reserve-management program is paused rather than withdrawn. Meanwhile the oil buffer the system relied on in June is now largely spent, and long yields have repriced a full point higher. The framework's posture is unchanged from June.",
-    "posture": [
-      {
-        "color": "emerald",
-        "label": "Gold — overweight",
-        "reason": "Tier 1 is quiet (8-week momentum +5.3%), but central banks bought 289t in Q2 — a record for a second quarter — into a falling price. With interest costs at 18.6% of revenue and an oil shock underway, the structural case is intact."
-      },
-      {
-        "color": "emerald",
-        "label": "Bitcoin — overweight",
-        "reason": "High-beta gold. In a credit- and energy-led transition, BTC is the cleanest expression of the accommodation response that tends to follow. Size for volatility — it will draw down with risk assets before it leads."
-      },
-      {
-        "color": "red",
-        "label": "Short-term Treasuries — reduce",
-        "reason": "Transition is the wind-down point for the T-bill buffer. With the Fed's bill purchases paused and yields rising across the curve, keep only what funds near-term liquidity."
-      },
-      {
-        "color": "emerald",
-        "label": "Critical materials — overweight",
-        "reason": "COMEX copper at a record $6.83/lb with ~70% of exchange stocks concentrated in US warehouses; spot TC/RCs still negative; silver in a sixth straight deficit year. Physical tightness is unmoved by the macro tape."
-      },
-      {
-        "color": "red",
-        "label": "Equities — underweight",
-        "reason": "S&P/Gold at 1.78. Nominal highs, but a 5% ten-year and a $115 oil shock are the combination that pressures multiples most in a transition."
-      },
-      {
-        "color": "red",
-        "label": "Long Treasuries — underweight",
-        "reason": "The 10-year rose from ~4.2% to 5.18% over the year. Long duration still carries asymmetric downside while an energy shock and a depleted fiscal buffer push the term premium higher."
-      }
-    ]
-  },
   "triggers": {
     "escalation": [
       "A new flagship private-credit gate, or one that drags in a bank counterparty → pushes Private Credit Stress toward systemic. Currently 2 funds prorating in Q3.",
@@ -160,64 +125,6 @@
       "Fed <strong>formally ends</strong> reserve-management purchases → removes half the Override #5 trigger. Currently paused through at least Oct 14; program still standing.",
       "SPR refill begins at scale → restores the oil circuit breaker. Reserve at 284.6M bbl, lowest since 1982; no refill underway.",
       "Tier 2 falls back below <strong>7</strong> with no active overrides → returns to Stable. Currently 10/22 with Override #5 live."
-    ]
-  },
-  "track_record": {
-    "intro": "Applied retroactively across nine historical periods, The Canary identified every major regime transition 3–6 months early with near-zero false positives.",
-    "confirmed": [
-      {
-        "year": "1971–73",
-        "label": "Nixon Shock",
-        "signal": "Early Warning → Crisis Acceleration",
-        "lead": "6 months early",
-        "result": "Gold +375% over next 3 years"
-      },
-      {
-        "year": "2008–09",
-        "label": "Global Financial Crisis",
-        "signal": "Early Warning → Crisis Acceleration",
-        "lead": "3 months before QE1",
-        "result": "Gold +170% from crisis to peak"
-      },
-      {
-        "year": "2020",
-        "label": "COVID Monetary Flood",
-        "signal": "Early Warning at onset",
-        "lead": "Real-time detection",
-        "result": "Gold +30%, BTC +1,692% from lows"
-      }
-    ],
-    "adversarial": [
-      {
-        "year": "2015–16",
-        "label": "Gold rally (+25%)",
-        "result": "No signal ✔ — cyclical bounce with no yield divergence or Fed expansion. Gold reversed within a year."
-      },
-      {
-        "year": "2013–15",
-        "label": "Gold bear market (−45%)",
-        "result": "No false signal ✔ — real tightening with rising yields. The system correctly read this as non-monetary."
-      },
-      {
-        "year": "2018",
-        "label": "Fed tightening cycle",
-        "result": "No false signal ✔ — QT was running and balance sheet shrinking. No divergence to trigger on."
-      },
-      {
-        "year": "1998",
-        "label": "LTCM / Russia crisis",
-        "result": "Correctly filtered ✔ — financial stress but no monetary regime implications. Fed cut rates and markets stabilized."
-      },
-      {
-        "year": "2022–23",
-        "label": "SVB banking stress",
-        "result": "Brief signal, self-corrected ✔ — initial spike in Fed lending resolved within weeks. No sustained monetary shift."
-      },
-      {
-        "year": "Japan",
-        "label": "30-year balance sheet expansion",
-        "result": "Right on direction, open on timing — BOJ's experiment is still running. The framework flags the trajectory correctly but can't call the endpoint."
-      }
     ]
   }
 }

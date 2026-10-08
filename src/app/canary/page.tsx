@@ -6,7 +6,7 @@ import AtlasDashboard from "@/components/AtlasDashboard";
 export const metadata: Metadata = {
   title: "The Canary | Lance Pieper",
   description:
-    "A live dashboard tracking 22 macro indicators to detect monetary system transitions and investment implications.",
+    "A live dashboard tracking 22 macro indicators for stress in the monetary system.",
 };
 
 export interface AtlasIndicator {
@@ -59,18 +59,9 @@ export interface NarrativeData {
     current_reading: string;
   };
   consensus: { topic: string; wall_street: string; atlas: string }[];
-  positioning: {
-    intro: string;
-    posture: { color: string; label: string; reason: string }[];
-  };
   triggers: {
     escalation: string[];
     deescalation: string[];
-  };
-  track_record: {
-    intro: string;
-    confirmed: { year: string; label: string; signal: string; lead: string; result: string; grade: string }[];
-    adversarial: { year: string; label: string; result: string }[];
   };
 }
 
