@@ -152,6 +152,7 @@ function IndicatorRow({ indicator }: { indicator: AtlasIndicator }) {
 /* ── Main Dashboard ──────────────────────────────────── */
 
 export default function AtlasDashboard({ data, narrative }: { data: AtlasData; narrative: NarrativeData | null }) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
@@ -164,13 +165,13 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.includes("@")) return;
+    if (!name.trim() || !email.includes("@")) return;
     setSubmitting(true);
     try {
       await fetch("/api/canary-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ name: name.trim(), email }),
       });
     } catch {
       // Still mark as subscribed — email was sent fire-and-forget
@@ -335,9 +336,17 @@ export default function AtlasDashboard({ data, narrative }: { data: AtlasData; n
               Subscribe for updates
             </div>
             <div className="text-sm text-gray-500 max-w-[460px] mx-auto mb-6">
-              Get an email when The Canary is updated. Your address is only used to send updates.
+              Get an email when The Canary is updated. Your name and address are only used to send updates.
             </div>
             <form onSubmit={handleSubscribe} className="flex flex-col gap-2 max-w-[400px] mx-auto">
+              <input
+                type="text"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full name"
+                className="rounded-md border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gold-500/60 focus:outline-none focus:ring-1 focus:ring-gold-500/30"
+              />
               <div className="flex gap-2">
                 <input
                   type="email"
